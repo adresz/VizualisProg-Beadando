@@ -5,15 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="0,2,0,-2">
-        <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="488,245,0,0" VerticalAlignment="Top" Height="43" Width="76" Click="Login_click"/>
-        <TextBox x:Name="UsernameTbox" HorizontalAlignment="Center" Margin="0,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
-        <PasswordBox x:Name="PasswordTbox" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="215,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98"><Run Language="hu-hu" Text="Felhasználónév"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="215,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="98"><Run Language="hu-hu" Text="Jelszó"/></TextBlock>
-        <Button x:Name="register" Content="Register" HorizontalAlignment="Left" Margin="606,247,0,0" VerticalAlignment="Top" Height="41" Width="76" Click="Register_click"/>
+        Title="MainWindow" Height="400" Width="700"
+        WindowStyle="None"
+        WindowState="Maximized">
 
+    <!--Viewbox használata, a könnyebb designolhatóság miatt-->
+    <Viewbox>
+        <Grid Width="250" Height="330">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
 
-    </Grid>
+            <!-- Felirat félkövérre, középre rakása -->
+            <TextBlock Text="Válasszon bejelentkezési módot"
+                       FontSize="10"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top" Margin="0,118,0,0" />
+
+            <!-- Gombok felhelyezése eligazitása-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,136,0,23" Width="150">
+                <Button Content="Felhasználó" Width="70" Height="25"/>
+                <Button Content="Admin" Width="70" Height="25" Margin="10,0,0,0"/>
+            </StackPanel>
+        </Grid>
+    </Viewbox>
 </Window>
