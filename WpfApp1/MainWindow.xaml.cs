@@ -23,9 +23,9 @@ public partial class MainWindow : Window
     private string connectionString = "server=localhost;database=userdatabase;uid=root;pwd=;";
     private string username, password;
 
-    public MainWindow()
+    public void LoginOptions()
     {
-        InitializeComponent();
+
     }
 
 
