@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="700"
         WindowStyle="None"
-        WindowState="Maximized">
+        WindowState="Maximized"
+       >
 
     <!--Viewbox használata, a könnyebb designolhatóság miatt-->
     <Viewbox>
@@ -28,8 +29,11 @@
             <!-- Gombok felhelyezése eligazitása-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,136,0,23" Width="150">
                 <Button Content="Felhasználó" Width="70" Height="25"/>
-                <Button Content="Admin" Width="70" Height="25" Margin="10,0,0,0"/>
+                <Button Content="Admin" Width="70" Height="25" Margin="10,0,0,0" Click="Button_Click"/>
+                
             </StackPanel>
         </Grid>
+        
+
     </Viewbox>
 </Window>

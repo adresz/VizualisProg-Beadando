@@ -10,22 +10,25 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BCrypt.Net;
 using MySql.Data.MySqlClient;
+using WpfApp1;
 
 
-namespace WpfApp1;
+namespace LoginOptions;
 
-/// <summary>
-/// Interaction logic for MainWindow.xaml
-/// </summary>
 public partial class MainWindow : Window
 {
-    //Csatlakozás a helyi SQL adatbázishoz
-    private string connectionString = "server=localhost;database=userdatabase;uid=root;pwd=;";
-    private string username, password;
+
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+        
+        
+
+    }
 
     public void LoginOptions()
     {
-
+        InitializeComponent();
     }
 
 
