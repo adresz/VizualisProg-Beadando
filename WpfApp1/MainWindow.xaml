@@ -6,14 +6,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="700"
-        WindowStyle="None"
-        WindowState="Maximized"
-       >
+        Title="Bejelentkezés" Height="400" Width="700">
 
-    <!--Viewbox használata, a könnyebb designolhatóság miatt-->
     <Viewbox>
-        <Grid Width="250" Height="330">
+        <Grid Width="250" Height="300" VerticalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="2*" />
                 <RowDefinition Height="1*" />
@@ -30,10 +26,10 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,136,0,23" Width="150">
                 <Button Content="Felhasználó" Width="70" Height="25"/>
                 <Button Content="Admin" Width="70" Height="25" Margin="10,0,0,0" Click="Button_Click"/>
-                
+
             </StackPanel>
         </Grid>
-        
+
 
     </Viewbox>
 </Window>

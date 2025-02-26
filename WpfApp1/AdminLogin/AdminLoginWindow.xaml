@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Admin Bejelentkezés" Height="400" Width="700"
         Background="AliceBlue">
+
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock Text="Felhasználónév:"/>
@@ -11,7 +12,7 @@
             <TextBlock Text="Jelszó:"/>
             <PasswordBox x:Name="Password" Width="200"/>
 
-            <Button Content="Login" Width="200" Margin="10"></Button>
+            <Button Content="Login" Width="200" Margin="10" Click="AdminLogin"></Button>
         </StackPanel>
     </Grid>
 </Window>

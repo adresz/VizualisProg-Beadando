@@ -21,7 +21,10 @@ public partial class MainWindow : Window
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
-        
+        AdminLoginWindow AdminWindow = new AdminLoginWindow();
+        AdminWindow.Show();
+        this.Close();   
+
         
 
     }
