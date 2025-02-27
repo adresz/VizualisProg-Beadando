@@ -8,28 +8,17 @@
         mc:Ignorable="d"
         Title="Bejelentkezés" Height="400" Width="700">
 
-    <Viewbox>
-        <Grid Width="250" Height="300" VerticalAlignment="Center">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="2*" />
-                <RowDefinition Height="1*" />
-            </Grid.RowDefinitions>
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Felhasználónév:"/>
+            <TextBox x:Name="Username" Width="200"/>
 
-            <!-- Felirat félkövérre, középre rakása -->
-            <TextBlock Text="Válasszon bejelentkezési módot"
-                       FontSize="10"
-                       FontWeight="Bold"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Top" Margin="0,118,0,0" />
+            <TextBlock Text="Jelszó:"/>
+            <PasswordBox x:Name="Password" Width="200"/>
 
-            <!-- Gombok felhelyezése eligazitása-->
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,136,0,23" Width="150">
-                <Button Content="Felhasználó" Width="70" Height="25"/>
-                <Button Content="Admin" Width="70" Height="25" Margin="10,0,0,0" Click="Button_Click"/>
-
-            </StackPanel>
-        </Grid>
+            <Button Content="Login" Width="200" Margin="10" Click="Login_Click"></Button>
+        </StackPanel>
+    </Grid>
 
 
-    </Viewbox>
 </Window>

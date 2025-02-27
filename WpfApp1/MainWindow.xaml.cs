@@ -11,6 +11,8 @@ using System.Windows.Shapes;
 using BCrypt.Net;
 using MySql.Data.MySqlClient;
 using WpfApp1;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 
 
 namespace LoginOptions;
@@ -19,21 +21,14 @@ public partial class MainWindow : Window
 {
 
 
-    private void Button_Click(object sender, RoutedEventArgs e)
-    {
-        AdminLoginWindow AdminWindow = new AdminLoginWindow();
-        AdminWindow.Show();
-        this.Close();   
-
-        
-
-    }
 
     public void LoginOptions()
     {
         InitializeComponent();
     }
 
-
-
+    private void Login_Click(object sender, RoutedEventArgs e)
+    {
+        
+    }
 }
