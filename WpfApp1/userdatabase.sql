@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Feb 27. 19:16
+-- Létrehozás ideje: 2025. Feb 27. 21:41
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -29,14 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `accesslevels` (
   `AccessID` int(11) NOT NULL,
-  `level_name` varchar(50) NOT NULL
+  `AccessLVL` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- A tábla adatainak kiíratása `accesslevels`
 --
 
-INSERT INTO `accesslevels` (`AccessID`, `level_name`) VALUES
+INSERT INTO `accesslevels` (`AccessID`, `AccessLVL`) VALUES
 (0, 'User'),
 (1, 'Moderator'),
 (2, 'Admin'),
@@ -56,6 +56,15 @@ CREATE TABLE `users` (
   `AccessID` int(11) DEFAULT 0 CHECK (`AccessID` between 0 and 3),
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- A tábla adatainak kiíratása `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `AccessID`, `created_at`) VALUES
+(1, 'adresz', 'tigerad97@gmail.com', '$2b$12$9lJ7aNZPX8H/dOP2C.20Z.4eeHB2q1vYHgwj9wst4U8cSOp5pc/FG', 3, '2025-02-27 20:03:22'),
+(2, 'm.zeteny', 'meszaros.zeteny@gmail.com', '$2b$12$LG656O9OvlGrv5NT1sv1k.N5k9KNED650f97XcPBljMrYaLT8EVY2', 3, '2025-02-27 20:15:47'),
+(3, 'sz.arpi', 'szabo.arpad@gmail.com', '$2b$12$tzDf6LPQLRbY.UNkBQqH4.8sBIVa4.1gcfx6hx0JqdWIyhKHEeFja', 3, '2025-02-27 20:16:01');
 
 --
 -- Eseményindítók `users`
@@ -85,6 +94,15 @@ CREATE TABLE `user_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- A tábla adatainak kiíratása `user_details`
+--
+
+INSERT INTO `user_details` (`email`, `First_Name`, `Last_Name`, `Phone_Number`, `ID_Number`, `Birth_Date`, `Gender`) VALUES
+('meszaros.zeteny@gmail.com', 'Zeteny', 'Meszaros', '+36209999999', '21666666666', '2005-02-28', 'Male'),
+('szabo.arpad@gmail.com', 'Arpad', 'Szabo', '+36301234369', '21333392911', '2002-02-02', 'Male'),
+('tigerad97@gmail.com', 'Adrian', 'Tiger', '+36201234567', '21234567891', '2002-12-10', 'Male');
+
+--
 -- Indexek a kiírt táblákhoz
 --
 
@@ -101,13 +119,18 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`),
   ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `username_2` (`username`),
+  ADD UNIQUE KEY `email_2` (`email`),
   ADD KEY `AccessID` (`AccessID`);
 
 --
 -- A tábla indexei `user_details`
 --
 ALTER TABLE `user_details`
-  ADD PRIMARY KEY (`email`);
+  ADD PRIMARY KEY (`email`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `ID_Number` (`ID_Number`),
+  ADD UNIQUE KEY `Phone_Number` (`Phone_Number`);
 
 --
 -- A kiírt táblák AUTO_INCREMENT értéke
@@ -117,7 +140,7 @@ ALTER TABLE `user_details`
 -- AUTO_INCREMENT a táblához `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Megkötések a kiírt táblákhoz

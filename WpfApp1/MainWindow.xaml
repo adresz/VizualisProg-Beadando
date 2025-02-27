@@ -10,15 +10,20 @@
 
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="Felhasználónév:"/>
+
+            <TextBlock Text="Felhasználónév"/>
             <TextBox x:Name="Username" Width="200"/>
 
             <TextBlock Text="Jelszó:"/>
             <PasswordBox x:Name="Password" Width="200"/>
 
             <Button Content="Login" Width="200" Margin="10" Click="Login_Click"></Button>
+            
+            
+            
         </StackPanel>
     </Grid>
+    
 
 
 </Window>
