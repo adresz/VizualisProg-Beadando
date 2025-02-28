@@ -17,13 +17,13 @@
             <TextBlock Text="Jelszó:"/>
             <PasswordBox x:Name="Password" Width="200"/>
 
-            <Button Content="Login" Width="200" Margin="10" Click="Login_Click"></Button>
-            
-            
-            
+            <!-- A gombokat egy új StackPanel-be helyezzük, amely vízszintesen rendezi őket -->
+            <StackPanel Orientation="Horizontal" Margin="10" Width="200">
+                <Button Content="Regisztráció" Width="90" Margin="5" Click="Register_Click"/>
+                <Button Content="Bejelentkezés" Width="90" Margin="5" Click="Login_Click"/>
+            </StackPanel>
+
         </StackPanel>
     </Grid>
-    
-
 
 </Window>
