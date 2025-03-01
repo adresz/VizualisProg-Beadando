@@ -1,0 +1,8 @@
+*.nupkg
+*.snupkg
+packages/
+!packages/repositories.config
+
+# Build output
+bin/
+obj/
