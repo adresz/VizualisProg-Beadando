@@ -38,3 +38,7 @@ C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\Vizuali
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\RegisterView\Register.g.cs
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\RegisterView\Register.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\AdminView\Admin.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\AdminView\Admin.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserView\UserV.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserView\UserV.baml
