@@ -109,8 +109,8 @@ public partial class MainWindow : Window
 public class User
 {
     [Key] // Enélkül össze szarja magát az adatbázis, ne nyúlj hozzá 
-    public string Username { get; set; }
-    public string Password { get; set; }
+    public required string Username { get; set; }
+    public required string Password { get; set; }
     public int AccessID { get; set; }
     public int isBanned { get; set; }
 

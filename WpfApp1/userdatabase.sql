@@ -40,9 +40,8 @@ CREATE TABLE `accesslevels` (
 
 INSERT INTO `accesslevels` (`AccessID`, `AccessLVL`) VALUES
 (0, 'User'),
-(1, 'Moderator'),
-(2, 'Admin'),
-(3, 'Owner');
+(1, 'Admin'),
+(2, 'Owner');
 
 -- --------------------------------------------------------
 
@@ -55,7 +54,7 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `AccessID` int(11) DEFAULT 0 CHECK (`AccessID` between 0 and 3),
+  `AccessID` int(11) DEFAULT 0 CHECK (`AccessID` between 0 and 2),
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `isBanned` tinyint(1) NOT NULL DEFAULT 0
 ) ;
@@ -65,9 +64,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `AccessID`, `created_at`, `isBanned`) VALUES
-(1, 'adresz', 'tigerad97@gmail.com', '$2b$12$9lJ7aNZPX8H/dOP2C.20Z.4eeHB2q1vYHgwj9wst4U8cSOp5pc/FG', 3, '2025-02-27 19:03:22', 0),
-(2, 'm.zeteny', 'meszaros.zeteny@gmail.com', '$2b$12$LG656O9OvlGrv5NT1sv1k.N5k9KNED650f97XcPBljMrYaLT8EVY2', 3, '2025-02-27 19:15:47', 0),
-(3, 'sz.arpi', 'szabo.arpad@gmail.com', '$2b$12$tzDf6LPQLRbY.UNkBQqH4.8sBIVa4.1gcfx6hx0JqdWIyhKHEeFja', 3, '2025-02-27 19:16:01', 0);
+(1, 'adresz', 'tigerad97@gmail.com', '$2b$12$9lJ7aNZPX8H/dOP2C.20Z.4eeHB2q1vYHgwj9wst4U8cSOp5pc/FG', 2, '2025-02-27 19:03:22', 0),
+(2, 'm.zeteny', 'meszaros.zeteny@gmail.com', '$2b$12$LG656O9OvlGrv5NT1sv1k.N5k9KNED650f97XcPBljMrYaLT8EVY2', 2, '2025-02-27 19:15:47', 0),
+(3, 'sz.arpi', 'szabo.arpad@gmail.com', '$2b$12$tzDf6LPQLRbY.UNkBQqH4.8sBIVa4.1gcfx6hx0JqdWIyhKHEeFja', 2, '2025-02-27 19:16:01', 0);
 
 --
 -- Eseményindítók `users`
