@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\registerview\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:registerview\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\adminview\\admin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:adminview\\admin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -42,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 311,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Admin.xaml",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml",
               "RelativeDocumentMoniker": "AdminView\\Admin.xaml",
@@ -57,7 +57,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Register.xaml.cs",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml.cs",
               "RelativeDocumentMoniker": "RegisterView\\Register.xaml.cs",
@@ -80,15 +80,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAUwGgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAIwDcAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T20:04:32.506Z"
+              "WhenOpened": "2025-02-24T20:04:32.506Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -127,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Register.xaml",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml",
               "RelativeDocumentMoniker": "RegisterView\\Register.xaml",
