@@ -48,37 +48,27 @@ public partial class MainWindow : Window
             {
                 var user = db.users.FirstOrDefault(u => u.Username == Username.Text);
                 int accessID = user.AccessID;
-                int isBanned = user.isBanned;
                 if (user != null && BCrypt.Net.BCrypt.Verify(Password.Password, user.Password))
                 {
                     if(accessID == 2 || accessID == 3)
                     {
-                        if(isBanned == 1)
-                        {
-                            MessageBox.Show("A felhasználói fiókja tiltva van.");
-                        }
-                        else
-                        {
+                       
+                       
                             MessageBox.Show("Sikeres bejelentkezés");
                             AdminV AdminWindow = new AdminV();
                             AdminWindow.Show();
                             this.Close();
-                        }
+                      
 
                     }
                     else if(accessID == 0)
                     {
-                        if (isBanned == 1)
-                        {
-                            MessageBox.Show("A felhasználói fiókja tiltva van.");
-                        }
-                        else
-                        {
+                       
                             MessageBox.Show("Sikeres bejelentkezés");
                             UserV UserWindow = new UserV();
                             UserWindow.Show();
                             this.Close();
-                        }
+                       
                     }
                 
 
@@ -112,7 +102,6 @@ public class User
     public string Username { get; set; }
     public string Password { get; set; }
     public int AccessID { get; set; }
-    public int isBanned { get; set; }
 
 
 
