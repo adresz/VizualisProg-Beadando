@@ -8,13 +8,14 @@
         Title="Regisztráció" Height="450" Width="800"
         Background="AliceBlue">
 
-  
 
-        <Grid>
+
+    <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 
             <TextBlock Text="Vezetéknév:"/>
-            <TextBox x:Name="lastname" Width="200"/>
+            <TextBox x:Name="lastname" Width="200" LostFocus="Field_LostFocus" TextChanged="Field_TextChanged"/>
+            <TextBlock x:Name="LastName_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
 
             <TextBlock Text="Keresztnév:"/>
             <TextBox x:Name="firstname" Width="200"/>
@@ -40,8 +41,8 @@
             <TextBlock Text="Neme:"/>
             <RadioButton x:Name="Gender_M" GroupName="neme" Content="Férfi" IsChecked="True"></RadioButton>
             <RadioButton x:Name="Gender_F" GroupName="neme" Content="Nő"></RadioButton>
-           
-            
+
+
             <TextBlock Text="Születési dátum:"/>
             <DatePicker x:Name="Birthday">
                 <DatePicker.Resources>
@@ -59,6 +60,6 @@
 
 
             <!-- A gombokat egy új StackPanel-be helyezzük, amely vízszintesen rendezi őket -->
-            </StackPanel>
-         </Grid>
+        </StackPanel>
+    </Grid>
 </Window>

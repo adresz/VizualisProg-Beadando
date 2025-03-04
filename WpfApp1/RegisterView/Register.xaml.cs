@@ -38,8 +38,33 @@ namespace WpfApp1.RegisterView
 
         }
 
+        private void Field_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ValidateFields();
+        }
 
-
+        private void Field_LostFocus(object sender, RoutedEventArgs e)
+        {
+            ValidateFields();
+        }
+        
+        private void ValidateFields()
+        {
+            //last name mezőre való hiba jelzés, ha üres lenne a mező
+            if (string.IsNullOrEmpty(lastname.Text))
+            {
+                lastname.BorderBrush = Brushes.Red;
+                lastname.BorderThickness = new Thickness(2);
+                if (lastname.Name == "lastname")
+                    LastName_err.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                lastname.BorderBrush = Brushes.Gray;
+                lastname.BorderThickness = new Thickness(1);
+                LastName_err.Visibility = Visibility.Collapsed;
+            }
+        }
 
     }
 }
