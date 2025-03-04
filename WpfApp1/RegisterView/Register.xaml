@@ -55,7 +55,6 @@
                 <DatePicker.Resources>
                     <Style TargetType="DatePickerTextBox">
                         <Setter Property="Foreground" Value="Gray"/>
-                        <Setter Property="Text" Value="Születési dátum"/>
                     </Style>
                 </DatePicker.Resources>
             </DatePicker>

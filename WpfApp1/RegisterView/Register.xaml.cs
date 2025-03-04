@@ -3,13 +3,16 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation.Peers;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -27,6 +30,7 @@ namespace WpfApp1.RegisterView
         public Register()
         {
             InitializeComponent();
+            Birthday.SelectedDate = DateTime.Now;
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
@@ -38,6 +42,8 @@ namespace WpfApp1.RegisterView
         private void Register_Click(object sender, RoutedEventArgs e)
         {
             ValidateFields();
+
+            
         }
 
         private void Field_TextChanged(object sender, TextChangedEventArgs e)
@@ -52,7 +58,7 @@ namespace WpfApp1.RegisterView
 
         private void ValidateFields()
         {
-            bool hasEmptyField = false;
+          
 
             List<TextBox> textBoxes = new List<TextBox> { lastname, firstname, Username, email, phone_number, id_number};
             List<PasswordBox> passwordBoxes = new List<PasswordBox> { Password, Passwordconf};
@@ -157,6 +163,7 @@ namespace WpfApp1.RegisterView
             }
 
         }
+        
 
 
     }
