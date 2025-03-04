@@ -7,14 +7,17 @@
         mc:Ignorable="d"
         Title="Regisztráció" Height="450" Width="800"
         Background="AliceBlue">
-    <Grid>
+
+  
+
+        <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 
             <TextBlock Text="Vezetéknév:"/>
-            <PasswordBox x:Name="lastname" Width="200"/>
+            <TextBox x:Name="lastname" Width="200"/>
 
             <TextBlock Text="Keresztnév:"/>
-            <PasswordBox x:Name="firstname" Width="200"/>
+            <TextBox x:Name="firstname" Width="200"/>
 
             <TextBlock Text="Felhasználónév"/>
             <TextBox x:Name="Username" Width="200"/>
@@ -35,12 +38,12 @@
             <TextBox x:Name="id_number" Width="200"/>
 
             <TextBlock Text="Neme:"/>
-            <RadioButton x:Name="nem_ferfi" GroupName="neme" Content="Férfi" IsChecked="True"></RadioButton>
-            <RadioButton x:Name="nem_no" GroupName="neme" Content="Nő"></RadioButton>
-            <RadioButton x:Name="nem_tudja" GroupName="neme" Content="Egyéb"></RadioButton>
+            <RadioButton x:Name="Gender_M" GroupName="neme" Content="Férfi" IsChecked="True"></RadioButton>
+            <RadioButton x:Name="Gender_F" GroupName="neme" Content="Nő"></RadioButton>
+           
             
-            <TextBlock Text="Szüetési dátum:"/>
-            <DatePicker x:Name="szul_datum">
+            <TextBlock Text="Születési dátum:"/>
+            <DatePicker x:Name="Birthday">
                 <DatePicker.Resources>
                     <Style TargetType="DatePickerTextBox">
                         <Setter Property="Foreground" Value="Gray"/>
@@ -48,6 +51,12 @@
                     </Style>
                 </DatePicker.Resources>
             </DatePicker>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Vissza" HorizontalAlignment="Right" Width="90" Margin="5" Click="GoBack_Click"/>
+                <Button Content="Regisztrál" HorizontalAlignment="Left" Width="90" Margin="5" Click="Register_Click"/>
+            </StackPanel>
+
 
             <!-- A gombokat egy új StackPanel-be helyezzük, amely vízszintesen rendezi őket -->
             </StackPanel>
