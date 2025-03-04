@@ -39,7 +39,7 @@ public partial class MainWindow : Window
         if (string.IsNullOrWhiteSpace(Username.Text) || string.IsNullOrWhiteSpace(Password.Password))
         {
             MessageBox.Show("Hiányzó felhasználónév és/vagy jelszó");
-            return; 
+            return;
         }
 
         try
@@ -51,9 +51,9 @@ public partial class MainWindow : Window
                 int isBanned = user.isBanned;
                 if (user != null && BCrypt.Net.BCrypt.Verify(Password.Password, user.Password))
                 {
-                    if(accessID == 2 || accessID == 3)
+                    if (accessID == 2 || accessID == 3)
                     {
-                        if(isBanned == 1)
+                        if (isBanned == 1)
                         {
                             MessageBox.Show("A felhasználói fiókja tiltva van.");
                         }
@@ -66,7 +66,7 @@ public partial class MainWindow : Window
                         }
 
                     }
-                    else if(accessID == 0)
+                    else if (accessID == 0)
                     {
                         if (isBanned == 1)
                         {
@@ -80,7 +80,7 @@ public partial class MainWindow : Window
                             this.Close();
                         }
                     }
-                
+
 
                 }
                 else
@@ -116,7 +116,7 @@ public class User
 
 
 
-    
+
 }
 
 public class AppDBContext : DbContext
@@ -125,13 +125,13 @@ public class AppDBContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        
+
         var connectionString = "server=localhost;database=userdatabase;user=root;password=;";
 
 
         optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 
-        
+
 
     }
 }

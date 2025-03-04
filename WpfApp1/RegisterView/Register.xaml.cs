@@ -33,11 +33,12 @@ namespace WpfApp1.RegisterView
             this.Close();
 
         }
-
         private void Register_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
+
 
 
     }
