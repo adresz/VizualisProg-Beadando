@@ -101,7 +101,7 @@ public partial class MainWindow : Window
     {
         Register RegisterWindow = new Register();
         RegisterWindow.Show();
-        this.Close();
+        this.Hide();
     }
 }
 
