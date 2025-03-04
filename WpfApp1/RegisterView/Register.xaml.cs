@@ -1,8 +1,5 @@
-﻿using LoginOptions;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,19 +23,5 @@ namespace WpfApp1.RegisterView
         {
             InitializeComponent();
         }
-
-        private void GoBack_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.MainWindow.Show();
-            this.Close();
-
-        }
-
-        private void Register_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
     }
 }
