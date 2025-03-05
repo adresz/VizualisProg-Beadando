@@ -1,18 +1,13 @@
 ﻿using LoginOptions;
-using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
-using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Automation.Peers;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -32,133 +27,58 @@ namespace WpfApp1.RegisterView
             InitializeComponent();
             Birthday.DisplayDateEnd = DateTime.Today;
             Birthday.DisplayDateStart = DateTime.Parse("1900.01.01");
-
-            
         }
+
         protected override void OnClosed(EventArgs e)
         {
-
             Application.Current.MainWindow.Show();
         }
+
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.MainWindow.Show();
             this.Close();
-
         }
+
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-            ValidateFields();
-            
+            if (ValidateFields())
+            {
+                MessageBox.Show("Sikeres bejelentkezés");
+            }
         }
 
-        private void ValidateFields()
+        private bool ValidateFields()
         {
-          
-
-            List<TextBox> textBoxes = new List<TextBox> { lastname, firstname, Username, email, phone_number, id_number};
+            List<TextBox> textBoxes = new List<TextBox> { LastName, FirstName, Username, Email, Phone, ID};
             List<PasswordBox> passwordBoxes = new List<PasswordBox> { Password, Passwordconf};
-           
+            
+            //ehhez már túl fáradt vagyok
+            //hogy kell jelszavakat összehasonlítani?
+            if(Password.Name == Passwordconf.Name)
+            {
+                passwordBoxes[0].BorderBrush = Brushes.Red;
+                passwordBoxes[1].BorderBrush = Brushes.Red;
+                return false;
+            }
+
+            string tmp = "";
             foreach (var textBox in textBoxes)
             {
+                tmp = "";
                 if (string.IsNullOrEmpty(textBox.Text))
                 {
                     textBox.BorderBrush = Brushes.Red;
-                    textBox.BorderThickness = new Thickness(2);
-                    switch (textBox.Name)
-                    {
-                        case "lastname":
-                            LastName_err.Visibility = Visibility.Visible;
-                            break;
-                        case "firstname":
-                            firstname_err.Visibility = Visibility.Visible;
-                            break;
-                        case "Username":
-                            Username_err.Visibility = Visibility.Visible;
-                            break;
-                        case "email":
-                            Email_err.Visibility = Visibility.Visible;
-                            break;
-                        case "phone_number":
-                            Phone_err.Visibility = Visibility.Visible;
-                            break;
-                        case "id_number":
-                            ID_err.Visibility = Visibility.Visible;
-                            break;
-                        default:
-                            break;
-                        
-                    }
-                }   
-                else
-                {
-                    textBox.BorderBrush = Brushes.Gray;
-                    textBox.BorderThickness = new Thickness(1);
+                    tmp = (string)textBox.GetValue(FrameworkElement.NameProperty) + "_err";
+                    TextBlock targetTextBox = (TextBlock)FindName(tmp);
+                    targetTextBox.Visibility = Visibility.Visible;
 
-                    switch (textBox.Name)
-                    {
-                        case "lastname":
-                            LastName_err.Visibility = Visibility.Collapsed;
-                            break;
-                        case "firstname":
-                            firstname_err.Visibility = Visibility.Collapsed;
-                            break;
-                        case "Username":
-                            Username_err.Visibility = Visibility.Collapsed;
-                            break;
-                        case "email":
-                            Email_err.Visibility = Visibility.Collapsed;
-                            break;
-                        case "phone_number":
-                            Phone_err.Visibility = Visibility.Collapsed;
-                            break;
-                        case "id_number":
-                            ID_err.Visibility = Visibility.Collapsed;
-                            break;
-                        default:
-                            break;
-                    }
+                    return false;
                 }
             }
-
-            foreach (var passwordBox in passwordBoxes)
-            {
-                if (string.IsNullOrEmpty(passwordBox.Password))
-                {
-
-                    passwordBox.BorderBrush = Brushes.Red;
-                    passwordBox.BorderThickness = new Thickness(2);
-                    switch (passwordBox.Name)
-                    {
-                        case "Password":
-                            Password_err.Visibility = Visibility.Visible;
-                            break;
-                        case "Passwordconf":
-                            Passwordconf_err.Visibility = Visibility.Visible;
-                            break;
-                        default:
-                            break;
-                    }
-                }
-                else
-                {
-                    passwordBox.BorderBrush = Brushes.Gray;
-                    passwordBox.BorderThickness = new Thickness(1);
-                    switch (passwordBox.Name)
-                    {
-                        case "Password":
-                            Password_err.Visibility = Visibility.Collapsed;
-                            break;
-                        case "Passwordconf":
-                            Passwordconf_err.Visibility = Visibility.Collapsed;
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            }
-
+            
+            //ellenőrzés kell, hogy adatbázisban létezik-e
+            return true;
         }
-
     }
 }

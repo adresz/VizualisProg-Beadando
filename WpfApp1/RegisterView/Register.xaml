@@ -14,11 +14,11 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 
             <TextBlock Text="Vezetéknév:"/>
-            <TextBox x:Name="lastname" Width="200"/>
+            <TextBox x:Name="LastName" Width="200"/>
             <TextBlock x:Name="LastName_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
 
             <TextBlock Text="Keresztnév:" Width="200"/>
-            <TextBox x:Name="firstname" Width="200" />
+            <TextBox x:Name="FirstName" Width="200" />
             <TextBlock x:Name="firstname_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
             
             <TextBlock Text="Felhasználónév"/>
@@ -34,15 +34,15 @@
             <TextBlock x:Name="Passwordconf_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
             
             <TextBlock Text="E-mail cím:"/>
-            <TextBox x:Name="email" Width="200"/>
+            <TextBox x:Name="Email" Width="200"/>
             <TextBlock x:Name="Email_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
             
             <TextBlock Text="Tel.szám(06xx000000):"/>
-            <TextBox x:Name="phone_number" Width="200" />
+            <TextBox x:Name="Phone" Width="200" />
             <TextBlock x:Name="Phone_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
             
             <TextBlock Text="Személyi igazolvány szám:"/>
-            <TextBox x:Name="id_number" Width="200"/>
+            <TextBox x:Name="ID" Width="200"/>
             <TextBlock x:Name="ID_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
             
             <TextBlock Text="Neme:"/>
