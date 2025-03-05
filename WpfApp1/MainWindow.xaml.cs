@@ -106,13 +106,7 @@ public partial class MainWindow : Window
         this.Hide();
         
     }
-    public void BringToFront()
-    {
-        this.WindowState = WindowState.Normal; // Ha minimalizálva van, állítsuk vissza
-        this.Activate(); // Előtérbe hozzuk
-        this.Topmost = true; // Ideiglenesen legfelülre tesszük
-        this.Topmost = false; // Majd visszaállítjuk normál állapotba
-    }
+    
 }
 
 
