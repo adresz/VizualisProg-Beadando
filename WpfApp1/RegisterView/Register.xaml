@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.RegisterView"
         mc:Ignorable="d"
-        Title="Regisztráció" Height="450" Width="800"
+        Title="Regisztráció" Height="540" Width="960"
         Background="AliceBlue">
 
   
@@ -14,6 +14,7 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 
             <TextBlock Text="Vezetéknév:"/>
+<<<<<<< Updated upstream
             <TextBox x:Name="lastname" Width="200"/>
 
             <TextBlock Text="Keresztnév:"/>
@@ -37,6 +38,39 @@
             <TextBlock Text="Személyi igazolvány szám:"/>
             <TextBox x:Name="id_number" Width="200"/>
 
+=======
+            <TextBox x:Name="LastName" Width="200" BorderThickness="2"/>
+            <TextBlock x:Name="LastName_err" FontSize="10" Foreground="red" Visibility="Hidden" Text="Kötelező mező"/>
+
+            <TextBlock Text="Keresztnév:" Width="200"/>
+            <TextBox x:Name="FirstName" Width="200" BorderThickness="2"/>
+            <TextBlock x:Name="FirstName_err" FontSize="10" Foreground="red" Visibility="Hidden" Text="Kötelező mező"/>
+            
+            <TextBlock Text="Felhasználónév"/>
+            <TextBox x:Name="Username" Width="200" BorderThickness="2"/>
+            <TextBlock x:Name="Username_err" FontSize="10" Foreground="red" Visibility="Hidden" Text="Kötelező mező"/>
+            
+            <TextBlock Text="Jelszó:"/>
+            <PasswordBox x:Name="Password" Width="200" BorderThickness="2"/>
+            <TextBlock x:Name="Password_err" FontSize="10" Foreground="red" Visibility="Hidden" Text="Kötelező mező"/>
+            
+            <TextBlock Text="Jelszó megerősítése:"/>
+            <PasswordBox x:Name="Passwordconf" Width="200" BorderThickness="2"/>
+            <TextBlock x:Name="Passwordconf_err" FontSize="10" Foreground="red" Visibility="Hidden" Text="Kötelező mező"/>
+            
+            <TextBlock Text="E-mail cím:"/>
+            <TextBox x:Name="Email" Width="200" BorderThickness="2"/>
+            <TextBlock x:Name="Email_err" FontSize="10" Foreground="red" Visibility="Hidden" Text="Kötelező mező"/>
+            
+            <TextBlock Text="Tel.szám(06xx000000):"/>
+            <TextBox x:Name="Phone" Width="200" BorderThickness="2"/>
+            <TextBlock x:Name="Phone_err" FontSize="10" Foreground="red" Visibility="Hidden" Text="Kötelező mező"/>
+            
+            <TextBlock Text="Személyi igazolvány szám:"/>
+            <TextBox x:Name="ID" Width="200" BorderThickness="2"/>
+            <TextBlock x:Name="ID_err" FontSize="10" Foreground="red" Visibility="Hidden" Text="Kötelező mező"/>
+            
+>>>>>>> Stashed changes
             <TextBlock Text="Neme:"/>
             <RadioButton x:Name="Gender_M" GroupName="neme" Content="Férfi" IsChecked="True"></RadioButton>
             <RadioButton x:Name="Gender_F" GroupName="neme" Content="Nő"></RadioButton>

@@ -86,3 +86,74 @@ D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\refint\WpfApp1.dll
 D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.pdb
 D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.genruntimeconfig.cache
 D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\ref\WpfApp1.dll
+<<<<<<< Updated upstream
+=======
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+>>>>>>> Stashed changes
