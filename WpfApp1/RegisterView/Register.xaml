@@ -14,35 +14,35 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 
             <TextBlock Text="Vezetéknév:"/>
-            <TextBox x:Name="lastname" Width="200" LostFocus="Field_LostFocus" TextChanged="Field_TextChanged"/>
+            <TextBox x:Name="lastname" Width="200"/>
             <TextBlock x:Name="LastName_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
 
             <TextBlock Text="Keresztnév:" Width="200"/>
-            <TextBox x:Name="firstname" Width="200" LostFocus="Field_LostFocus" TextChanged="Field_TextChanged"/>
+            <TextBox x:Name="firstname" Width="200" />
             <TextBlock x:Name="firstname_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
             
             <TextBlock Text="Felhasználónév"/>
-            <TextBox x:Name="Username" Width="200" LostFocus="Field_LostFocus" TextChanged="Field_TextChanged"/>
+            <TextBox x:Name="Username" Width="200"/>
             <TextBlock x:Name="Username_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
             
             <TextBlock Text="Jelszó:"/>
-            <PasswordBox x:Name="Password" Width="200" LostFocus="Field_LostFocus"/>
+            <PasswordBox x:Name="Password" Width="200"/>
             <TextBlock x:Name="Password_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
             
             <TextBlock Text="Jelszó megerősítése:"/>
-            <PasswordBox x:Name="Passwordconf" Width="200" LostFocus="Field_LostFocus"/>
+            <PasswordBox x:Name="Passwordconf" Width="200"/>
             <TextBlock x:Name="Passwordconf_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
             
             <TextBlock Text="E-mail cím:"/>
-            <TextBox x:Name="email" Width="200" LostFocus="Field_LostFocus" TextChanged="Field_TextChanged"/>
+            <TextBox x:Name="email" Width="200"/>
             <TextBlock x:Name="Email_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
             
             <TextBlock Text="Tel.szám(06xx000000):"/>
-            <TextBox x:Name="phone_number" Width="200"  LostFocus="Field_LostFocus" TextChanged="Field_TextChanged"/>
+            <TextBox x:Name="phone_number" Width="200" />
             <TextBlock x:Name="Phone_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
             
             <TextBlock Text="Személyi igazolvány szám:"/>
-            <TextBox x:Name="id_number" Width="200" LostFocus="Field_LostFocus" TextChanged="Field_TextChanged"/>
+            <TextBox x:Name="id_number" Width="200"/>
             <TextBlock x:Name="ID_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
             
             <TextBlock Text="Neme:"/>
@@ -54,13 +54,13 @@
             <DatePicker x:Name="Birthday">
                 <DatePicker.Resources>
                     <Style TargetType="DatePickerTextBox">
-                        <Setter Property="Foreground" Value="Gray"/>
+                        <Setter Property="Text" Value="Születési dátum"/>
                     </Style>
                 </DatePicker.Resources>
             </DatePicker>
 
             <StackPanel Orientation="Horizontal">
-                <Button Content="Vissza" HorizontalAlignment="Right" Width="90" Margin="5" Click="GoBack_Click"/>
+                <Button Content="Vissza" HorizontalAlignment="Right" Width="90" Margin="5" Click="GoBack_Click" IsCancel="True"/>
                 <Button Content="Regisztrál" HorizontalAlignment="Left" Width="90" Margin="5" Click="Register_Click"/>
             </StackPanel>
 

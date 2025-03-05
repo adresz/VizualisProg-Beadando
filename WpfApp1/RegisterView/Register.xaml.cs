@@ -30,9 +30,16 @@ namespace WpfApp1.RegisterView
         public Register()
         {
             InitializeComponent();
-            Birthday.SelectedDate = DateTime.Now;
-        }
+            Birthday.DisplayDateEnd = DateTime.Today;
+            Birthday.DisplayDateStart = DateTime.Parse("1900.01.01");
 
+            
+        }
+        protected override void OnClosed(EventArgs e)
+        {
+
+            Application.Current.MainWindow.Show();
+        }
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.MainWindow.Show();
@@ -42,18 +49,7 @@ namespace WpfApp1.RegisterView
         private void Register_Click(object sender, RoutedEventArgs e)
         {
             ValidateFields();
-
             
-        }
-
-        private void Field_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            ValidateFields();
-        }
-
-        private void Field_LostFocus(object sender, RoutedEventArgs e)
-        {
-            ValidateFields();
         }
 
         private void ValidateFields()
@@ -67,7 +63,6 @@ namespace WpfApp1.RegisterView
             {
                 if (string.IsNullOrEmpty(textBox.Text))
                 {
-
                     textBox.BorderBrush = Brushes.Red;
                     textBox.BorderThickness = new Thickness(2);
                     switch (textBox.Name)
@@ -92,8 +87,9 @@ namespace WpfApp1.RegisterView
                             break;
                         default:
                             break;
+                        
                     }
-                }
+                }   
                 else
                 {
                     textBox.BorderBrush = Brushes.Gray;
@@ -163,8 +159,6 @@ namespace WpfApp1.RegisterView
             }
 
         }
-        
-
 
     }
 }

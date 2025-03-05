@@ -31,6 +31,8 @@ public partial class MainWindow : Window
     public void LoginOptions()
     {
         InitializeComponent();
+
+       
     }
 
     private void Login_Click(object sender, RoutedEventArgs e)
@@ -102,6 +104,14 @@ public partial class MainWindow : Window
         Register RegisterWindow = new Register();
         RegisterWindow.Show();
         this.Hide();
+        
+    }
+    public void BringToFront()
+    {
+        this.WindowState = WindowState.Normal; // Ha minimalizálva van, állítsuk vissza
+        this.Activate(); // Előtérbe hozzuk
+        this.Topmost = true; // Ideiglenesen legfelülre tesszük
+        this.Topmost = false; // Majd visszaállítjuk normál állapotba
     }
 }
 
@@ -115,7 +125,7 @@ public class User
     public int isBanned { get; set; }
 
 
-
+    
 
 }
 
