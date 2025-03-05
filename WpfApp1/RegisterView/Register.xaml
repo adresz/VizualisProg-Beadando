@@ -19,7 +19,7 @@
 
             <TextBlock Text="Keresztnév:" Width="200"/>
             <TextBox x:Name="FirstName" Width="200" />
-            <TextBlock x:Name="firstname_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
+            <TextBlock x:Name="FirstName_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
             
             <TextBlock Text="Felhasználónév"/>
             <TextBox x:Name="Username" Width="200"/>
