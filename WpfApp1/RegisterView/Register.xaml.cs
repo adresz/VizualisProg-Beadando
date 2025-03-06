@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -39,7 +41,7 @@ namespace WpfApp1.RegisterView
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-            if (ValidateText() && ValidatePassword())
+            if (ValidateText())
             {
                 MessageBox.Show("Sikeres regisztrálás");
             }
@@ -56,7 +58,17 @@ namespace WpfApp1.RegisterView
                 hiba |= empty;
             }
 
-            return !hiba & ValidatePassword();
+            return !hiba & ValidatePassword() & ValidateBirthday();
+        }
+
+        private bool ValidateBirthday()
+        {
+            bool van = Birthday.Text != "";
+            Birthday.BorderBrush = van ? Brushes.Gray : Brushes.Red;
+            Birthday.BorderThickness = van ? new Thickness(1) : new Thickness(2);
+            Birthday_err.Visibility = van ? Visibility.Hidden : Visibility.Visible;
+
+            return van;
         }
 
         private bool ValidatePassword()

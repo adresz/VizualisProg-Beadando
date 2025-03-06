@@ -46,6 +46,7 @@
                     </Style>
                 </DatePicker.Resources>
             </DatePicker>
+            <TextBlock x:Name="Birthday_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
 
             <TextBlock Text="Felhasználónév"/>
             <TextBox x:Name="Username" Width="200"/>
