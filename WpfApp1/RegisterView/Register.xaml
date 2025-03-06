@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.RegisterView"
         mc:Ignorable="d"
-        Title="Regisztráció" Height="450" Width="800"
+        Title="Regisztráció" Height="540" Width="960"
         Background="AliceBlue">
 
 
@@ -15,35 +15,23 @@
 
             <TextBlock Text="Vezetéknév:"/>
             <TextBox x:Name="LastName" Width="200"/>
-            <TextBlock x:Name="LastName_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
+            <TextBlock x:Name="LastName_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
 
             <TextBlock Text="Keresztnév:" Width="200"/>
             <TextBox x:Name="FirstName" Width="200" />
-            <TextBlock x:Name="FirstName_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
-            
-            <TextBlock Text="Felhasználónév"/>
-            <TextBox x:Name="Username" Width="200"/>
-            <TextBlock x:Name="Username_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
-            
-            <TextBlock Text="Jelszó:"/>
-            <PasswordBox x:Name="Password" Width="200"/>
-            <TextBlock x:Name="Password_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
-            
-            <TextBlock Text="Jelszó megerősítése:"/>
-            <PasswordBox x:Name="Passwordconf" Width="200"/>
-            <TextBlock x:Name="Passwordconf_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
+            <TextBlock x:Name="FirstName_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
             
             <TextBlock Text="E-mail cím:"/>
             <TextBox x:Name="Email" Width="200"/>
-            <TextBlock x:Name="Email_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
+            <TextBlock x:Name="Email_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
             
             <TextBlock Text="Tel.szám(06xx000000):"/>
             <TextBox x:Name="Phone" Width="200" />
-            <TextBlock x:Name="Phone_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
+            <TextBlock x:Name="Phone_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
             
             <TextBlock Text="Személyi igazolvány szám:"/>
             <TextBox x:Name="ID" Width="200"/>
-            <TextBlock x:Name="ID_err" Foreground="red" Visibility="Collapsed" Text="Kötelező mező"/>
+            <TextBlock x:Name="ID_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
             
             <TextBlock Text="Neme:"/>
             <RadioButton x:Name="Gender_M" GroupName="neme" Content="Férfi" IsChecked="True"></RadioButton>
@@ -59,6 +47,18 @@
                 </DatePicker.Resources>
             </DatePicker>
 
+            <TextBlock Text="Felhasználónév"/>
+            <TextBox x:Name="Username" Width="200"/>
+            <TextBlock x:Name="Username_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+            
+            <TextBlock Text="Jelszó:"/>
+            <PasswordBox x:Name="Password" Width="200"/>
+            <TextBlock x:Name="Password_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+            
+            <TextBlock Text="Jelszó megerősítése:"/>
+            <PasswordBox x:Name="Passwordconf" Width="200"/>
+            <TextBlock x:Name="Passwordconf_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+            
             <StackPanel Orientation="Horizontal">
                 <Button Content="Vissza" HorizontalAlignment="Right" Width="90" Margin="5" Click="GoBack_Click" IsCancel="True"/>
                 <Button Content="Regisztrál" HorizontalAlignment="Left" Width="90" Margin="5" Click="Register_Click"/>

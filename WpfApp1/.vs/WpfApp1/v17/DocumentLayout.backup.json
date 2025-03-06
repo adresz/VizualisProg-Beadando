@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "RegisterView\\Register.xaml.cs",
               "ToolTip": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml.cs",
               "RelativeToolTip": "RegisterView\\Register.xaml.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAcwEIAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAADwAAAAAAAAAAAAQwEkAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-05T15:49:08.079Z",
               "EditorCaption": ""
@@ -77,7 +77,8 @@
               "ToolTip": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-05T15:30:33.206Z"
+              "WhenOpened": "2025-03-05T15:30:33.206Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -87,9 +88,10 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAcwGwAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAkwCMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T20:04:32.506Z"
+              "WhenOpened": "2025-02-24T20:04:32.506Z",
+              "EditorCaption": ""
             }
           ]
         }

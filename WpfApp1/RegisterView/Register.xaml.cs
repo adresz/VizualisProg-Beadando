@@ -17,9 +17,6 @@ using System.Windows.Shapes;
 
 namespace WpfApp1.RegisterView
 {
-    /// <summary>
-    /// Interaction logic for Register.xaml
-    /// </summary>
     public partial class Register : Window
     {
         public Register()
@@ -42,74 +39,43 @@ namespace WpfApp1.RegisterView
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-            if (ValidateFields())
+            if (ValidateText() && ValidatePassword())
             {
                 MessageBox.Show("Sikeres regisztrálás");
             }
         }
-
-        private bool ValidateFields()
+        private bool ValidateText()
         {
-            List<TextBox> textBoxes = new List<TextBox> { LastName, FirstName, Username, Email, Phone, ID};
-            List<PasswordBox> passwordBoxes = new List<PasswordBox> { Password, Passwordconf};
-
-            //ehhez már túl fáradt vagyok
-            //hogy kell jelszavakat összehasonlítani?
-            //Kb 20 percig szenvedtem, hogy rábirjam az igazra,
-            //mostmár elvileg müködik ez a csodás bogár :D
-
-            if (string.IsNullOrEmpty(Password.Password) || string.IsNullOrEmpty(Passwordconf.Password) || Password.Password != Passwordconf.Password)
+            bool hiba = false;
+            foreach (var textBox in new List<TextBox> { LastName, FirstName, Username, Email, Phone, ID })
             {
-                passwordBoxes[0].BorderBrush = Brushes.Red;
-                passwordBoxes[0].BorderThickness = new Thickness(2);
-                passwordBoxes[1].BorderBrush = Brushes.Red;
-                passwordBoxes[1].BorderThickness = new Thickness(2);
-                return false;
-            }
-            else
-            {
-                passwordBoxes[0].BorderBrush = Brushes.Gray;
-                passwordBoxes[0].BorderThickness = new Thickness(1);
-                passwordBoxes[1].BorderBrush = Brushes.Gray;
-                passwordBoxes[1].BorderThickness = new Thickness(1);
+                TextBlock errorTextBlock = (TextBlock)FindName(textBox.Name + "_err");
+                bool empty = string.IsNullOrEmpty(textBox.Text);
+                textBox.BorderBrush = empty ? Brushes.Red : Brushes.Gray;
+                if (errorTextBlock != null) errorTextBlock.Visibility = empty ? Visibility.Visible : Visibility.Hidden;
+                hiba |= empty;
             }
 
-            /*
-            Itt meg nem akarja mindegyik mezőre kiirni
-             csak a legfelsőre ami nincs kitöltve, igy kéne lennie?
-            továbbá
-            az eredeti kódod hibára futott ha hiányzott a második mezőből bármi, szóval kicsit átdolgoztam
-            */
-            foreach (var textBox in textBoxes)
+            return !hiba & ValidatePassword();
+        }
+
+        private bool ValidatePassword()
+        {
+            bool isEmpty = string.IsNullOrEmpty(Password.Password) || string.IsNullOrEmpty(Passwordconf.Password);
+            bool match = Password.Password == Passwordconf.Password && !isEmpty;
+            Brush borderBrush = match ? Brushes.Gray : Brushes.Red;
+            Thickness borderThickness = match ? new Thickness(1) : new Thickness(2);
+
+            foreach (var box in new List<PasswordBox> { Password, Passwordconf })
             {
-                string errorTextBlockName = textBox.Name + "_err";
-                TextBlock errorTextBlock = (TextBlock)FindName(errorTextBlockName);
-
-                if (string.IsNullOrEmpty(textBox.Text))
-                {
-                    textBox.BorderBrush = Brushes.Red;
-
-                    if (errorTextBlock != null)
-                    {
-                        errorTextBlock.Visibility = Visibility.Visible;
-                    }
-
-                    
-                    return false;
-                }
-                else
-                {
-                    textBox.ClearValue(BorderBrushProperty);
-                    if (errorTextBlock != null)
-                    {
-                        errorTextBlock.Visibility = Visibility.Collapsed;
-                    }
-                }
+                box.BorderBrush = borderBrush;
+                box.BorderThickness = borderThickness;
             }
-            //Kell még dátum ellenőrzés majd, meg jelszó komplexitás ellenőrzés
 
-            //ellenőrzés kell, hogy adatbázisban létezik-e
-            return true;
+            Password_err.Visibility = match ? Visibility.Hidden : Visibility.Visible;
+            Passwordconf_err.Visibility = match ? Visibility.Hidden : Visibility.Visible;
+
+            return match;
         }
     }
 }
