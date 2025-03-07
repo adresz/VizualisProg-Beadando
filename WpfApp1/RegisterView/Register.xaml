@@ -8,8 +8,6 @@
         Title="Regisztráció" Height="540" Width="960"
         Background="AliceBlue">
 
-
-
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 
@@ -20,23 +18,22 @@
             <TextBlock Text="Keresztnév:" Width="200"/>
             <TextBox x:Name="FirstName" Width="200" />
             <TextBlock x:Name="FirstName_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
-            
+
             <TextBlock Text="E-mail cím:"/>
             <TextBox x:Name="Email" Width="200"/>
             <TextBlock x:Name="Email_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
-            
+
             <TextBlock Text="Tel.szám(06xx000000):"/>
             <TextBox x:Name="Phone" Width="200" />
             <TextBlock x:Name="Phone_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
-            
+
             <TextBlock Text="Személyi igazolvány szám:"/>
             <TextBox x:Name="ID" Width="200"/>
             <TextBlock x:Name="ID_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
-            
+
             <TextBlock Text="Neme:"/>
             <RadioButton x:Name="Gender_M" GroupName="neme" Content="Férfi" IsChecked="True"></RadioButton>
             <RadioButton x:Name="Gender_F" GroupName="neme" Content="Nő"></RadioButton>
-
 
             <TextBlock Text="Születési dátum:"/>
             <DatePicker x:Name="Birthday">
@@ -51,22 +48,28 @@
             <TextBlock Text="Felhasználónév"/>
             <TextBox x:Name="Username" Width="200"/>
             <TextBlock x:Name="Username_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
-            
+
             <TextBlock Text="Jelszó:"/>
-            <PasswordBox x:Name="Password" Width="200"/>
+            <Grid>
+                <PasswordBox x:Name="Password" Width="200" MaxLength="24" PasswordChar="*" />
+                <TextBox x:Name="SeenPassword" Width="200" Visibility="Collapsed" />
+                <Button Name="TogglePassword" Content="👁" Width="30" Height="20" HorizontalAlignment="Right" Click="TogglePassword_Click" />
+            </Grid>
             <TextBlock x:Name="Password_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
-            
+
             <TextBlock Text="Jelszó megerősítése:"/>
-            <PasswordBox x:Name="Passwordconf" Width="200"/>
+            <Grid>
+                <PasswordBox x:Name="Passwordconf" Width="200" MaxLength="24" PasswordChar="*" />
+                <TextBox x:Name="SeenConfPassword" Width="200" Visibility="Collapsed" />
+                <Button Name="TogglePasswordConf" Content="👁" Width="30" Height="20" HorizontalAlignment="Right" Click="TogglePasswordConf_Click" />
+            </Grid>
             <TextBlock x:Name="Passwordconf_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
-            
+
             <StackPanel Orientation="Horizontal">
                 <Button Content="Vissza" HorizontalAlignment="Right" Width="90" Margin="5" Click="GoBack_Click" IsCancel="True"/>
                 <Button Content="Regisztrál" HorizontalAlignment="Left" Width="90" Margin="5" Click="Register_Click"/>
             </StackPanel>
 
-
-            <!-- A gombokat egy új StackPanel-be helyezzük, amely vízszintesen rendezi őket -->
         </StackPanel>
     </Grid>
 </Window>

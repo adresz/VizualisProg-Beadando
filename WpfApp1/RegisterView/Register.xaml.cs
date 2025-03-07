@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -41,6 +42,7 @@ namespace WpfApp1.RegisterView
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
+            PasswordHide();
             if (ValidateText())
             {
                 MessageBox.Show("Sikeres regisztrálás");
@@ -63,20 +65,22 @@ namespace WpfApp1.RegisterView
 
         private bool ValidateBirthday()
         {
-            bool van = Birthday.Text != "";
-            Birthday.BorderBrush = van ? Brushes.Gray : Brushes.Red;
-            Birthday.BorderThickness = van ? new Thickness(1) : new Thickness(2);
-            Birthday_err.Visibility = van ? Visibility.Hidden : Visibility.Visible;
+            bool hasDate = Birthday.SelectedDate.HasValue; // Átirtam erre, mert az előzőnél lehetséges volt bugoltatni, és dátum nélkül elfogadtatni
+            Birthday.BorderBrush = hasDate ? Brushes.Gray : Brushes.Red;
+            Birthday.BorderThickness = hasDate ? new Thickness(1) : new Thickness(2);
+            Birthday_err.Visibility = hasDate ? Visibility.Hidden : Visibility.Visible;
 
-            return van;
+            return hasDate;
         }
 
         private bool ValidatePassword()
         {
             bool isEmpty = string.IsNullOrEmpty(Password.Password) || string.IsNullOrEmpty(Passwordconf.Password);
             bool match = Password.Password == Passwordconf.Password && !isEmpty;
-            Brush borderBrush = match ? Brushes.Gray : Brushes.Red;
-            Thickness borderThickness = match ? new Thickness(1) : new Thickness(2);
+            bool isComplex = PasswordComplexity(Password.Password);
+
+            Brush borderBrush = (match && isComplex) ? Brushes.Gray : Brushes.Red;
+            Thickness borderThickness = (match && isComplex) ? new Thickness(1) : new Thickness(2);
 
             foreach (var box in new List<PasswordBox> { Password, Passwordconf })
             {
@@ -84,22 +88,90 @@ namespace WpfApp1.RegisterView
                 box.BorderThickness = borderThickness;
             }
 
-            if(!match)
-            {
-                Password_err.Text = "Nem megegyező jelszavak";
-                Passwordconf_err.Text = "Nem megegyező jelszavak";
-            }
-
             if (isEmpty)
             {
                 Password_err.Text = "Kötelező mező";
                 Passwordconf_err.Text = "Kötelező mező";
             }
+            else if (!match)
+            {
+                Password_err.Text = "Nem megegyező jelszavak";
+                Passwordconf_err.Text = "Nem megegyező jelszavak";
+            }
+            else if (!isComplex)
+            {
+                Password_err.Text = "Túl könnyű jelszó";
+                Passwordconf_err.Text = "Túl könnyű jelszó";
+                MessageBox.Show("A jelszónak legalább 8, legfeljebb 24 karakterből" +
+                    "kell állnia, tartalmaznia kell egy kis-és nagybetűt, egy számot, " +
+                    "valamint egy speciális karaktert.");
 
-            Password_err.Visibility = match ? Visibility.Hidden : Visibility.Visible;
-            Passwordconf_err.Visibility = match ? Visibility.Hidden : Visibility.Visible;
+            }
 
-            return match;
+            Password_err.Visibility = (match && isComplex) ? Visibility.Hidden : Visibility.Visible;
+            Passwordconf_err.Visibility = (match && isComplex) ? Visibility.Hidden : Visibility.Visible;
+
+            return match && isComplex;
         }
+
+
+        static bool PasswordComplexity(string password)
+        {
+            string pattern = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?""{}|<>]).{8,24}$";
+            return Regex.IsMatch(password, pattern);
+        }
+
+        private void TogglePassword_Click(object sender, RoutedEventArgs e)
+        {
+            if (Password.Visibility == Visibility.Visible)
+            {
+                SeenPassword.Text = Password.Password;
+                Password.Visibility = Visibility.Collapsed;
+                SeenPassword.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Password.Password = SeenPassword.Text;
+                Password.Visibility = Visibility.Visible;
+                SeenPassword.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void TogglePasswordConf_Click(object sender, RoutedEventArgs e)
+        {
+            if (Passwordconf.Visibility == Visibility.Visible)
+            {
+                SeenConfPassword.Text = Passwordconf.Password;
+                Passwordconf.Visibility = Visibility.Collapsed;
+                SeenConfPassword.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Passwordconf.Password = SeenConfPassword.Text;
+                Passwordconf.Visibility = Visibility.Visible;
+                SeenConfPassword.Visibility = Visibility.Collapsed;
+            }
+        }
+        //Jelszó elrejtése regisztrálás gomb nyomáskor, hogy ne kelljen
+        // külön vizsgálni a Password text és jelszó állapotban lévő adatait
+        private void PasswordHide()
+        {
+            if (SeenPassword.Visibility == Visibility.Visible)
+            {
+                Password.Password = SeenPassword.Text;
+                SeenPassword.Visibility = Visibility.Collapsed;
+                Password.Visibility = Visibility.Visible;
+            }
+
+            if (SeenConfPassword.Visibility == Visibility.Visible)
+            {
+                Passwordconf.Password = SeenConfPassword.Text;
+                SeenConfPassword.Visibility = Visibility.Collapsed;
+                Passwordconf.Visibility = Visibility.Visible;
+            }
+        }
+
+
+
     }
 }
