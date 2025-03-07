@@ -25,14 +25,9 @@ namespace LoginOptions;
 
 public partial class MainWindow : Window
 {
-
-
-
     public void LoginOptions()
     {
         InitializeComponent();
-
-       
     }
 
     private void Login_Click(object sender, RoutedEventArgs e)
@@ -53,45 +48,32 @@ public partial class MainWindow : Window
                 int isBanned = user.isBanned;
                 if (user != null && BCrypt.Net.BCrypt.Verify(Password.Password, user.Password))
                 {
-                    if (accessID == 2 || accessID == 3)
+                    //elég egy helyen megnézni, bannolva van-e
+                    if (isBanned == 1)
                     {
-                        if (isBanned == 1)
-                        {
-                            MessageBox.Show("A felhasználói fiókja tiltva van.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Sikeres bejelentkezés");
-                            AdminV AdminWindow = new AdminV();
-                            AdminWindow.Show();
-                            this.Close();
-                        }
-
+                        MessageBox.Show("A felhasználói fiókja tiltva van.");
                     }
                     else if (accessID == 0)
                     {
-                        if (isBanned == 1)
-                        {
-                            MessageBox.Show("A felhasználói fiókja tiltva van.");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Sikeres bejelentkezés");
-                            UserV UserWindow = new UserV();
-                            UserWindow.Show();
-                            this.Close();
-                        }
+                        MessageBox.Show("Sikeres bejelentkezés");
+                        UserV UserWindow = new UserV();
+                        UserWindow.Show();
+                        this.Close();
                     }
-
-
+                    //már csak 0, 1, és 2 accessID van, amíg 1 és 2 nincs megkülönböztetve ide nem kell if
+                    else
+                    {
+                        MessageBox.Show("Sikeres bejelentkezés");
+                        AdminV AdminWindow = new AdminV();
+                        AdminWindow.Show();
+                        this.Close();
+                    }
                 }
                 else
                 {
                     MessageBox.Show("Hibás felhasználónév vagy jelszó");
                 }
-
             }
-
         }
         catch (Exception err)
         {
@@ -104,11 +86,8 @@ public partial class MainWindow : Window
         Register RegisterWindow = new Register();
         RegisterWindow.Show();
         this.Hide();
-        
     }
-    
 }
-
 
 public class User
 {
@@ -117,10 +96,6 @@ public class User
     public required string Password { get; set; }
     public int AccessID { get; set; }
     public int isBanned { get; set; }
-
-
-    
-
 }
 
 public class AppDBContext : DbContext
@@ -129,13 +104,7 @@ public class AppDBContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-
         var connectionString = "server=localhost;database=userdatabase;user=root;password=;";
-
-
         optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-
-
-
     }
 }

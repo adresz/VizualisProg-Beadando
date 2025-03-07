@@ -84,6 +84,18 @@ namespace WpfApp1.RegisterView
                 box.BorderThickness = borderThickness;
             }
 
+            if(!match)
+            {
+                Password_err.Text = "Nem megegyező jelszavak";
+                Passwordconf_err.Text = "Nem megegyező jelszavak";
+            }
+
+            if (isEmpty)
+            {
+                Password_err.Text = "Kötelező mező";
+                Passwordconf_err.Text = "Kötelező mező";
+            }
+
             Password_err.Visibility = match ? Visibility.Hidden : Visibility.Visible;
             Passwordconf_err.Visibility = match ? Visibility.Hidden : Visibility.Visible;
 
