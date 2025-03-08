@@ -24,11 +24,11 @@
             <TextBlock x:Name="Email_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
 
             <TextBlock Text="Tel.szám(06xxYYYYYYY):"/>
-            <TextBox x:Name="Phone" Width="200" />
+            <TextBox x:Name="Phone" Width="200" PreviewTextInput="NumbersOnly" MaxLength="11"/>
             <TextBlock x:Name="Phone_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
 
-            <TextBlock Text="Személyi igazolvány szám:"/>
-            <TextBox x:Name="ID" Width="200"/>
+            <TextBlock Text="Taj kártya szám:"/>
+            <TextBox x:Name="ID" Width="200" PreviewTextInput="NumbersOnly" MaxLength="9"/>
             <TextBlock x:Name="ID_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
 
             <TextBlock Text="Neme:"/>

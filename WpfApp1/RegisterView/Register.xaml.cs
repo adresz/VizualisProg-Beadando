@@ -58,6 +58,16 @@ namespace WpfApp1.RegisterView
                 MessageBox.Show("Sikeres regisztráció");
             }
         }
+        //
+        private void NumbersOnly(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsDigitsOnly(e.Text);
+        }
+
+        private bool IsDigitsOnly(string text)
+        {
+            return text.All(char.IsDigit);
+        }
 
         private bool isNotTaken()
         {
@@ -97,7 +107,7 @@ namespace WpfApp1.RegisterView
 
                     if (db.user_details.Any(u => u.ID_Number == ID.Text))//ID teszt
                     {
-                        taken += ", a személyazonosító szám";
+                        taken += ", a tajkártya szám";
                         ID.BorderBrush = Brushes.Red;
                         available = false;
                         ID_err.Visibility = Visibility.Visible;
@@ -268,7 +278,9 @@ namespace WpfApp1.RegisterView
             }
         }
 
+        private void Phone_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
 
-
+        }
     }
 }
