@@ -1,4 +1,5 @@
 ﻿using LoginOptions;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,12 +19,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace WpfApp1.RegisterView
 {
     public partial class Register : Window
     {
+        
         public Register()
         {
+            
             InitializeComponent();
             Birthday.DisplayDateEnd = DateTime.Today;
             Birthday.DisplayDateStart = DateTime.Parse("1900.01.01");
@@ -34,6 +38,7 @@ namespace WpfApp1.RegisterView
             Application.Current.MainWindow.Show();
         }
 
+
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.MainWindow.Show();
@@ -43,24 +48,116 @@ namespace WpfApp1.RegisterView
         private void Register_Click(object sender, RoutedEventArgs e)
         {
             PasswordHide();
-            if (ValidateText())
+            //Külön megnézve a 2 validáció, hogy egyszerre ha
+            // több helyen is bajvan, több üzenet megjelenlhessen
+            bool isValid = ValidateText();
+            bool isAvailable = isNotTaken();
+
+            if (isValid && isAvailable)
             {
-                MessageBox.Show("Sikeres regisztrálás");
+                MessageBox.Show("Sikeres regisztráció");
             }
         }
+
+        private bool isNotTaken()
+        {
+            bool available = true;
+            var taken = "Hiba";
+
+            try
+            {
+                using (var db = new AppDBContext())
+                {
+
+                    if (db.users.Any(u => u.email == Email.Text))//Email teszt
+                    {
+                        taken += ", az email cím";
+                        Email.BorderBrush = Brushes.Red;
+                        available = false;
+                        Email_err.Visibility = Visibility.Visible;
+                        Email_err.Text = "A megadott email foglalt";
+                    }
+                    else
+                    {
+                        Email.BorderBrush = Brushes.Gray;
+                    }
+
+                    if (db.user_details.Any(u => u.Phone_number == Phone.Text))//Telóteszt
+                    {
+                        taken += ", a telefonszám";
+                        Phone.BorderBrush = Brushes.Red;
+                        available = false;
+                        Phone_err.Visibility = Visibility.Visible;
+                        Phone_err.Text = "A megadott tel.szám foglalt";
+                    }
+                    else
+                    {
+                        Phone.BorderBrush = Brushes.Gray;
+                    }
+
+                    if (db.user_details.Any(u => u.ID_Number == ID.Text))//ID teszt
+                    {
+                        taken += ", a személyazonosító szám";
+                        ID.BorderBrush = Brushes.Red;
+                        available = false;
+                        ID_err.Visibility = Visibility.Visible;
+                        ID_err.Text = "A megadott azonosito foglalt";
+                    }
+                    else
+                    {
+                        ID.BorderBrush = Brushes.Gray;
+                    }
+
+                    if (db.users.Any(u => u.Username == Username.Text))//Felhasználónév teszt
+                    {
+                        taken += ", a felhasználónév";
+                        Username.BorderBrush = Brushes.Red;
+                        available = false;
+                        Username_err.Visibility = Visibility.Visible;
+                        Username_err.Text = "A megadott név foglalt";
+                    }
+                    else
+                    {
+                        Username.BorderBrush = Brushes.Gray;
+                    }
+
+                }
+
+                if (!available)
+                {
+                    taken = taken.TrimEnd(',', ' ') + " már foglalt.";
+                    MessageBox.Show(taken);
+                }
+                else
+                {
+                    Username_err.Visibility = Visibility.Hidden;
+                    Email_err.Visibility = Visibility.Hidden;
+                    ID_err.Visibility = Visibility.Hidden;
+                    Phone_err.Visibility = Visibility.Hidden;
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Váratlan hiba lépett fel, lépjen kapcsolatba az ügyfélszolgálattal.");
+                return false;
+            }
+
+            return available;
+        }
+
         private bool ValidateText()
         {
-            bool hiba = false;
+            bool taken = false;
             foreach (var textBox in new List<TextBox> { LastName, FirstName, Username, Email, Phone, ID })
             {
                 TextBlock errorTextBlock = (TextBlock)FindName(textBox.Name + "_err");
                 bool empty = string.IsNullOrEmpty(textBox.Text);
                 textBox.BorderBrush = empty ? Brushes.Red : Brushes.Gray;
                 if (errorTextBlock != null) errorTextBlock.Visibility = empty ? Visibility.Visible : Visibility.Hidden;
-                hiba |= empty;
+                taken |= empty;
             }
 
-            return !hiba & ValidatePassword() & ValidateBirthday();
+            return !taken & ValidatePassword() & ValidateBirthday();
         }
 
         private bool ValidateBirthday()

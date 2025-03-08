@@ -96,12 +96,20 @@ public class User
     public required string Password { get; set; }
     public int AccessID { get; set; }
     public int isBanned { get; set; }
+    public string email { get; set; }
+}
+public class user_details
+{
+    [Key]
+    public required string email { get; set; }
+    public required string Phone_number { get; set; }
+    public required string ID_Number { get; set; }
 }
 
 public class AppDBContext : DbContext
 {
     public DbSet<User> users { get; set; }
-
+    public DbSet<user_details> user_details { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         var connectionString = "server=localhost;database=userdatabase;user=root;password=;";
