@@ -105,7 +105,7 @@ namespace WpfApp1.RegisterView
                         Phone.BorderBrush = Brushes.Gray;
                     }
 
-                    if (db.user_details.Any(u => u.ID_Number == ID.Text))//ID teszt
+                    if (db.user_details.Any(u => u.TAJ_Number == ID.Text))//ID teszt
                     {
                         taken += ", a tajkártya szám";
                         ID.BorderBrush = Brushes.Red;
@@ -157,18 +157,22 @@ namespace WpfApp1.RegisterView
 
         private bool ValidateText()
         {
-            bool taken = false;
+            bool hasError = false;
+
             foreach (var textBox in new List<TextBox> { LastName, FirstName, Username, Email, Phone, ID })
             {
                 TextBlock errorTextBlock = (TextBlock)FindName(textBox.Name + "_err");
                 bool empty = string.IsNullOrEmpty(textBox.Text);
                 textBox.BorderBrush = empty ? Brushes.Red : Brushes.Gray;
                 if (errorTextBlock != null) errorTextBlock.Visibility = empty ? Visibility.Visible : Visibility.Hidden;
-                taken |= empty;
+                hasError |= empty;
             }
+            //Kidolgozásra vár a mező megfelelő hosszána megnézése
+            //illetve a mező megfelelő kezdésének feltétele
 
-            return !taken & ValidatePassword() & ValidateBirthday();
+            return !hasError & ValidatePassword() & ValidateBirthday();
         }
+
 
         private bool ValidateBirthday()
         {

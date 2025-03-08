@@ -96,14 +96,14 @@ public class User
     public required string Password { get; set; }
     public int AccessID { get; set; }
     public int isBanned { get; set; }
-    public string email { get; set; }
+    public required string email { get; set; }
 }
 public class user_details
 {
     [Key]
     public required string email { get; set; }
     public required string Phone_number { get; set; }
-    public required string ID_Number { get; set; }
+    public required string TAJ_Number { get; set; }
 }
 
 public class AppDBContext : DbContext
