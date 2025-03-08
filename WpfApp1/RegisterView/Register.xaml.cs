@@ -50,14 +50,22 @@ namespace WpfApp1.RegisterView
             PasswordHide();
             //külön külön futtatva, hogy egyszerre több fajta hiba is kijöjjön
             bool isValidText = ValidateText();
-            bool isAvailable = isNotTaken();  
+            bool isAvailable = isNotTaken();
+            bool isCorrectFormEmail = ValidateEmail(Email.Text);
 
-            if (isValidText && isAvailable)
+            if (isValidText & isAvailable & isCorrectFormEmail)
             {
                 MessageBox.Show("Sikeres regisztráció");
+                SendData();
             }
         }
-        
+
+        private void SendData()
+        {
+            //Adatbázisba adat felküldés, majd a regisztráció elküldése egy log fájlba
+            //Ki dolgozandó
+        }
+
         private void NumbersOnly(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !IsDigitsOnly(e.Text);
@@ -184,15 +192,18 @@ namespace WpfApp1.RegisterView
         private bool ValidateText()
         {
             bool hasError = false;
+          
+       
 
-            foreach (var textBox in new List<TextBox> { LastName, FirstName, Username, Email, Phone, ID })
-            {
-                TextBlock errorTextBlock = (TextBlock)FindName(textBox.Name + "_err");
-                bool empty = string.IsNullOrEmpty(textBox.Text);
-                textBox.BorderBrush = empty ? Brushes.Red : Brushes.Gray;
-                if (errorTextBlock != null) errorTextBlock.Visibility = empty ? Visibility.Visible : Visibility.Hidden;
-                hasError |= empty;
-            }
+
+                foreach (var textBox in new List<TextBox> { LastName, FirstName, Username, Email, Phone, ID })
+                {
+                    TextBlock errorTextBlock = (TextBlock)FindName(textBox.Name + "_err");
+                    bool empty = string.IsNullOrEmpty(textBox.Text);
+                    textBox.BorderBrush = empty ? Brushes.Red : Brushes.Gray;
+                    if (errorTextBlock != null) errorTextBlock.Visibility = empty ? Visibility.Visible : Visibility.Hidden;
+                    hasError |= empty;
+                }
 
             return !hasError & isCorrectLength() & ValidatePassword() & ValidateBirthday();
         }
@@ -247,6 +258,34 @@ namespace WpfApp1.RegisterView
             Passwordconf_err.Visibility = (match && isComplex) ? Visibility.Hidden : Visibility.Visible;
 
             return match && isComplex;
+        }
+
+        public bool ValidateEmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                Email.BorderBrush = Brushes.Red;
+                Email_err.Visibility = Visibility.Visible;
+                Email_err.Text = "Kötelező mező";
+                return false;
+            }
+            else if (!Regex.IsMatch(email, pattern))
+            {
+                Email.BorderBrush = Brushes.Red;
+                Email_err.Visibility = Visibility.Visible;
+                Email_err.Text = "Hibás formátum";
+                return false;
+            }
+            else
+            {
+                Email.BorderBrush = Brushes.Gray;
+                Email_err.Visibility = Visibility.Hidden;
+                Email_err.Text = "";
+            }
+
+            return true;
         }
 
 
