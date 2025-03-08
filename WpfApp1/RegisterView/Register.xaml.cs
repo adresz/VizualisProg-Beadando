@@ -282,9 +282,5 @@ namespace WpfApp1.RegisterView
             }
         }
 
-        private void Phone_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-
-        }
     }
 }
