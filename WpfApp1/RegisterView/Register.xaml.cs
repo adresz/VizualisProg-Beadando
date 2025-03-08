@@ -48,17 +48,16 @@ namespace WpfApp1.RegisterView
         private void Register_Click(object sender, RoutedEventArgs e)
         {
             PasswordHide();
-            //Külön megnézve a 2 validáció, hogy egyszerre ha
-            // több helyen is bajvan, több üzenet megjelenlhessen
-            bool isValid = ValidateText();
-            bool isAvailable = isNotTaken();
+            //külön külön futtatva, hogy egyszerre több fajta hiba is kijöjjön
+            bool isValidText = ValidateText();
+            bool isAvailable = isNotTaken();  
 
-            if (isValid && isAvailable)
+            if (isValidText && isAvailable)
             {
                 MessageBox.Show("Sikeres regisztráció");
             }
         }
-        //
+        
         private void NumbersOnly(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !IsDigitsOnly(e.Text);
@@ -73,13 +72,14 @@ namespace WpfApp1.RegisterView
         {
             bool available = true;
             var taken = "Hiba";
-
+            //Else if feltételek kellenek, hogy mindenképp piros legyen
+            //Ha nincs ott szürke marad mert üres karakter mindig szabad
+            //az adatbázison belül
             try
             {
                 using (var db = new AppDBContext())
                 {
-
-                    if (db.users.Any(u => u.email == Email.Text))//Email teszt
+                    if (db.users.Any(u => u.email == Email.Text))
                     {
                         taken += ", az email cím";
                         Email.BorderBrush = Brushes.Red;
@@ -87,12 +87,12 @@ namespace WpfApp1.RegisterView
                         Email_err.Visibility = Visibility.Visible;
                         Email_err.Text = "A megadott email foglalt";
                     }
-                    else
+                    else if (Email.BorderBrush != Brushes.Red)
                     {
                         Email.BorderBrush = Brushes.Gray;
                     }
 
-                    if (db.user_details.Any(u => u.Phone_number == Phone.Text))//Telóteszt
+                    if (db.user_details.Any(u => u.Phone_number == Phone.Text))
                     {
                         taken += ", a telefonszám";
                         Phone.BorderBrush = Brushes.Red;
@@ -100,25 +100,25 @@ namespace WpfApp1.RegisterView
                         Phone_err.Visibility = Visibility.Visible;
                         Phone_err.Text = "A megadott tel.szám foglalt";
                     }
-                    else
+                    else if (Phone.BorderBrush != Brushes.Red)
                     {
                         Phone.BorderBrush = Brushes.Gray;
                     }
 
-                    if (db.user_details.Any(u => u.TAJ_Number == ID.Text))//ID teszt
+                    if (db.user_details.Any(u => u.TAJ_Number == ID.Text))
                     {
                         taken += ", a tajkártya szám";
                         ID.BorderBrush = Brushes.Red;
                         available = false;
                         ID_err.Visibility = Visibility.Visible;
-                        ID_err.Text = "A megadott azonosito foglalt";
+                        ID_err.Text = "A megadott azonosító foglalt";
                     }
-                    else
+                    else if (ID.BorderBrush != Brushes.Red)
                     {
                         ID.BorderBrush = Brushes.Gray;
                     }
 
-                    if (db.users.Any(u => u.Username == Username.Text))//Felhasználónév teszt
+                    if (db.users.Any(u => u.Username == Username.Text))
                     {
                         taken += ", a felhasználónév";
                         Username.BorderBrush = Brushes.Red;
@@ -126,24 +126,16 @@ namespace WpfApp1.RegisterView
                         Username_err.Visibility = Visibility.Visible;
                         Username_err.Text = "A megadott név foglalt";
                     }
-                    else
+                    else if (Username.BorderBrush != Brushes.Red)
                     {
                         Username.BorderBrush = Brushes.Gray;
                     }
-
                 }
 
                 if (!available)
                 {
                     taken = taken.TrimEnd(',', ' ') + " már foglalt.";
                     MessageBox.Show(taken);
-                }
-                else
-                {
-                    Username_err.Visibility = Visibility.Hidden;
-                    Email_err.Visibility = Visibility.Hidden;
-                    ID_err.Visibility = Visibility.Hidden;
-                    Phone_err.Visibility = Visibility.Hidden;
                 }
             }
             catch (Exception)
@@ -153,6 +145,40 @@ namespace WpfApp1.RegisterView
             }
 
             return available;
+        }
+
+
+        private bool isCorrectLength()
+        {
+            bool valid = true;
+
+            if (ID.Text.Length != 9)
+            {
+                ID.BorderBrush = Brushes.Red;
+                ID_err.Visibility = Visibility.Visible;
+                ID_err.Text = "Az azonosító 9 számjegy kell legyen";
+                valid = false;
+            }
+            else
+            {
+                ID.BorderBrush = Brushes.Gray;
+                ID_err.Visibility = Visibility.Hidden;
+            }
+
+            if (Phone.Text.Length != 11)
+            {
+                Phone.BorderBrush = Brushes.Red;
+                Phone_err.Visibility = Visibility.Visible;
+                Phone_err.Text = "A telefonszám 11 számjegy kell legyen";
+                valid = false;
+            }
+            else
+            {
+                Phone.BorderBrush = Brushes.Gray;
+                Phone_err.Visibility = Visibility.Hidden;
+            }
+
+            return valid;
         }
 
         private bool ValidateText()
@@ -167,10 +193,8 @@ namespace WpfApp1.RegisterView
                 if (errorTextBlock != null) errorTextBlock.Visibility = empty ? Visibility.Visible : Visibility.Hidden;
                 hasError |= empty;
             }
-            //Kidolgozásra vár a mező megfelelő hosszána megnézése
-            //illetve a mező megfelelő kezdésének feltétele
 
-            return !hasError & ValidatePassword() & ValidateBirthday();
+            return !hasError & isCorrectLength() & ValidatePassword() & ValidateBirthday();
         }
 
 
