@@ -151,6 +151,12 @@ namespace WpfApp1.RegisterView
             return System.Linq.Expressions.Expression.Lambda<Func<T, bool>>(equality, parameter);
         }
 
+        private bool ValidateUsername(string username)
+        {
+            string pattern = @"^[A-Za-z0-9_.]{6,20}$";
+            return Regex.IsMatch(username, pattern);
+        }
+
         private bool isCorrectLength()
         {
             bool valid = true;
@@ -199,6 +205,20 @@ namespace WpfApp1.RegisterView
                     if (errorTextBlock != null) errorTextBlock.Visibility = empty ? Visibility.Visible : Visibility.Hidden;
                     hasError |= empty;
                 }
+
+            if (!ValidateUsername(Username.Text))
+            {
+                Username.BorderBrush = Brushes.Red;
+                Username_err.Visibility = Visibility.Visible;
+                Username_err.Text = "A felhasználó név legalább 6 karakter legyen";
+                hasError = true;
+            }
+            else
+            {
+                Username.BorderBrush = Brushes.Gray;
+                Username_err.Visibility = Visibility.Hidden;
+                hasError = false;
+            }
 
             return !hasError & isCorrectLength() & ValidatePassword() & ValidateBirthday();
         }

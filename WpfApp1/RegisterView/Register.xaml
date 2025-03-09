@@ -20,7 +20,7 @@
             <TextBlock x:Name="FirstName_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
 
             <TextBlock Text="E-mail cím:"/>
-            <TextBox x:Name="Email" Width="200"/>
+            <TextBox x:Name="Email" Width="200" MaxLength="120"/>
             <TextBlock x:Name="Email_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
 
             <TextBlock Text="Tel.szám(06xxYYYYYYY):"/>
@@ -46,7 +46,7 @@
             <TextBlock x:Name="Birthday_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
 
             <TextBlock Text="Felhasználónév"/>
-            <TextBox x:Name="Username" Width="200"/>
+            <TextBox x:Name="Username" Width="200" MaxLength="20"/>
             <TextBlock x:Name="Username_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
 
             <TextBlock Text="Jelszó:"/>
