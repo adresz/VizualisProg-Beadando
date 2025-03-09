@@ -45,12 +45,15 @@ public partial class MainWindow : Window
             {
                 var user = db.users.FirstOrDefault(u => u.Username == Username.Text);
                 int accessID = user.AccessID;
-                int isBanned = user.isBanned;
+                var userD = db.user_details.FirstOrDefault(ud => ud.email == user.email);
+                var banReason = userD.Ban_Reason;
+                int isBanned = userD?.isBanned ?? 0;
+
                 if (user != null && BCrypt.Net.BCrypt.Verify(Password.Password, user.Password))
                 {
                     if(isBanned == 1)
                     {
-                        MessageBox.Show("A felhasználói fiókja tiltva van.");
+                        MessageBox.Show($"A felhasználói fiókja tiltva van.\n Indok: {banReason}");
                     }
                     else if(accessID == 0)
                     {
@@ -94,7 +97,6 @@ public class User
     public required string Username { get; set; }
     public required string Password { get; set; }
     public required int AccessID { get; set; }
-    public required int isBanned { get; set; }
     public required string email { get; set; }
 }
 
@@ -104,6 +106,8 @@ public class Users_details
     public required string email { get; set; }
     public required string Phone_number { get; set; }
     public required string Taj_Number { get;set; }
+    public required int isBanned { get; set; }
+    public required string? Ban_Reason { get; set; }
 }
 
 public class AppDBContext : DbContext
