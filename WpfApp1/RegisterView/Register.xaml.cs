@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1.UserView;
 
 
 namespace WpfApp1.RegisterView
@@ -50,13 +52,16 @@ namespace WpfApp1.RegisterView
             PasswordHide();
             //külön külön futtatva, hogy egyszerre több fajta hiba is kijöjjön
             bool isValidText = ValidateText();
-            bool isAvailable = isNotTaken();
             bool isCorrectFormEmail = ValidateEmail(Email.Text);
+            bool isAvailable = isNotTaken();
 
-            if (isValidText & isAvailable & isCorrectFormEmail)
+            if (isValidText & isCorrectFormEmail & isAvailable)
             {
                 MessageBox.Show("Sikeres regisztráció");
                 SendData();
+                UserV userView = new UserV();
+                userView.Show();
+                this.Close();   
             }
         }
 
@@ -85,58 +90,39 @@ namespace WpfApp1.RegisterView
             //az adatbázison belül
             try
             {
+                List<TextBox> information = [Email, Phone, ID, Username];
+                bool[] invalid = {};
+                string[] errormsg = {", az email cím", ", a telefonszám", ", a tajkártya szám", ", a felhasználónév"};
+                string[] postfix = { "email", "Phone_number", "TAJ_number", "Username" };
+                string[] textBoxmsg = {"A megadott email foglalt", "A megadott tel.szám foglalt", "A megadott azonosító foglalt", "A megadott név foglalt"};
                 using (var db = new AppDBContext())
                 {
-                    if (db.users.Any(u => u.email == Email.Text))
+                    //csak emailt és username-et ellenőriz, a user_details táblát most nem írtam bele
+                    //arra chatgpt dobott egy még vadabb függvényt, és nem számítottam rá hogy ez eddig elhúzódik
+                    //szólj és átdobom amit írt
+                    for(int i = 0; i < 4; i+= 3)
                     {
-                        taken += ", az email cím";
-                        Email.BorderBrush = Brushes.Red;
-                        available = false;
-                        Email_err.Visibility = Visibility.Visible;
-                        Email_err.Text = "A megadott email foglalt";
+                        if (db.users.Any(BuildPredicate<User>(postfix[i], (information[i]).Text)))
+                        {
+                            taken += errormsg[i];
+                            information[i].BorderBrush = Brushes.Red;
+                            available = false;
+                            TextBlock errorTextBlock = (TextBlock)FindName(information[i].Name + "_err");
+                            errorTextBlock.Visibility = Visibility.Visible;
+                            errorTextBlock.Text = textBoxmsg[i];
+                        }
                     }
-                    else if (Email.BorderBrush != Brushes.Red)
+                    for (int i = 1; i < 3; i ++)
                     {
-                        Email.BorderBrush = Brushes.Gray;
-                    }
-
-                    if (db.user_details.Any(u => u.Phone_number == Phone.Text))
-                    {
-                        taken += ", a telefonszám";
-                        Phone.BorderBrush = Brushes.Red;
-                        available = false;
-                        Phone_err.Visibility = Visibility.Visible;
-                        Phone_err.Text = "A megadott tel.szám foglalt";
-                    }
-                    else if (Phone.BorderBrush != Brushes.Red)
-                    {
-                        Phone.BorderBrush = Brushes.Gray;
-                    }
-
-                    if (db.user_details.Any(u => u.TAJ_Number == ID.Text))
-                    {
-                        taken += ", a tajkártya szám";
-                        ID.BorderBrush = Brushes.Red;
-                        available = false;
-                        ID_err.Visibility = Visibility.Visible;
-                        ID_err.Text = "A megadott azonosító foglalt";
-                    }
-                    else if (ID.BorderBrush != Brushes.Red)
-                    {
-                        ID.BorderBrush = Brushes.Gray;
-                    }
-
-                    if (db.users.Any(u => u.Username == Username.Text))
-                    {
-                        taken += ", a felhasználónév";
-                        Username.BorderBrush = Brushes.Red;
-                        available = false;
-                        Username_err.Visibility = Visibility.Visible;
-                        Username_err.Text = "A megadott név foglalt";
-                    }
-                    else if (Username.BorderBrush != Brushes.Red)
-                    {
-                        Username.BorderBrush = Brushes.Gray;
+                        if (db.user_details.Any(BuildPredicate<Users_details>(postfix[i], (information[i]).Text)))
+                        {
+                            taken += errormsg[i];
+                            information[i].BorderBrush = Brushes.Red;
+                            available = false;
+                            TextBlock errorTextBlock = (TextBlock)FindName(information[i].Name + "_err");
+                            errorTextBlock.Visibility = Visibility.Visible;
+                            errorTextBlock.Text = textBoxmsg[i];
+                        }
                     }
                 }
 
@@ -146,15 +132,24 @@ namespace WpfApp1.RegisterView
                     MessageBox.Show(taken);
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                MessageBox.Show("Váratlan hiba lépett fel, lépjen kapcsolatba az ügyfélszolgálattal.");
+                MessageBox.Show("Váratlan hiba lépett fel, lépjen kapcsolatba az ügyfélszolgálattal\n." + err);
                 return false;
             }
 
             return available;
         }
+        //Átalakitás, hogy ne kelljen mindig irni hogy u => u.xy == "valami"
+        static Expression<Func<T, bool>> BuildPredicate<T>(string propertyName, string value)
+        {
+            var parameter = System.Linq.Expressions.Expression.Parameter(typeof(T), "u"); // u =>
+            var property = System.Linq.Expressions.Expression.Property(parameter, propertyName); // u.PropertyName
+            var constant = System.Linq.Expressions.Expression.Constant(value); // value
+            var equality = System.Linq.Expressions.Expression.Equal(property, constant); // u.PropertyName == value
 
+            return System.Linq.Expressions.Expression.Lambda<Func<T, bool>>(equality, parameter);
+        }
 
         private bool isCorrectLength()
         {

@@ -25,6 +25,9 @@ namespace LoginOptions;
 
 public partial class MainWindow : Window
 {
+
+
+
     public void LoginOptions()
     {
         InitializeComponent();
@@ -36,7 +39,7 @@ public partial class MainWindow : Window
         if (string.IsNullOrWhiteSpace(Username.Text) || string.IsNullOrWhiteSpace(Password.Password))
         {
             MessageBox.Show("Hiányzó felhasználónév és/vagy jelszó");
-            return;
+            return; 
         }
 
         try
@@ -48,32 +51,45 @@ public partial class MainWindow : Window
                 int isBanned = user.isBanned;
                 if (user != null && BCrypt.Net.BCrypt.Verify(Password.Password, user.Password))
                 {
-                    //elég egy helyen megnézni, bannolva van-e
-                    if (isBanned == 1)
+                    if(accessID == 2 || accessID == 3)
                     {
-                        MessageBox.Show("A felhasználói fiókja tiltva van.");
+                        if(isBanned == 1)
+                        {
+                            MessageBox.Show("A felhasználói fiókja tiltva van.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sikeres bejelentkezés");
+                            AdminV AdminWindow = new AdminV();
+                            AdminWindow.Show();
+                            this.Close();
+                        }
+
                     }
-                    else if (accessID == 0)
+                    else if(accessID == 0)
                     {
-                        MessageBox.Show("Sikeres bejelentkezés");
-                        UserV UserWindow = new UserV();
-                        UserWindow.Show();
-                        this.Close();
+                        if (isBanned == 1)
+                        {
+                            MessageBox.Show("A felhasználói fiókja tiltva van.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Sikeres bejelentkezés");
+                            UserV UserWindow = new UserV();
+                            UserWindow.Show();
+                            this.Close();
+                        }
                     }
-                    //már csak 0, 1, és 2 accessID van, amíg 1 és 2 nincs megkülönböztetve ide nem kell if
-                    else
-                    {
-                        MessageBox.Show("Sikeres bejelentkezés");
-                        AdminV AdminWindow = new AdminV();
-                        AdminWindow.Show();
-                        this.Close();
-                    }
+                
+
                 }
                 else
                 {
                     MessageBox.Show("Hibás felhasználónév vagy jelszó");
                 }
+
             }
+
         }
         catch (Exception err)
         {
@@ -89,30 +105,41 @@ public partial class MainWindow : Window
     }
 }
 
+
 public class User
 {
     [Key] // Enélkül össze szarja magát az adatbázis, ne nyúlj hozzá 
     public required string Username { get; set; }
     public required string Password { get; set; }
-    public int AccessID { get; set; }
-    public int isBanned { get; set; }
+    public required int AccessID { get; set; }
+    public required int isBanned { get; set; }
     public required string email { get; set; }
+
+
+    
 }
-public class user_details
+public class Users_details
 {
     [Key]
     public required string email { get; set; }
     public required string Phone_number { get; set; }
-    public required string TAJ_Number { get; set; }
+    public required string Taj_Number { get;set; }
 }
+
 
 public class AppDBContext : DbContext
 {
     public DbSet<User> users { get; set; }
-    public DbSet<user_details> user_details { get; set; }
+    public DbSet<Users_details> user_details{ get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+        
         var connectionString = "server=localhost;database=userdatabase;user=root;password=;";
+
+
         optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
+
+        
+
     }
 }
