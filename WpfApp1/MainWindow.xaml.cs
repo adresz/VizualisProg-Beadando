@@ -44,9 +44,9 @@ public partial class MainWindow : Window
             using (var db = new AppDBContext())
             {
                 var user = db.users.FirstOrDefault(u => u.Username == Username.Text);
-                int accessID = user.AccessID;
+                int accessID = user?.AccessID ?? 0;
                 var userD = db.user_details.FirstOrDefault(ud => ud.email == user.email);
-                var banReason = userD.Ban_Reason;
+                var banReason = userD?.Ban_Reason ?? "Ki lett tiltva";
                 int isBanned = userD?.isBanned ?? 0;
 
                 if (user != null && BCrypt.Net.BCrypt.Verify(Password.Password, user.Password))
