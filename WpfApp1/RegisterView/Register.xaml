@@ -32,8 +32,8 @@
             <TextBlock x:Name="ID_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
 
             <TextBlock Text="Neme:"/>
-            <RadioButton x:Name="Gender_M" GroupName="neme" Content="Férfi" IsChecked="True"></RadioButton>
-            <RadioButton x:Name="Gender_F" GroupName="neme" Content="Nő"></RadioButton>
+            <RadioButton x:Name="Gender_M" GroupName="Gender" Content="Férfi" IsChecked="True"></RadioButton>
+            <RadioButton x:Name="Gender_F" GroupName="Gender" Content="Nő"></RadioButton>
 
             <TextBlock Text="Születési dátum:"/>
             <DatePicker x:Name="Birthday">
@@ -72,4 +72,6 @@
 
         </StackPanel>
     </Grid>
+    
+    
 </Window>

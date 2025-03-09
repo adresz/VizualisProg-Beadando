@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
 using System.IO;
+using BCrypt;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -24,6 +25,8 @@ using WpfApp1.UserView;
 
 namespace WpfApp1.RegisterView
 {
+    
+
     public partial class Register : Window
     {
         
@@ -32,7 +35,7 @@ namespace WpfApp1.RegisterView
             
             InitializeComponent();
             Birthday.DisplayDateEnd = DateTime.Today;
-            Birthday.DisplayDateStart = DateTime.Parse("1900.01.01");
+            Birthday.DisplayDateStart = DateTime.Parse("1900-01-01");
         }
 
         protected override void OnClosed(EventArgs e)
@@ -55,21 +58,74 @@ namespace WpfApp1.RegisterView
             bool isCorrectFormEmail = ValidateEmail(Email.Text);
             bool isAvailable = isNotTaken();
 
+
             if (isValidText & isCorrectFormEmail & isAvailable)
             {
                 MessageBox.Show("Sikeres regisztráció");
-                SendData();
+                // SendData();
                 UserV userView = new UserV();
                 userView.Show();
-                this.Close();   
+                this.Close();
+
             }
         }
 
+
         private void SendData()
         {
-            //Adatbázisba adat felküldés, majd a regisztráció elküldése egy log fájlba
-            //Ki dolgozandó
+            try
+            {
+                using (var db = new AppDBContext())
+                {
+
+                    // Jelszó titkositás
+                    string hashedPassword = BCrypt.Net.BCrypt.HashPassword(Password.Password.Trim());
+
+                    // Új user létrehozása
+                    User newUser = new User
+                    {
+                        Username = Username.Text,
+                        Password = hashedPassword,
+                        email = Email.Text,
+                        AccessID = 0 
+                    };
+                    string selectedGender = Gender_M.IsChecked == true ? "Male" : "Female"; // Gender kikérése
+                    // Új user details
+                    Users_details newUserDetails = new Users_details
+                    {
+                        email = Email.Text,
+                        First_Name = FirstName.Text,
+                        Last_Name = LastName.Text,
+                        Phone_number = Phone.Text,
+                        Taj_Number = ID.Text,
+                        Birth_Date = Birthday.Text,
+                        isBanned = 0,
+                        Ban_Reason = null,
+                        Gender = selectedGender
+                    };
+
+                    // Add the new user and user details to the database
+                    db.users.Add(newUser);
+                    db.user_details.Add(newUserDetails);
+
+                    // Save changes to the database
+                    db.SaveChanges();
+
+                    MessageBox.Show("Sikeres regisztráció!");
+
+                    // Show the user window and close the registration window
+                    UserV userView = new UserV();
+                    userView.Show();
+                    this.Close();
+                }
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Váratlan hiba lépett fel, kérjük lépjen kapcsolatba az ügyfélszolgálattal.\nHiba kód:\n" + err.Message);
+            }
         }
+
+
 
         private void NumbersOnly(object sender, TextCompositionEventArgs e)
         {
@@ -362,3 +418,4 @@ namespace WpfApp1.RegisterView
 
     }
 }
+
