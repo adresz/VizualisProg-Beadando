@@ -86,8 +86,6 @@ D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\refint\WpfApp1.dll
 D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.pdb
 D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.genruntimeconfig.cache
 D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\ref\WpfApp1.dll
-<<<<<<< Updated upstream
-=======
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Core.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
@@ -156,5 +154,4 @@ D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64
 D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
->>>>>>> Stashed changes
 D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.Memory.dll
