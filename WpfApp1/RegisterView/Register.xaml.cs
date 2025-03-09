@@ -19,6 +19,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1.UserView;
 
 
 namespace WpfApp1.RegisterView
@@ -51,13 +52,17 @@ namespace WpfApp1.RegisterView
             PasswordHide();
             //külön külön futtatva, hogy egyszerre több fajta hiba is kijöjjön
             bool isValidText = ValidateText();
-            bool isAvailable = isNotTaken();
             bool isCorrectFormEmail = ValidateEmail(Email.Text);
+            bool isAvailable = isNotTaken();
 
-            if (isValidText & isAvailable & isCorrectFormEmail)
+            if (isValidText & isCorrectFormEmail & isAvailable)
             {
                 MessageBox.Show("Sikeres regisztráció");
                 SendData();
+                UserV userView = new UserV();
+                userView.Show();
+                this.Close();
+                
             }
         }
 
@@ -96,7 +101,7 @@ namespace WpfApp1.RegisterView
                     //csak emailt és username-et ellenőriz, a user_details táblát most nem írtam bele
                     //arra chatgpt dobott egy még vadabb függvényt, és nem számítottam rá hogy ez eddig elhúzódik
                     //szólj és átdobom amit írt
-                    for(int i = 0; i < 4; i=i+3)
+                    for(int i = 0; i < 4; i+= 3)
                     {
                         if (db.users.Any(BuildPredicate<User>(postfix[i], (information[i]).Text)))
                         {
@@ -105,11 +110,19 @@ namespace WpfApp1.RegisterView
                             available = false;
                             TextBlock errorTextBlock = (TextBlock)FindName(information[i].Name + "_err");
                             errorTextBlock.Visibility = Visibility.Visible;
-                            errorTextBlock.Text = "A megadott email foglalt";
+                            errorTextBlock.Text = textBoxmsg[i];
                         }
-                        else if (information[i].BorderBrush != Brushes.Red)
+                    }
+                    for (int i = 1; i < 3; i ++)
+                    {
+                        if (db.user_details.Any(BuildPredicate<Users_details>(postfix[i], (information[i]).Text)))
                         {
-                            information[i].BorderBrush = Brushes.Gray;
+                            taken += errormsg[i];
+                            information[i].BorderBrush = Brushes.Red;
+                            available = false;
+                            TextBlock errorTextBlock = (TextBlock)FindName(information[i].Name + "_err");
+                            errorTextBlock.Visibility = Visibility.Visible;
+                            errorTextBlock.Text = textBoxmsg[i];
                         }
                     }
                 }
@@ -120,15 +133,15 @@ namespace WpfApp1.RegisterView
                     MessageBox.Show(taken);
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-                MessageBox.Show("Váratlan hiba lépett fel, lépjen kapcsolatba az ügyfélszolgálattal.");
+                MessageBox.Show("Váratlan hiba lépett fel, lépjen kapcsolatba az ügyfélszolgálattal\n." + err);
                 return false;
             }
 
             return available;
         }
-
+        //Átalakitás, hogy ne kelljen mindig irni hogy u => u.xy == "valami"
         static Expression<Func<T, bool>> BuildPredicate<T>(string propertyName, string value)
         {
             var parameter = System.Linq.Expressions.Expression.Parameter(typeof(T), "u"); // u =>

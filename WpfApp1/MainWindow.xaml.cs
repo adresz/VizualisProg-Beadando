@@ -111,18 +111,26 @@ public class User
     [Key] // Enélkül össze szarja magát az adatbázis, ne nyúlj hozzá 
     public required string Username { get; set; }
     public required string Password { get; set; }
-    public int AccessID { get; set; }
-    public int isBanned { get; set; }
-
+    public required int AccessID { get; set; }
+    public required int isBanned { get; set; }
+    public required string email { get; set; }
 
 
     
 }
+public class Users_details
+{
+    [Key]
+    public required string email { get; set; }
+    public required string Phone_number { get; set; }
+    public required string Taj_Number { get;set; }
+}
+
 
 public class AppDBContext : DbContext
 {
     public DbSet<User> users { get; set; }
-
+    public DbSet<Users_details> user_details{ get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         
