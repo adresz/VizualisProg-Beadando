@@ -57,18 +57,17 @@ CREATE TABLE `users` (
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `AccessID` int(11) DEFAULT 0 CHECK (`AccessID` between 0 and 3),
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `IsBanned` tinyint(1) NOT NULL DEFAULT 0
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ;
 
 --
 -- A tábla adatainak kiíratása `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `AccessID`, `created_at`, `IsBanned`) VALUES
-(1, 'adresz', 'tigerad97@gmail.com', '$2b$12$9lJ7aNZPX8H/dOP2C.20Z.4eeHB2q1vYHgwj9wst4U8cSOp5pc/FG', 2, '2025-02-27 20:03:22', 0),
-(2, 'm.zeteny', 'meszaros.zeteny@gmail.com', '$2b$12$LG656O9OvlGrv5NT1sv1k.N5k9KNED650f97XcPBljMrYaLT8EVY2', 2, '2025-02-27 20:15:47', 0),
-(3, 'sz.arpi', 'szabo.arpad@gmail.com', '$2b$12$tzDf6LPQLRbY.UNkBQqH4.8sBIVa4.1gcfx6hx0JqdWIyhKHEeFja', 2, '2025-02-27 20:16:01', 0);
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `AccessID`, `created_at`) VALUES
+(1, 'adresz', 'tigerad97@gmail.com', '$2b$12$9lJ7aNZPX8H/dOP2C.20Z.4eeHB2q1vYHgwj9wst4U8cSOp5pc/FG', 2, '2025-02-27 20:03:22'),
+(2, 'm.zeteny', 'meszaros.zeteny@gmail.com', '$2b$12$LG656O9OvlGrv5NT1sv1k.N5k9KNED650f97XcPBljMrYaLT8EVY2', 2, '2025-02-27 20:15:47'),
+(3, 'sz.arpi', 'szabo.arpad@gmail.com', '$2b$12$tzDf6LPQLRbY.UNkBQqH4.8sBIVa4.1gcfx6hx0JqdWIyhKHEeFja', 2, '2025-02-27 20:16:01');
 
 --
 -- Eseményindítók `users`
@@ -96,6 +95,8 @@ CREATE TABLE `user_details` (
   `Phone_Number` varchar(11) NOT NULL,
   `TAJ_Number` varchar(9) NOT NULL,
   `Birth_Date` date DEFAULT NULL,
+  `IsBanned` tinyint(1) NOT NULL DEFAULT 0,
+  'Ban_Reason' varchar(200) DEFAULT NULL,
   `Gender` enum('Male','Female') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -103,10 +104,10 @@ CREATE TABLE `user_details` (
 -- A tábla adatainak kiíratása `user_details`
 --
 
-INSERT INTO `user_details` (`email`, `First_Name`, `Last_Name`, `Phone_Number`, `TAJ_Number`, `Birth_Date`, `Gender`) VALUES
-('meszaros.zeteny@gmail.com', 'Zétény', 'Mészáros', '06203124396', '720831921', '2005-02-28', 'Male'),
-('szabo.arpad@gmail.com', 'Árpád', 'Szabó', '06302786491', '720932912', '2002-02-02', 'Male'),
-('tigerad97@gmail.com', 'Adrián', 'Tiger', '06709319291', '720952831', '2002-12-10', 'Male');
+INSERT INTO `user_details` (`email`, `First_Name`, `Last_Name`, `Phone_Number`, `TAJ_Number`, `Birth_Date`, 'IsBanned', 'Ban_Reason', `Gender`) VALUES
+('meszaros.zeteny@gmail.com', 'Zétény', 'Mészáros', '06203124396', '720831921', '2005-02-28', 0, NULL, 'Male'),
+('szabo.arpad@gmail.com', 'Árpád', 'Szabó', '06302786491', '720932912', '2002-02-02', 0, NULL, 'Male'),
+('tigerad97@gmail.com', 'Adrián', 'Tiger', '06709319291', '720952831', '2002-12-10', 0, NULL, 'Male');
 
 --
 -- Indexek a kiírt táblákhoz

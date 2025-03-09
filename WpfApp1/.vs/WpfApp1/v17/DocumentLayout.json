@@ -37,8 +37,7 @@
               "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-24T20:04:37.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-24T20:04:37.674Z"
             },
             {
               "$type": "Document",
@@ -48,7 +47,7 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwEEAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T20:04:32.506Z",
               "EditorCaption": ""
@@ -74,8 +73,7 @@
               "RelativeToolTip": "RegisterView\\Register.xaml.cs",
               "ViewState": "AgIAAGAAAAAAAAAAAAAgwKcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T08:57:16.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T08:57:16.081Z"
             }
           ]
         }
