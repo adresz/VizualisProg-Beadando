@@ -8,6 +8,7 @@
     },
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\registerview\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:registerview\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -34,6 +35,12 @@
     {
 <<<<<<< Updated upstream
 =======
+=======
+      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+>>>>>>> Stashed changes
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\registerview\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:registerview\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -72,6 +79,7 @@
             {
               "$type": "Document",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "DocumentIndex": 3,
 =======
               "DocumentIndex": 7,
@@ -103,6 +111,9 @@
 =======
               "DocumentIndex": 4,
 >>>>>>> Stashed changes
+=======
+              "DocumentIndex": 2,
+>>>>>>> Stashed changes
               "Title": "Register.xaml",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml",
               "RelativeDocumentMoniker": "RegisterView\\Register.xaml",
@@ -119,6 +130,7 @@
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml.cs",
               "RelativeDocumentMoniker": "RegisterView\\Register.xaml.cs",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
               "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml.cs",
               "RelativeToolTip": "RegisterView\\Register.xaml.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAcwBwAAAAAAAAAAAAAAA==",
@@ -126,6 +138,11 @@
               "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml.cs*",
               "RelativeToolTip": "RegisterView\\Register.xaml.cs*",
               "ViewState": "AgIAACgAAAAAAAAAAAAowDQAAAANAAAAAAAAAA==",
+>>>>>>> Stashed changes
+=======
+              "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml.cs",
+              "RelativeToolTip": "RegisterView\\Register.xaml.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAWwIcAAAA2AAAAAAAAAA==",
 >>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-28T18:56:54.358Z",
@@ -149,6 +166,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 2,
               "Title": "Admin.xaml.cs",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml.cs",
@@ -156,6 +174,15 @@
               "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml.cs",
               "RelativeToolTip": "AdminView\\Admin.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+=======
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAA6wG4AAAAqAAAAAAAAAA==",
+>>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-01T15:09:19.315Z",
               "EditorCaption": ""
