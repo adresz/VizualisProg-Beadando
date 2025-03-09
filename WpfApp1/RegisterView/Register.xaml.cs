@@ -1,14 +1,18 @@
 ﻿using LoginOptions;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -16,20 +20,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace WpfApp1.RegisterView
 {
-    /// <summary>
-    /// Interaction logic for Register.xaml
-    /// </summary>
     public partial class Register : Window
     {
+        
         public Register()
         {
+            
             InitializeComponent();
-<<<<<<< Updated upstream
-        }
-
-=======
             Birthday.DisplayDateEnd = DateTime.Today;
             Birthday.DisplayDateStart = DateTime.Parse("1900.01.01");
         }
@@ -39,7 +39,7 @@ namespace WpfApp1.RegisterView
             Application.Current.MainWindow.Show();
         }
 
->>>>>>> Stashed changes
+
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.MainWindow.Show();
@@ -48,34 +48,44 @@ namespace WpfApp1.RegisterView
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-<<<<<<< Updated upstream
+            PasswordHide();
+            //külön külön futtatva, hogy egyszerre több fajta hiba is kijöjjön
+            bool isValidText = ValidateText();
+            bool isAvailable = isNotTaken();
+            bool isCorrectFormEmail = ValidateEmail(Email.Text);
 
-        }
-
-
-=======
-            if (ValidateFields())
+            if (isValidText & isAvailable & isCorrectFormEmail)
             {
-                MessageBox.Show("Sikeres bejelentkezés");
+                MessageBox.Show("Sikeres regisztráció");
+                SendData();
             }
         }
 
-        private bool ValidateFields()
+        private void SendData()
         {
-            List<TextBox> textBoxes = new List<TextBox> { LastName, FirstName, Username, Email, Phone, ID};
-            List<PasswordBox> passwordBoxes = new List<PasswordBox> { Password, Passwordconf};
-            
-            if(Password.Name == Passwordconf.Name)
-            {
-<<<<<<< Updated upstream
-                passwordBoxes[0].BorderBrush = Brushes.Red;
-                passwordBoxes[1].BorderBrush = Brushes.Red;
-                return false;
-            }
+            //Adatbázisba adat felküldés, majd a regisztráció elküldése egy log fájlba
+            //Ki dolgozandó
+        }
 
-            string tmp = "";
-            foreach (var textBox in textBoxes)
-=======
+        private void NumbersOnly(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !IsDigitsOnly(e.Text);
+        }
+
+        private bool IsDigitsOnly(string text)
+        {
+            return text.All(char.IsDigit);
+        }
+
+        private bool isNotTaken()
+        {
+            bool available = true;
+            var taken = "Hiba";
+            //Else if feltételek kellenek, hogy mindenképp piros legyen
+            //Ha nincs ott szürke marad mert üres karakter mindig szabad
+            //az adatbázison belül
+            try
+            {
                 List<TextBox> information = [Email, Phone, ID, Username];
                 bool[] invalid = {};
                 string[] errormsg = {", az email cím", ", a telefonszám", ", a tajkártya szám", ", a felhasználónév"};
@@ -134,23 +144,189 @@ namespace WpfApp1.RegisterView
             bool valid = true;
 
             if (ID.Text.Length != 9)
->>>>>>> Stashed changes
             {
-                tmp = "";
-                if (string.IsNullOrEmpty(textBox.Text))
-                {
-                    textBox.BorderBrush = Brushes.Red;
-                    tmp = (string)textBox.GetValue(FrameworkElement.NameProperty) + "_err";
-                    TextBlock targetTextBox = (TextBlock)FindName(tmp);
-                    targetTextBox.Visibility = Visibility.Visible;
-
-                    return false;
-                }
+                ID.BorderBrush = Brushes.Red;
+                ID_err.Visibility = Visibility.Visible;
+                ID_err.Text = "Az azonosító 9 számjegy kell legyen";
+                valid = false;
             }
-            
-            //ellenőrzés kell, hogy adatbázisban létezik-e
+            else
+            {
+                ID.BorderBrush = Brushes.Gray;
+                ID_err.Visibility = Visibility.Hidden;
+            }
+
+            if (Phone.Text.Length != 11)
+            {
+                Phone.BorderBrush = Brushes.Red;
+                Phone_err.Visibility = Visibility.Visible;
+                Phone_err.Text = "A telefonszám 11 számjegy kell legyen";
+                valid = false;
+            }
+            else
+            {
+                Phone.BorderBrush = Brushes.Gray;
+                Phone_err.Visibility = Visibility.Hidden;
+            }
+
+            return valid;
+        }
+
+        private bool ValidateText()
+        {
+            bool hasError = false;
+          
+       
+
+
+                foreach (var textBox in new List<TextBox> { LastName, FirstName, Username, Email, Phone, ID })
+                {
+                    TextBlock errorTextBlock = (TextBlock)FindName(textBox.Name + "_err");
+                    bool empty = string.IsNullOrEmpty(textBox.Text);
+                    textBox.BorderBrush = empty ? Brushes.Red : Brushes.Gray;
+                    if (errorTextBlock != null) errorTextBlock.Visibility = empty ? Visibility.Visible : Visibility.Hidden;
+                    hasError |= empty;
+                }
+
+            return !hasError & isCorrectLength() & ValidatePassword() & ValidateBirthday();
+        }
+
+
+        private bool ValidateBirthday()
+        {
+            bool hasDate = Birthday.SelectedDate.HasValue; // Átirtam erre, mert az előzőnél lehetséges volt bugoltatni, és dátum nélkül elfogadtatni
+            Birthday.BorderBrush = hasDate ? Brushes.Gray : Brushes.Red;
+            Birthday.BorderThickness = hasDate ? new Thickness(1) : new Thickness(2);
+            Birthday_err.Visibility = hasDate ? Visibility.Hidden : Visibility.Visible;
+
+            return hasDate;
+        }
+
+        private bool ValidatePassword()
+        {
+            bool isEmpty = string.IsNullOrEmpty(Password.Password) || string.IsNullOrEmpty(Passwordconf.Password);
+            bool match = Password.Password == Passwordconf.Password && !isEmpty;
+            bool isComplex = PasswordComplexity(Password.Password);
+
+            Brush borderBrush = (match && isComplex) ? Brushes.Gray : Brushes.Red;
+            Thickness borderThickness = (match && isComplex) ? new Thickness(1) : new Thickness(2);
+
+            foreach (var box in new List<PasswordBox> { Password, Passwordconf })
+            {
+                box.BorderBrush = borderBrush;
+                box.BorderThickness = borderThickness;
+            }
+
+            if (isEmpty)
+            {
+                Password_err.Text = "Kötelező mező";
+                Passwordconf_err.Text = "Kötelező mező";
+            }
+            else if (!match)
+            {
+                Password_err.Text = "Nem megegyező jelszavak";
+                Passwordconf_err.Text = "Nem megegyező jelszavak";
+            }
+            else if (!isComplex)
+            {
+                Password_err.Text = "Túl könnyű jelszó";
+                Passwordconf_err.Text = "Túl könnyű jelszó";
+                MessageBox.Show("A jelszónak legalább 8, legfeljebb 24 karakterből" +
+                    "kell állnia, tartalmaznia kell egy kis-és nagybetűt, egy számot, " +
+                    "valamint egy speciális karaktert.");
+
+            }
+
+            Password_err.Visibility = (match && isComplex) ? Visibility.Hidden : Visibility.Visible;
+            Passwordconf_err.Visibility = (match && isComplex) ? Visibility.Hidden : Visibility.Visible;
+
+            return match && isComplex;
+        }
+
+        public bool ValidateEmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                Email.BorderBrush = Brushes.Red;
+                Email_err.Visibility = Visibility.Visible;
+                Email_err.Text = "Kötelező mező";
+                return false;
+            }
+            else if (!Regex.IsMatch(email, pattern))
+            {
+                Email.BorderBrush = Brushes.Red;
+                Email_err.Visibility = Visibility.Visible;
+                Email_err.Text = "Hibás formátum";
+                return false;
+            }
+            else
+            {
+                Email.BorderBrush = Brushes.Gray;
+                Email_err.Visibility = Visibility.Hidden;
+                Email_err.Text = "";
+            }
+
             return true;
         }
->>>>>>> Stashed changes
+
+
+        static bool PasswordComplexity(string password)
+        {
+            string pattern = @"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!@#$%^&*(),.?""{}|<>]).{8,24}$";
+            return Regex.IsMatch(password, pattern);
+        }
+
+        private void TogglePassword_Click(object sender, RoutedEventArgs e)
+        {
+            if (Password.Visibility == Visibility.Visible)
+            {
+                SeenPassword.Text = Password.Password;
+                Password.Visibility = Visibility.Collapsed;
+                SeenPassword.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Password.Password = SeenPassword.Text;
+                Password.Visibility = Visibility.Visible;
+                SeenPassword.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void TogglePasswordConf_Click(object sender, RoutedEventArgs e)
+        {
+            if (Passwordconf.Visibility == Visibility.Visible)
+            {
+                SeenConfPassword.Text = Passwordconf.Password;
+                Passwordconf.Visibility = Visibility.Collapsed;
+                SeenConfPassword.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Passwordconf.Password = SeenConfPassword.Text;
+                Passwordconf.Visibility = Visibility.Visible;
+                SeenConfPassword.Visibility = Visibility.Collapsed;
+            }
+        }
+        //Jelszó elrejtése regisztrálás gomb nyomáskor, hogy ne kelljen
+        // külön vizsgálni a Password text és jelszó állapotban lévő adatait
+        private void PasswordHide()
+        {
+            if (SeenPassword.Visibility == Visibility.Visible)
+            {
+                Password.Password = SeenPassword.Text;
+                SeenPassword.Visibility = Visibility.Collapsed;
+                Password.Visibility = Visibility.Visible;
+            }
+
+            if (SeenConfPassword.Visibility == Visibility.Visible)
+            {
+                Passwordconf.Password = SeenConfPassword.Text;
+                SeenConfPassword.Visibility = Visibility.Collapsed;
+                Passwordconf.Visibility = Visibility.Visible;
+            }
+        }
+
     }
 }

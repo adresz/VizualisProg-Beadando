@@ -7,60 +7,32 @@
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:registerview\\register.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\registerview\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:registerview\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\userview\\userv.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:userview\\userv.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> Stashed changes
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\adminview\\admin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:adminview\\admin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\adminview\\admin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:adminview\\admin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-<<<<<<< Updated upstream
-=======
-=======
-      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
->>>>>>> Stashed changes
-      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\registerview\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:registerview\\register.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
->>>>>>> Stashed changes
+      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\userview\\userv.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:userview\\userv.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-<<<<<<< Updated upstream
+      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\adminview\\admin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:adminview\\admin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\userview\\userv.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:userview\\userv.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|d:\\git\\vizualisprog-beadando\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
->>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -69,21 +41,12 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-<<<<<<< Updated upstream
           "DockedHeight": 311,
-=======
-          "DockedHeight": 455,
->>>>>>> Stashed changes
           "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-              "DocumentIndex": 3,
-=======
-              "DocumentIndex": 7,
->>>>>>> Stashed changes
+              "DocumentIndex": 4,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
@@ -95,7 +58,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "UserV.xaml",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\UserView\\UserV.xaml",
               "RelativeDocumentMoniker": "UserView\\UserV.xaml",
@@ -106,14 +69,7 @@
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
               "DocumentIndex": 1,
-=======
-              "DocumentIndex": 4,
->>>>>>> Stashed changes
-=======
-              "DocumentIndex": 2,
->>>>>>> Stashed changes
               "Title": "Register.xaml",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml",
               "RelativeDocumentMoniker": "RegisterView\\Register.xaml",
@@ -129,44 +85,26 @@
               "Title": "Register.xaml.cs",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml.cs",
               "RelativeDocumentMoniker": "RegisterView\\Register.xaml.cs",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
               "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml.cs",
               "RelativeToolTip": "RegisterView\\Register.xaml.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAcwBwAAAAAAAAAAAAAAA==",
-=======
-              "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml.cs*",
-              "RelativeToolTip": "RegisterView\\Register.xaml.cs*",
-              "ViewState": "AgIAACgAAAAAAAAAAAAowDQAAAANAAAAAAAAAA==",
->>>>>>> Stashed changes
-=======
-              "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml.cs",
-              "RelativeToolTip": "RegisterView\\Register.xaml.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAWwIcAAAA2AAAAAAAAAA==",
->>>>>>> Stashed changes
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-28T18:56:54.358Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
-              "DocumentIndex": 2,
-=======
-              "DocumentIndex": 5,
->>>>>>> Stashed changes
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-02-24T20:04:37.674Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-24T20:04:37.674Z"
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
               "DocumentIndex": 2,
               "Title": "Admin.xaml.cs",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml.cs",
@@ -174,26 +112,13 @@
               "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml.cs",
               "RelativeToolTip": "AdminView\\Admin.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-=======
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAA6wG4AAAAqAAAAAAAAAA==",
->>>>>>> Stashed changes
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-01T15:09:19.315Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
               "DocumentIndex": 7,
-=======
-              "DocumentIndex": 1,
->>>>>>> Stashed changes
               "Title": "UserV.xaml.cs",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\UserView\\UserV.xaml.cs",
               "RelativeDocumentMoniker": "UserView\\UserV.xaml.cs",
@@ -201,24 +126,18 @@
               "RelativeToolTip": "UserView\\UserV.xaml.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAowAwAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-01T15:09:34.196Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T15:09:34.196Z"
             },
             {
               "$type": "Document",
-<<<<<<< Updated upstream
-              "DocumentIndex": 5,
-=======
-              "DocumentIndex": 3,
->>>>>>> Stashed changes
+              "DocumentIndex": 6,
               "Title": "Admin.xaml",
               "DocumentMoniker": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml",
               "RelativeDocumentMoniker": "AdminView\\Admin.xaml",
               "ToolTip": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml",
               "RelativeToolTip": "AdminView\\Admin.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-01T15:01:06.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-01T15:01:06.177Z"
             }
           ]
         }
