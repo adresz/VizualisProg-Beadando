@@ -415,7 +415,6 @@ namespace WpfApp1.RegisterView
                 Passwordconf.Visibility = Visibility.Visible;
             }
         }
-
     }
 }
 
