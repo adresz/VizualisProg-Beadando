@@ -12,10 +12,10 @@
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 
             <TextBlock Text="Felhasználónév"/>
-            <TextBox x:Name="Username" Width="200"/>
+            <TextBox x:Name="Username" Width="220"/>
 
             <TextBlock Text="Jelszó:"/>
-            <PasswordBox x:Name="Password" Width="200"/>
+            <PasswordBox x:Name="Password" Width="220"/>
 
             <!-- A gombokat egy új StackPanel-be helyezzük, amely vízszintesen rendezi őket -->
             <StackPanel Orientation="Horizontal" Margin="10" Width="200">

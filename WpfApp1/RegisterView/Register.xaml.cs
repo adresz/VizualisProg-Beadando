@@ -29,10 +29,8 @@ namespace WpfApp1.RegisterView
 
     public partial class Register : Window
     {
-        
         public Register()
         {
-            
             InitializeComponent();
             Birthday.DisplayDateEnd = DateTime.Today;
             Birthday.DisplayDateStart = DateTime.Parse("1900-01-01");
@@ -42,7 +40,6 @@ namespace WpfApp1.RegisterView
         {
             Application.Current.MainWindow.Show();
         }
-
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {
@@ -58,7 +55,6 @@ namespace WpfApp1.RegisterView
             bool isCorrectFormEmail = ValidateEmail(Email.Text);
             bool isAvailable = isNotTaken();
 
-
             if (isValidText & isCorrectFormEmail & isAvailable)
             {
                 MessageBox.Show("Sikeres regisztráció");
@@ -70,14 +66,12 @@ namespace WpfApp1.RegisterView
             }
         }
 
-
         private void SendData()
         {
             try
             {
                 using (var db = new AppDBContext())
                 {
-
                     // Jelszó titkositás
                     string hashedPassword = BCrypt.Net.BCrypt.HashPassword(Password.Password.Trim());
 
@@ -124,8 +118,6 @@ namespace WpfApp1.RegisterView
                 MessageBox.Show("Váratlan hiba lépett fel, kérjük lépjen kapcsolatba az ügyfélszolgálattal.\nHiba kód:\n" + err.Message);
             }
         }
-
-
 
         private void NumbersOnly(object sender, TextCompositionEventArgs e)
         {
@@ -287,7 +279,13 @@ namespace WpfApp1.RegisterView
             Birthday.BorderThickness = hasDate ? new Thickness(1) : new Thickness(2);
             Birthday_err.Visibility = hasDate ? Visibility.Hidden : Visibility.Visible;
 
-            return hasDate;
+            bool notYoug = ((DateTime.Now.Year - Birthday.SelectedDate.Value.Year) >= 16) && (DateTime.Now.Month >= Birthday.SelectedDate.Value.Month) && (DateTime.Now.Day >= Birthday.SelectedDate.Value.Day);
+            Birthday.BorderBrush = notYoug ? Brushes.Gray : Brushes.Red;
+            Birthday.BorderThickness = notYoug ? new Thickness(1) : new Thickness(2);
+            Birthday_err.Text = "Túl fiatal vagy fiacskám!";
+            Birthday_err.Visibility = notYoug ? Visibility.Hidden : Visibility.Visible;
+
+            return hasDate && notYoug;
         }
 
         private bool ValidatePassword()

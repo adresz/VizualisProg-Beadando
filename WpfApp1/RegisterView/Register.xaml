@@ -40,8 +40,12 @@
                 <DatePicker.Resources>
                     <Style TargetType="DatePickerTextBox">
                         <Setter Property="Text" Value="Születési dátum"/>
+                        <Setter Property="Text" Value="{Binding SelectedDate, RelativeSource={RelativeSource AncestorType=DatePicker}, StringFormat='yyyy-mm-dd'}"/>
                     </Style>
                 </DatePicker.Resources>
+                <DatePicker.CacheMode>
+                    <BitmapCache/>
+                </DatePicker.CacheMode>
             </DatePicker>
             <TextBlock x:Name="Birthday_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
 
