@@ -59,9 +59,10 @@ namespace WpfApp1.RegisterView
             {
                 MessageBox.Show("Sikeres regisztráció");
                 // SendData();
-                UserV userView = new UserV();
+                UserV userView = new UserV(Username.Text);
                 userView.Show();
                 this.Close();
+                Application.Current.MainWindow.Close();
 
             }
         }
@@ -92,7 +93,7 @@ namespace WpfApp1.RegisterView
                         Last_Name = LastName.Text,
                         Phone_number = Phone.Text,
                         Taj_Number = ID.Text,
-                        Birth_Date = Birthday.Text,
+                        Birth_Date = DateTime.Now,
                         isBanned = 0,
                         Ban_Reason = null,
                         Gender = selectedGender
@@ -106,11 +107,6 @@ namespace WpfApp1.RegisterView
                     db.SaveChanges();
 
                     MessageBox.Show("Sikeres regisztráció!");
-
-                    // Show the user window and close the registration window
-                    UserV userView = new UserV();
-                    userView.Show();
-                    this.Close();
                 }
             }
             catch (Exception err)

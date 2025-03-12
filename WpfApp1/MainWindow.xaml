@@ -11,17 +11,19 @@
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
 
-            <TextBlock Text="Felhasználónév"/>
-            <TextBox x:Name="Username" Width="220"/>
+            <TextBlock Text="    Felhasználónév"/>
+            <TextBox x:Name="Username" Width="190"/>
 
-            <TextBlock Text="Jelszó:"/>
-            <PasswordBox x:Name="Password" Width="220"/>
+            <TextBlock Text="    Jelszó:"/>
+            <PasswordBox x:Name="Password" Width="190"/>
 
-            <!-- A gombokat egy új StackPanel-be helyezzük, amely vízszintesen rendezi őket -->
-            <StackPanel Orientation="Horizontal" Margin="10" Width="200">
+            <!-- Gombok egy vízszintes StackPanelben -->
+            <StackPanel Orientation="Horizontal" Margin="10">
                 <Button Content="Regisztráció" Width="90" Margin="5" Click="Register_Click"/>
                 <Button Content="Bejelentkezés" Width="90" Margin="5" Click="Login_Click"/>
             </StackPanel>
+
+            <CheckBox Content="Emlékezz rám" HorizontalAlignment="Left" Margin="15,0,0,0" x:Name="RememberMe"/>
 
         </StackPanel>
     </Grid>

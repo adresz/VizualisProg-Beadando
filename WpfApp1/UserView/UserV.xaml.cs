@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginOptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,20 @@ namespace WpfApp1.UserView
     /// </summary>
     public partial class UserV : Window
     {
-        public UserV()
+        public UserV(string username)
         {
             InitializeComponent();
+            Title = $"Bejelentkezve mint: {username}";
+        }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Close();
+            MainWindow newMainWindow = new MainWindow(); // Új példány létrehozása
+            newMainWindow.InitializeComponent();
+            Application.Current.MainWindow = newMainWindow; // Új ablak beállítása főablakként5
+            newMainWindow.Show(); // Új ablak megnyitása
+            this.Close();
         }
     }
 }

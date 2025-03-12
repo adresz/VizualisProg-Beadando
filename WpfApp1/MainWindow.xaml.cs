@@ -20,6 +20,8 @@ using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using WpfApp1.AdminView;
 using WpfApp1.UserView;
 using System.Runtime.CompilerServices;
+using System.Configuration;
+using System.Dynamic;
 
 namespace LoginOptions;
 
@@ -28,15 +30,34 @@ public partial class MainWindow : Window
     public void LoginOptions()
     {
         InitializeComponent();
+        LoadUserSavedData();
     }
+
+    private void LoadUserSavedData()
+    {
+        // Betölti a RememberMe értékét és beállítja a checkboxot
+        Settings1.Default.Reload();
+        RememberMe.IsChecked = Settings1.Default.RememberMe;
+
+        // Ha a RememberMe be van pipálva, akkor betölti a felhasználónevet és jelszót, különben üresen hagyja
+        Username.Text = Settings1.Default.RememberMe ? Settings1.Default.Username : "";
+        Password.Password = Settings1.Default.RememberMe ? Settings1.Default.Password : "";
+    }
+
 
     private void Login_Click(object sender, RoutedEventArgs e)
     {
+        // Konfigurációs fájl frissítése
+        Settings1.Default.RememberMe = RememberMe.IsChecked == true;
+        Settings1.Default.Username = RememberMe.IsChecked == true ? Username.Text : "";
+        Settings1.Default.Password = RememberMe.IsChecked == true ? Password.Password : "";
+        Settings1.Default.Save(); // Mentés a config fájlba
+        MessageBox.Show(Settings1.Default.RememberMe.ToString());
         //Ne töröld, mert hibára fut a kód, ha bejelentkezéskor nincs kitöltve a textBox
         if (string.IsNullOrWhiteSpace(Username.Text) || string.IsNullOrWhiteSpace(Password.Password))
         {
             MessageBox.Show("Hiányzó felhasználónév és/vagy jelszó");
-            return; 
+            return;
         }
 
         try
@@ -46,27 +67,26 @@ public partial class MainWindow : Window
                 var user = db.users.FirstOrDefault(u => u.Username == Username.Text);
                 int accessID = user?.AccessID ?? 0;
                 var userD = db.user_details.FirstOrDefault(ud => ud.email == user.email);
-                var banReason = userD?.Ban_Reason ?? "Ki lett tiltva";
+                var banReason = userD?.Ban_Reason ?? "A felhasználói fiókja ki lett tiltva";
                 int isBanned = userD?.isBanned ?? 0;
 
                 if (user != null && BCrypt.Net.BCrypt.Verify(Password.Password, user.Password))
                 {
                     if(isBanned == 1)
                     {
-                        MessageBox.Show($"A felhasználói fiókja tiltva van.\n Indok: {banReason}");
+                        MessageBox.Show($"A felhasználói fiókja tiltva van.\nIndok:\n{banReason}");
                     }
                     else if(accessID == 0)
                     {
                         MessageBox.Show("Sikeres bejelentkezés");
-                        UserV UserWindow = new UserV();
+                        UserV UserWindow = new UserV(Username.Text);
                         UserWindow.Show();
                         this.Close();
                     }
-                    //amíg accessID 1 és 2 között nincs különbség, addig ide nem kell az if
                     else
                     {
                         MessageBox.Show("Sikeres bejelentkezés");
-                        AdminV AdminWindow = new AdminV();
+                        AdminV AdminWindow = new AdminV(accessID, Username.Text);
                         AdminWindow.Show();
                         this.Close();
                     }
@@ -109,7 +129,7 @@ public class Users_details
     public required string Last_Name { get; set; }
     public required string Phone_number { get; set; }
     public required string Taj_Number { get;set; }
-    public required string Birth_Date { get; set; }
+    public required DateTime Birth_Date { get; set; }
     public required int isBanned { get; set; }
     public required string? Ban_Reason { get; set; }
     public required string Gender { get; set; }

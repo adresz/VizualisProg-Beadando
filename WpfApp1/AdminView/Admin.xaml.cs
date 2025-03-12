@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginOptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,28 @@ namespace WpfApp1.AdminView
     /// </summary>
     public partial class AdminV : Window
     {
-        public AdminV()
+        public AdminV(int accessID, string Username)
         {
             InitializeComponent();
+
+            if(accessID == 2)
+            {
+            Title = $"Bejelentkezve mint [Tulaj] {Username}";
+            }
+            else
+            {
+            Title = $"Bejelentkezve mint [Admin] {Username}";
+            }
+        }
+
+        private void LogOut_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Close();
+            MainWindow newMainWindow = new MainWindow(); // Új példány létrehozása
+            newMainWindow.InitializeComponent();
+            Application.Current.MainWindow = newMainWindow; // Új ablak beállítása főablakként5
+            newMainWindow.Show(); // Új ablak megnyitása
+            this.Close();
         }
     }
 }
