@@ -95,3 +95,5 @@ D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity
 D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.Memory.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.Memory.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\WpfApp1.dll.config
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserDatas\UserDataGrid.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserDatas\UserDataGrid.baml

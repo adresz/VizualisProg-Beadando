@@ -237,9 +237,6 @@ namespace WpfApp1.RegisterView
         private bool ValidateText()
         {
             bool hasError = false;
-          
-       
-
 
                 foreach (var textBox in new List<TextBox> { LastName, FirstName, Username, Email, Phone, ID })
                 {
@@ -411,4 +408,3 @@ namespace WpfApp1.RegisterView
         }
     }
 }
-

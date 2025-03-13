@@ -35,11 +35,8 @@ public partial class MainWindow : Window
 
     private void LoadUserSavedData()
     {
-        // Betölti a RememberMe értékét és beállítja a checkboxot
         Settings1.Default.Reload();
         RememberMe.IsChecked = Settings1.Default.RememberMe;
-
-        // Ha a RememberMe be van pipálva, akkor betölti a felhasználónevet és jelszót, különben üresen hagyja
         Username.Text = Settings1.Default.RememberMe ? Settings1.Default.Username : "";
         Password.Password = Settings1.Default.RememberMe ? Settings1.Default.Password : "";
     }
