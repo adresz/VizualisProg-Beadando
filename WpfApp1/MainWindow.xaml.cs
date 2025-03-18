@@ -126,7 +126,7 @@ public class Users_details
     public required string Taj_Number { get;set; }
     public required DateTime Birth_Date { get; set; }
     public required int isBanned { get; set; }
-    public string Ban_Reason { get; set; }
+    public string? Ban_Reason { get; set; }
     public required string? Gender { get; set; }
 }
 
