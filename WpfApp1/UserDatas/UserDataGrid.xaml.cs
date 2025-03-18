@@ -63,7 +63,8 @@ namespace WpfApp1.UserDatas
                         ud.Phone_number,
                         ud.Taj_Number,
                         ud.isBanned,
-                        u.AccessID,
+                        AccessRole = u.AccessID == 2 ? "Owner" :
+                        u.AccessID == 1 ? "Admin" : "User",
                         ud.Gender
                     }
                 ).ToList();
@@ -72,6 +73,7 @@ namespace WpfApp1.UserDatas
                 UpdateDataGrid();
             }
         }
+
 
         private void UpdateDataGrid()
         {
