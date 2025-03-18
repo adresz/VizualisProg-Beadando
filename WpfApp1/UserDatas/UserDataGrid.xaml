@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="UserDataGrid" Height="800" Width="1200">
     <Grid>
-        <DataGrid x:Name="UsersDataGrid" AutoGenerateColumns="False" Margin="10,12,10,8">
+        <DataGrid x:Name="UsersDataGrid" AutoGenerateColumns="False" Margin="10,12,10,60">
             <DataGrid.Columns>
                 <!-- User táblából -->
                 <DataGridTextColumn Header="Felhasználónév" Binding="{Binding Username}" Width="120*"/>
@@ -26,9 +26,14 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <!-- Frissítés gomb -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Bottom">
-            <Button Content="Frissítés" Width="100" Margin="5"/>
+        <!-- Laposítási gombok -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10">
+            <Button x:Name="PreviousButton" Content="Előző 30" Click="PreviousPage_Click" IsEnabled="False" Padding="10" Margin="5" Width="110"/>
+            <TextBlock Text="{Binding CurrentPage, Mode=OneWay}" Margin="10" FontSize="16"/>
+            <Button x:Name="NextButton" Content="Következő 30" Click="NextPage_Click" Padding="10" Margin="5" Width="110"/>
         </StackPanel>
+
+        <!-- Frissítés gomb -->
+        
     </Grid>
 </Window>

@@ -38,6 +38,8 @@ namespace WpfApp1.UserDatas
             
 
         }
+        public int CurrentPage { get; set; } = 1;
+        public int ItemsPerPage { get; set; } = 30;
 
         private void LoadDataFromDatabase()
         {
@@ -46,33 +48,60 @@ namespace WpfApp1.UserDatas
                 var users = db.users.ToList();
                 var userDetails = db.user_details.ToList();
 
-                // Perform the join and create ObservableCollection with anonymous type
-                UsersWithDetails = new ObservableCollection<dynamic>(
-                    users.Join(
-                        userDetails,
-                        u => u.email,
-                        ud => ud.email,
-                        (u, ud) => new
-                        {
-                            u.Username,
-                            u.email,
-                            ud.Ban_Reason,
-                            ud.Birth_Date,
-                            ud.First_Name,
-                            ud.Last_Name,
-                            ud.Phone_number,
-                            ud.Taj_Number,
-                            ud.isBanned,
-                            u.AccessID,
-                            ud.Gender
-                        }
-                    )
-                );
+                var joinedData = users.Join(
+                    userDetails,
+                    u => u.email,
+                    ud => ud.email,
+                    (u, ud) => new
+                    {
+                        u.Username,
+                        u.email,
+                        ud.Ban_Reason,
+                        ud.Birth_Date,
+                        ud.First_Name,
+                        ud.Last_Name,
+                        ud.Phone_number,
+                        ud.Taj_Number,
+                        ud.isBanned,
+                        u.AccessID,
+                        ud.Gender
+                    }
+                ).ToList();
 
-                // Bind to DataGrid
-                UsersDataGrid.ItemsSource = UsersWithDetails;
+                UsersWithDetails = new ObservableCollection<dynamic>(joinedData);
+                UpdateDataGrid();
             }
         }
+
+        private void UpdateDataGrid()
+        {
+            var pagedData = UsersWithDetails.Skip((CurrentPage - 1) * ItemsPerPage).Take(ItemsPerPage).ToList();
+            UsersDataGrid.ItemsSource = pagedData;
+
+            // Gombok engedélyezése/letiltása
+            PreviousButton.IsEnabled = CurrentPage > 1;
+            NextButton.IsEnabled = (CurrentPage * ItemsPerPage) < UsersWithDetails.Count;
+        }
+
+        private void NextPage_Click(object sender, RoutedEventArgs e)
+        {
+            if ((CurrentPage * ItemsPerPage) < UsersWithDetails.Count)
+            {
+                CurrentPage++;
+                UpdateDataGrid();
+            }
+        }
+
+        private void PreviousPage_Click(object sender, RoutedEventArgs e)
+        {
+            if (CurrentPage > 1)
+            {
+                CurrentPage--;
+                UpdateDataGrid();
+            }
+        }
+
+
     }
 }
 
