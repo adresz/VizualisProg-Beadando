@@ -96,7 +96,7 @@ CREATE TABLE `user_details` (
   `TAJ_Number` varchar(9) NOT NULL,
   `Birth_Date` date DEFAULT NULL,
   `IsBanned` tinyint(1) NOT NULL DEFAULT 0,
-  'Ban_Reason' varchar(200) DEFAULT NULL,
+  `Ban_Reason` varchar(200) DEFAULT "Nincs tiltva.",
   `Gender` enum('Male','Female') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -104,10 +104,10 @@ CREATE TABLE `user_details` (
 -- A tábla adatainak kiíratása `user_details`
 --
 
-INSERT INTO `user_details` (`email`, `First_Name`, `Last_Name`, `Phone_Number`, `TAJ_Number`, `Birth_Date`, 'IsBanned', 'Ban_Reason', `Gender`) VALUES
-('meszaros.zeteny@gmail.com', 'Zétény', 'Mészáros', '06203124396', '720831921', '2005-02-28', 0, NULL, 'Male'),
-('szabo.arpad@gmail.com', 'Árpád', 'Szabó', '06302786491', '720932912', '2002-02-02', 0, NULL, 'Male'),
-('tigerad97@gmail.com', 'Adrián', 'Tiger', '06709319291', '720952831', '2002-12-10', 0, NULL, 'Male');
+INSERT INTO `user_details` (`email`, `First_Name`, `Last_Name`, `Phone_Number`, `TAJ_Number`, `Birth_Date`, `IsBanned`, `Ban_Reason`, `Gender`) VALUES
+('meszaros.zeteny@gmail.com', 'Zétény', 'Mészáros', '06203124396', '720831921', '2005-02-28', 0, "Nincs tiltva.", 'Male'),
+('szabo.arpad@gmail.com', 'Árpád', 'Szabó', '06302786491', '720932912', '2002-02-02', 0, "Nincs tiltva.", 'Male'),
+('tigerad97@gmail.com', 'Adrián', 'Tiger', '06709319291', '720952831', '2002-12-10', 0, "Nincs tiltva.", 'Male');
 
 --
 -- Indexek a kiírt táblákhoz

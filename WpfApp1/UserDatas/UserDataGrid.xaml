@@ -11,18 +11,18 @@
             <DataGrid.Columns>
                 <!-- User táblából -->
                 <DataGridTextColumn Header="Felhasználónév" Binding="{Binding Username}" Width="120*"/>
-                <DataGridTextColumn Header="E-mail" Binding="{Binding email}" Width="180"/>
-                <DataGridTextColumn Header="Hozzáférési szint" Binding="{Binding AccessID}" Width="100"/>
+                <DataGridTextColumn Header="E-mail" Binding="{Binding email}" Width="180*"/>
+                <DataGridTextColumn Header="Hozzáférési szint" Binding="{Binding AccessID}" Width="100*"/>
 
                 <!-- Users_details táblából -->
-                <DataGridTextColumn Header="Keresztnév" Binding="{Binding First_Name}" Width="120"/>
-                <DataGridTextColumn Header="Vezetéknév" Binding="{Binding Last_Name}" Width="120"/>
-                <DataGridTextColumn Header="Telefonszám" Binding="{Binding Phone_number}" Width="120"/>
-                <DataGridTextColumn Header="TAJ szám" Binding="{Binding Taj_Number}" Width="120"/>
-                <DataGridTextColumn Header="Születési dátum" Binding="{Binding Birth_Date}" Width="120" />
-                <DataGridTextColumn Header="Kitiltva?" Binding="{Binding isBanned}" Width="80"/>
-                <DataGridTextColumn Header="Kitiltás oka" Binding="{Binding Ban_Reason}" Width="200"/>
-                <DataGridTextColumn Header="Nem" Binding="{Binding Gender}" Width="80"/>
+                <DataGridTextColumn Header="Keresztnév" Binding="{Binding First_Name}" Width="120*"/>
+                <DataGridTextColumn Header="Vezetéknév" Binding="{Binding Last_Name}" Width="120*"/>
+                <DataGridTextColumn Header="Telefonszám" Binding="{Binding Phone_number}" Width="120*"/>
+                <DataGridTextColumn Header="TAJ szám" Binding="{Binding Taj_Number}" Width="120*"/>
+                <DataGridTextColumn Header="Születési dátum" Binding="{Binding Birth_Date}" Width="120*" />
+                <DataGridTextColumn Header="Kitiltva?" Binding="{Binding isBanned}" Width="80*"/>
+                <DataGridTextColumn Header="Kitiltás oka" Binding="{Binding Ban_Reason}" Width="200*"/>
+                <DataGridTextColumn Header="Nem" Binding="{Binding Gender}" Width="80*"/>
             </DataGrid.Columns>
         </DataGrid>
 

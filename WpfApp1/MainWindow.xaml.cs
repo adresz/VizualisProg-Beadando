@@ -112,7 +112,7 @@ public class User
     public required string Username { get; set; }
     public required string Password { get; set; }
     public required string email { get; set; }
-    public required int AccessID { get; set; }
+    public int? AccessID { get; set; }
 
 }
 
@@ -126,8 +126,8 @@ public class Users_details
     public required string Taj_Number { get;set; }
     public required DateTime Birth_Date { get; set; }
     public required int isBanned { get; set; }
-    public required string? Ban_Reason { get; set; }
-    public required string Gender { get; set; }
+    public string Ban_Reason { get; set; }
+    public required string? Gender { get; set; }
 }
 
 public class AppDBContext : DbContext

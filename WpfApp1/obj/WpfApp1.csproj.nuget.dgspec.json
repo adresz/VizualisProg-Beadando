@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\T. Adrian\\OneDrive - Neumann János Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\WpfApp1.csproj": {}
+    "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\WpfApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\T. Adrian\\OneDrive - Neumann János Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\WpfApp1.csproj": {
+    "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\WpfApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\T. Adrian\\OneDrive - Neumann János Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\WpfApp1.csproj",
+        "projectUniqueName": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\WpfApp1.csproj",
         "projectName": "WpfApp1",
-        "projectPath": "C:\\Users\\T. Adrian\\OneDrive - Neumann János Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\WpfApp1.csproj",
-        "packagesPath": "C:\\Users\\T. Adrian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\T. Adrian\\OneDrive - Neumann János Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\obj\\",
+        "projectPath": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\WpfApp1.csproj",
+        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+        "outputPath": "D:\\Git\\VizualisProg-Beadando\\WpfApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\T. Adrian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -83,7 +82,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

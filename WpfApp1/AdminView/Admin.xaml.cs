@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApp1.UserDatas;
 
 namespace WpfApp1.AdminView
 {
@@ -42,6 +43,12 @@ namespace WpfApp1.AdminView
             Application.Current.MainWindow = newMainWindow; // Új ablak beállítása főablakként5
             newMainWindow.Show(); // Új ablak megnyitása
             this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UserDataGrid asd = new UserDataGrid();
+            asd.Show();
         }
     }
 }
