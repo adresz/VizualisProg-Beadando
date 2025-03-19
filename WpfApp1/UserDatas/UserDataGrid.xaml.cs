@@ -26,10 +26,12 @@ namespace WpfApp1.UserDatas
     /// </summary>
     public partial class UserDataGrid : Window
     {
-        public dynamic SelectedUser { get; set; }
+        public dynamic? SelectedUser { get; set; }
         public ObservableCollection<User> Users { get; set; }
         public ObservableCollection<Users_details> User_details { get; set; }
         public ObservableCollection<UserDetailsViewModel> UsersWithDetails { get; set; }
+        
+
         public UserDataGrid()
         {
             InitializeComponent();
@@ -39,8 +41,24 @@ namespace WpfApp1.UserDatas
             this.Closing += Window_Closing;
         }
 
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedItem = SelectedCombo.SelectedItem as ComboBoxItem;
+
+            if (selectedItem != null)
+            {
+                var selectedValue = selectedItem.Content.ToString();
+                int.TryParse(selectedValue, out int selectedValueInt);
+                ItemsPerPage = selectedValueInt;
+                LoadDataFromDatabase();
+            }
+        }
+
+
+
         public int CurrentPage { get; set; } = 1;
-        public int ItemsPerPage { get; set; } = 30;
+        public int ItemsPerPage { get; set; } 
 
         private void LoadDataFromDatabase()
         {
@@ -150,23 +168,23 @@ namespace WpfApp1.UserDatas
         {
             throw new NotImplementedException();
         }
-    }
-}
 
-namespace WpfApp1.UserDatas
-{
+    }
+
     public class UserDetailsViewModel
     {
-        public string Username { get; set; }
-        public string Email { get; set; }
-        public string BanReason { get; set; }
+        public string? Username { get; set; }
+        public string? Email { get; set; }
+        public string? BanReason { get; set; }
         public DateTime Birth_Date { get; set; }
-        public string First_Name { get; set; }
-        public string Last_Name { get; set; }
-        public string Phone_number { get; set; }
-        public string Taj_Number { get; set; }
-        public string Banned { get; set; }
-        public string AccessRole { get; set; }
-        public string Gender { get; set; }
+        public string? First_Name { get; set; }
+        public string? Last_Name { get; set; }
+        public string? Phone_number { get; set; }
+        public string? Taj_Number { get; set; }
+        public string? Banned { get; set; }
+        public string? AccessRole { get; set; }
+        public string? Gender { get; set; }
     }
+
 }
+

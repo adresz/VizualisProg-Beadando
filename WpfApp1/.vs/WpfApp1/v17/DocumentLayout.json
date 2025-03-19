@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|c:\\users\\t. adrian\\onedrive - neumann j\u00E1nos egyetem\\dokumentumok\\github\\vizualisprog-beadando\\wpfapp1\\adminview\\admin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:adminview\\admin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|c:\\users\\t. adrian\\onedrive - neumann j\u00E1nos egyetem\\dokumentumok\\github\\vizualisprog-beadando\\wpfapp1\\adminview\\admin.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:adminview\\admin.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|c:\\users\\t. adrian\\onedrive - neumann j\u00E1nos egyetem\\dokumentumok\\github\\vizualisprog-beadando\\wpfapp1\\user_logs\\user_logs.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:user_logs\\user_logs.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|c:\\users\\t. adrian\\onedrive - neumann j\u00E1nos egyetem\\dokumentumok\\github\\vizualisprog-beadando\\wpfapp1\\userdatas\\userdatagrid.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:userdatas\\userdatagrid.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|c:\\users\\t. adrian\\onedrive - neumann j\u00E1nos egyetem\\dokumentumok\\github\\vizualisprog-beadando\\wpfapp1\\userdatas\\userdatagrid.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:userdatas\\userdatagrid.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
     },
@@ -17,18 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|c:\\users\\t. adrian\\onedrive - neumann j\u00E1nos egyetem\\dokumentumok\\github\\vizualisprog-beadando\\wpfapp1\\user_logs\\user_logs.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:user_logs\\user_logs.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|c:\\users\\t. adrian\\onedrive - neumann j\u00E1nos egyetem\\dokumentumok\\github\\vizualisprog-beadando\\wpfapp1\\user_logs\\user_logs.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:user_logs\\user_logs.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|c:\\users\\t. adrian\\onedrive - neumann j\u00E1nos egyetem\\dokumentumok\\github\\vizualisprog-beadando\\wpfapp1\\adminview\\admin.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:adminview\\admin.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|c:\\users\\t. adrian\\onedrive - neumann j\u00E1nos egyetem\\dokumentumok\\github\\vizualisprog-beadando\\wpfapp1\\adminview\\admin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:adminview\\admin.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,11 +42,23 @@
       "DocumentGroups": [
         {
           "DockedHeight": 311,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "UserDataGrid.xaml",
+              "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\UserDatas\\UserDataGrid.xaml",
+              "RelativeDocumentMoniker": "UserDatas\\UserDataGrid.xaml",
+              "ToolTip": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\UserDatas\\UserDataGrid.xaml",
+              "RelativeToolTip": "UserDatas\\UserDataGrid.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-19T17:14:53.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "User_Logs.xaml",
               "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\User_Logs\\User_Logs.xaml",
               "RelativeDocumentMoniker": "User_Logs\\User_Logs.xaml",
@@ -54,7 +70,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Admin.xaml.cs",
               "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml.cs",
               "RelativeDocumentMoniker": "AdminView\\Admin.xaml.cs",
@@ -67,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Admin.xaml",
               "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml",
               "RelativeDocumentMoniker": "AdminView\\Admin.xaml",
@@ -79,7 +95,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
@@ -87,25 +103,24 @@
               "RelativeToolTip": "MainWindow.xaml.cs",
               "ViewState": "AgIAAHAAAAAAAAAAAAAAAH4AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T13:48:21.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T13:48:21.815Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "UserDataGrid.xaml.cs",
               "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\UserDatas\\UserDataGrid.xaml.cs",
               "RelativeDocumentMoniker": "UserDatas\\UserDataGrid.xaml.cs",
               "ToolTip": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\UserDatas\\UserDataGrid.xaml.cs",
               "RelativeToolTip": "UserDatas\\UserDataGrid.xaml.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAAAHkAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAADUAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-19T13:11:39.19Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "User_Logs.xaml.cs",
               "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\User_Logs\\User_Logs.xaml.cs",
               "RelativeDocumentMoniker": "User_Logs\\User_Logs.xaml.cs",
@@ -113,12 +128,11 @@
               "RelativeToolTip": "User_Logs\\User_Logs.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-19T14:05:49.791Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-19T14:05:49.791Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Register.xaml.cs",
               "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml.cs",
               "RelativeDocumentMoniker": "RegisterView\\Register.xaml.cs",
@@ -126,8 +140,7 @@
               "RelativeToolTip": "RegisterView\\Register.xaml.cs",
               "ViewState": "AgIAAEQAAAAAAAAAAAAAAEsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T08:57:16.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-09T08:57:16.081Z"
             }
           ]
         }

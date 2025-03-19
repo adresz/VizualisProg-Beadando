@@ -37,9 +37,19 @@
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,8" Width="120">
             <Button x:Name="Back" Content="Vissza" Click="GoBack_Click" Padding="10" Margin="5" Width="110"/>
-            <TextBlock Text="{Binding CurrentPage, Mode=OneWay}" Margin="10" FontSize="16"/>
         </StackPanel>
 
-        
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,38,15" Width="272">
+            <TextBlock Text="Ennyi megjelenitése:" VerticalAlignment="Center" Margin="0,0,40,0"/>
+            <ComboBox x:Name="SelectedCombo" Width="120" SelectedIndex="2" Height="37" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="ComboBox_SelectionChanged">
+                <ComboBoxItem Content="20"/>
+                <ComboBoxItem Content="25"/>
+                <ComboBoxItem Content="30"/>
+                <ComboBoxItem Content="50"/>
+                <ComboBoxItem Content="100"/>
+            </ComboBox>
+        </StackPanel>
+
     </Grid>
 </Window>
