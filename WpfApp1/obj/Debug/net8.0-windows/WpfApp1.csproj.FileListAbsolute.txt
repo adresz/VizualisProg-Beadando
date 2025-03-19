@@ -100,3 +100,5 @@ C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\Vizuali
 D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\WpfApp1.dll.config
 D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserDatas\UserDataGrid.g.cs
 D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserDatas\UserDataGrid.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\User_Logs\User_Logs.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\User_Logs\User_Logs.baml

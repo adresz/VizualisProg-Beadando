@@ -29,17 +29,16 @@ namespace WpfApp1.UserDatas
         public dynamic SelectedUser { get; set; }
         public ObservableCollection<User> Users { get; set; }
         public ObservableCollection<Users_details> User_details { get; set; }
-        public ObservableCollection<dynamic> UsersWithDetails { get; set; }
+        public ObservableCollection<UserDetailsViewModel> UsersWithDetails { get; set; }
         public UserDataGrid()
         {
             InitializeComponent();
             User_details = new ObservableCollection<Users_details>();
             Users = new ObservableCollection<User>();
-            
             LoadDataFromDatabase();
-            
-
+            this.Closing += Window_Closing;
         }
+
         public int CurrentPage { get; set; } = 1;
         public int ItemsPerPage { get; set; } = 30;
 
@@ -54,24 +53,23 @@ namespace WpfApp1.UserDatas
                     userDetails,
                     u => u.email,
                     ud => ud.email,
-                    (u, ud) => new
+                    (u, ud) => new UserDetailsViewModel
                     {
-                        u.Username,
-                        u.email,
-                        BanReason = ud.Ban_Reason == "Nincs tiltva." ? "" : ud.Ban_Reason,
-                        ud.Birth_Date,
-                        ud.First_Name,
-                        ud.Last_Name,
-                        ud.Phone_number,
-                        ud.Taj_Number,
+                        Username = u.Username,
+                        Email = u.email,
+                        BanReason = ud.Ban_Reason == "Nincs tiltva." ? "-" : ud.Ban_Reason,
+                        Birth_Date = ud.Birth_Date,
+                        First_Name = ud.First_Name,
+                        Last_Name = ud.Last_Name,
+                        Phone_number = ud.Phone_number,
+                        Taj_Number = ud.Taj_Number,
                         Banned = ud.isBanned == 1 ? "Igen" : "Nem",
-                        AccessRole = u.AccessID == 2 ? "Owner" :
-                        u.AccessID == 1 ? "Admin" : "User",
-                        ud.Gender
+                        AccessRole = u.AccessID == 2 ? "Owner" : u.AccessID == 1 ? "Admin" : "User",
+                        Gender = ud.Gender
                     }
                 ).ToList();
 
-                UsersWithDetails = new ObservableCollection<dynamic>(joinedData);
+                UsersWithDetails = new ObservableCollection<UserDetailsViewModel>(joinedData);
                 UpdateDataGrid();
             }
         }
@@ -119,17 +117,56 @@ namespace WpfApp1.UserDatas
             Application.Current.MainWindow.Show();
         }
 
+        private void Window_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Szeretni menteni kilépés előtt?", "Mentés", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                //BAN REASON CSAK AKKOR LEGYEN ADHATÓ HA ISBANNED = 1
+                // Mentés ki dolgozása
+            }
+            else if (result == MessageBoxResult.No)
+            { 
+                Application.Current.MainWindow.Show();
+            }
+            else if (result == MessageBoxResult.Cancel)
+            {              
+                e.Cancel = true; // Ne záródjon be az ablak
+            }
+        }
+
         protected override void OnClosed(EventArgs e)
         {
-            Application.Current.MainWindow.Show();
+            base.OnClosed(e);
         }
 
         private void UsersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // A kiválasztott elem beállítása
             SelectedUser = UsersDataGrid.SelectedItem as dynamic;
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
 
-
+namespace WpfApp1.UserDatas
+{
+    public class UserDetailsViewModel
+    {
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string BanReason { get; set; }
+        public DateTime Birth_Date { get; set; }
+        public string First_Name { get; set; }
+        public string Last_Name { get; set; }
+        public string Phone_number { get; set; }
+        public string Taj_Number { get; set; }
+        public string Banned { get; set; }
+        public string AccessRole { get; set; }
+        public string Gender { get; set; }
+    }
+}

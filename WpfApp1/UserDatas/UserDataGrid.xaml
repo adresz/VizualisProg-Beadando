@@ -8,11 +8,11 @@
         Title="UserDataGrid" Height="640" Width="1080"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid x:Name="UsersDataGrid" AutoGenerateColumns="False" Margin="10,12,10,60" MouseDoubleClick="UsersDataGrid_MouseDoubleClick">
+        <DataGrid x:Name="UsersDataGrid" AutoGenerateColumns="False" Margin="10,12,10,60" MouseDoubleClick="UsersDataGrid_MouseDoubleClick" SelectionUnit="Cell" IsReadOnly="False" CanUserAddRows="False">
             <DataGrid.Columns>
                 <!-- User táblából -->
                 <DataGridTextColumn Header="Felhasználónév" Binding="{Binding Username}" Width="120*"/>
-                <DataGridTextColumn Header="E-mail" Binding="{Binding email}" Width="180*"/>
+                <DataGridTextColumn Header="E-mail" Binding="{Binding Email}" Width="180*"/>
                 <DataGridTextColumn Header="Hozzáférési szint" Binding="{Binding AccessRole}" Width="100*"/>
 
                 <!-- Users_details táblából -->
@@ -40,5 +40,6 @@
             <TextBlock Text="{Binding CurrentPage, Mode=OneWay}" Margin="10" FontSize="16"/>
         </StackPanel>
 
+        
     </Grid>
 </Window>

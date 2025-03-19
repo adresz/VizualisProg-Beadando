@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1.UserDatas;
+using WpfApp1.UserLogs;
 
 namespace WpfApp1.AdminView
 {
@@ -33,6 +34,8 @@ namespace WpfApp1.AdminView
             {
             Title = $"Bejelentkezve mint [Admin] {Username}";
             }
+
+            Application.Current.MainWindow = this;
         }
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
@@ -45,10 +48,18 @@ namespace WpfApp1.AdminView
             this.Close();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void UserGrid_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             UserDataGrid asd = new UserDataGrid();
             asd.Show();
+        }
+
+        private void LogView_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            User_Logs assd = new User_Logs();
+            assd.Show();
         }
     }
 }

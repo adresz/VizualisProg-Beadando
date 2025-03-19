@@ -11,6 +11,9 @@
     <Compile Update="UserDatas\UserDataGrid.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="User_Logs\User_Logs.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserView\UserV.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
