@@ -58,13 +58,13 @@ namespace WpfApp1.UserDatas
                     {
                         u.Username,
                         u.email,
-                        ud.Ban_Reason,
+                        BanReason = ud.Ban_Reason == "Nincs tiltva." ? "" : ud.Ban_Reason,
                         ud.Birth_Date,
                         ud.First_Name,
                         ud.Last_Name,
                         ud.Phone_number,
                         ud.Taj_Number,
-                        ud.isBanned,
+                        Banned = ud.isBanned == 1 ? "Igen" : "Nem",
                         AccessRole = u.AccessID == 2 ? "Owner" :
                         u.AccessID == 1 ? "Admin" : "User",
                         ud.Gender
@@ -76,6 +76,14 @@ namespace WpfApp1.UserDatas
             }
         }
 
+        private void UsersDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (UsersDataGrid.SelectedItem != null)
+            {
+                SelectedUser = UsersDataGrid.SelectedItem as dynamic;
+                MessageBox.Show($"Dupla kattintás történt: {SelectedUser.Username}");
+            }
+        }
 
         private void UpdateDataGrid()
         {
@@ -111,7 +119,6 @@ namespace WpfApp1.UserDatas
             Application.Current.MainWindow.Show();
         }
 
-
         protected override void OnClosed(EventArgs e)
         {
             Application.Current.MainWindow.Show();
@@ -121,12 +128,6 @@ namespace WpfApp1.UserDatas
         {
             // A kiválasztott elem beállítása
             SelectedUser = UsersDataGrid.SelectedItem as dynamic;
-
-            if (SelectedUser != null)
-            {
-                // Tesztelés hogy jót választ-e ki
-                MessageBox.Show($"Kiválasztott felhasználó: {SelectedUser.Username}");
-            }
         }
     }
 }

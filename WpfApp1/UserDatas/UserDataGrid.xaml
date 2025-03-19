@@ -8,7 +8,7 @@
         Title="UserDataGrid" Height="640" Width="1080"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid x:Name="UsersDataGrid" AutoGenerateColumns="False" Margin="10,12,10,60">
+        <DataGrid x:Name="UsersDataGrid" AutoGenerateColumns="False" Margin="10,12,10,60" MouseDoubleClick="UsersDataGrid_MouseDoubleClick">
             <DataGrid.Columns>
                 <!-- User táblából -->
                 <DataGridTextColumn Header="Felhasználónév" Binding="{Binding Username}" Width="120*"/>
@@ -20,9 +20,9 @@
                 <DataGridTextColumn Header="Vezetéknév" Binding="{Binding Last_Name}" Width="120*"/>
                 <DataGridTextColumn Header="Telefonszám" Binding="{Binding Phone_number}" Width="120*"/>
                 <DataGridTextColumn Header="TAJ szám" Binding="{Binding Taj_Number}" Width="120*"/>
-                <DataGridTextColumn Header="Születési dátum" Binding="{Binding Birth_Date, StringFormat={}{0:yyyy-MM-dd}}" Width="120*" />
-                <DataGridTextColumn Header="Kitiltva?" Binding="{Binding isBanned}" Width="80*"/>
-                <DataGridTextColumn Header="Kitiltás oka" Binding="{Binding Ban_Reason}" Width="200*"/>
+                <DataGridTextColumn Header="Születési dátum" Binding="{Binding Birth_Date, StringFormat={}{0:yyyy-MM-dd}}" Width="120*"/>
+                <DataGridTextColumn Header="Kitiltva?" Binding="{Binding Banned}" Width="80*"/>
+                <DataGridTextColumn Header="Kitiltás oka" Binding="{Binding BanReason}" Width="200*"/>
                 <DataGridTextColumn Header="Nem" Binding="{Binding Gender}" Width="80*"/>
             </DataGrid.Columns>
         </DataGrid>
@@ -34,7 +34,11 @@
             <Button x:Name="NextButton" Content="Következő 30" Click="NextPage_Click" Padding="10" Margin="5" Width="110"/>
         </StackPanel>
 
-        <!-- Frissítés gomb -->
-        
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,8" Width="120">
+            <Button x:Name="Back" Content="Vissza" Click="GoBack_Click" Padding="10" Margin="5" Width="110"/>
+            <TextBlock Text="{Binding CurrentPage, Mode=OneWay}" Margin="10" FontSize="16"/>
+        </StackPanel>
+
     </Grid>
 </Window>
