@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1.UserView;
+using WpfApp1.AdminView;
 
 namespace WpfApp1.UserDatas
 {
@@ -25,6 +26,7 @@ namespace WpfApp1.UserDatas
     /// </summary>
     public partial class UserDataGrid : Window
     {
+        public dynamic SelectedUser { get; set; }
         public ObservableCollection<User> Users { get; set; }
         public ObservableCollection<Users_details> User_details { get; set; }
         public ObservableCollection<dynamic> UsersWithDetails { get; set; }
@@ -103,7 +105,29 @@ namespace WpfApp1.UserDatas
             }
         }
 
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Application.Current.MainWindow.Show();
+        }
 
+
+        protected override void OnClosed(EventArgs e)
+        {
+            Application.Current.MainWindow.Show();
+        }
+
+        private void UsersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // A kiválasztott elem beállítása
+            SelectedUser = UsersDataGrid.SelectedItem as dynamic;
+
+            if (SelectedUser != null)
+            {
+                // Tesztelés hogy jót választ-e ki
+                MessageBox.Show($"Kiválasztott felhasználó: {SelectedUser.Username}");
+            }
+        }
     }
 }
 
