@@ -25,8 +25,6 @@ using WpfApp1.UserView;
 
 namespace WpfApp1.RegisterView
 {
-    
-
     public partial class Register : Window
     {
         public Register()
@@ -63,7 +61,6 @@ namespace WpfApp1.RegisterView
                 userView.Show();
                 this.Close();
                 Application.Current.MainWindow.Close();
-
             }
         }
 
@@ -137,25 +134,22 @@ namespace WpfApp1.RegisterView
                 List<TextBox> information = [Email, Phone, ID, Username];
                 bool[] invalid = {};
                 string[] errormsg = {", az email cím", ", a telefonszám", ", a tajkártya szám", ", a felhasználónév"};
-                string[] postfix = { "email", "Phone_number", "TAJ_number", "Username" };
+                string[] postfix = { "email", "Phone_number", "TAJ_number"};
                 string[] textBoxmsg = {"A megadott email foglalt", "A megadott tel.szám foglalt", "A megadott azonosító foglalt", "A megadott név foglalt"};
                 using (var db = new AppDBContext())
                 {
-                    //csak emailt és username-et ellenőriz, a user_details táblát most nem írtam bele
-                    //arra chatgpt dobott egy még vadabb függvényt, és nem számítottam rá hogy ez eddig elhúzódik
-                    //szólj és átdobom amit írt
-                    for(int i = 0; i < 4; i+= 3)
+                    //a username-en kívül minden más a user_detailsben van, nem kell ciklus
+                    //ha lesz idő, a usernameet ki lehet venni a listából és konkrétan ideírni
+                    if (db.users.Any(u => u.Username == Username.Text))
                     {
-                        if (db.users.Any(BuildPredicate<User>(postfix[i], (information[i]).Text)))
-                        {
-                            taken += errormsg[i];
-                            information[i].BorderBrush = Brushes.Red;
-                            available = false;
-                            TextBlock errorTextBlock = (TextBlock)FindName(information[i].Name + "_err");
-                            errorTextBlock.Visibility = Visibility.Visible;
-                            errorTextBlock.Text = textBoxmsg[i];
-                        }
+                        taken += errormsg[3];
+                        information[3].BorderBrush = Brushes.Red;
+                        available = false;
+                        TextBlock errorTextBlock = (TextBlock)FindName(information[3].Name + "_err");
+                        errorTextBlock.Visibility = Visibility.Visible;
+                        errorTextBlock.Text = textBoxmsg[3];
                     }
+
                     for (int i = 1; i < 3; i ++)
                     {
                         if (db.user_details.Any(BuildPredicate<Users_details>(postfix[i], (information[i]).Text)))
@@ -238,14 +232,14 @@ namespace WpfApp1.RegisterView
         {
             bool hasError = false;
 
-                foreach (var textBox in new List<TextBox> { LastName, FirstName, Username, Email, Phone, ID })
-                {
-                    TextBlock errorTextBlock = (TextBlock)FindName(textBox.Name + "_err");
-                    bool empty = string.IsNullOrEmpty(textBox.Text);
-                    textBox.BorderBrush = empty ? Brushes.Red : Brushes.Gray;
-                    if (errorTextBlock != null) errorTextBlock.Visibility = empty ? Visibility.Visible : Visibility.Hidden;
-                    hasError |= empty;
-                }
+            foreach (var textBox in new List<TextBox> { LastName, FirstName, Username, Email, Phone, ID })
+            {
+                TextBlock errorTextBlock = (TextBlock)FindName(textBox.Name + "_err");
+                bool empty = string.IsNullOrEmpty(textBox.Text);
+                textBox.BorderBrush = empty ? Brushes.Red : Brushes.Gray;
+                if (errorTextBlock != null) errorTextBlock.Visibility = empty ? Visibility.Visible : Visibility.Hidden;
+                hasError |= empty;
+            }
 
             if (!ValidateUsername(Username.Text))
             {
@@ -263,7 +257,6 @@ namespace WpfApp1.RegisterView
 
             return !hasError & isCorrectLength() & ValidatePassword() & ValidateBirthday();
         }
-
 
         private bool ValidateBirthday()
         {
@@ -313,7 +306,6 @@ namespace WpfApp1.RegisterView
                 MessageBox.Show("A jelszónak legalább 8, legfeljebb 24 karakterből" +
                     "kell állnia, tartalmaznia kell egy kis-és nagybetűt, egy számot, " +
                     "valamint egy speciális karaktert.");
-
             }
 
             Password_err.Visibility = (match && isComplex) ? Visibility.Hidden : Visibility.Visible;
@@ -349,7 +341,6 @@ namespace WpfApp1.RegisterView
 
             return true;
         }
-
 
         static bool PasswordComplexity(string password)
         {

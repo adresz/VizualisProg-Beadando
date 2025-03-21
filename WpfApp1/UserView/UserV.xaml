@@ -14,11 +14,44 @@
                 <Button Content="" Padding="30,5" Margin="5"/>
             </StackPanel>
 
-
             <Button Content="Kijelentkezés" Padding="10,5" Margin="0,0,10,0"
                 HorizontalAlignment="Right" VerticalAlignment="Center" Click="LogOut_Click"/>
         </DockPanel>
 
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left">
+
+            <TextBlock Text="Felhasználónév vagy e-mail cím:"/>
+            <TextBox x:Name="Username" Width="200"/>
+            <TextBlock x:Name="Username_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+
+            <TextBlock Text="Helység vagy miafasz:" Width="200"/>
+            <TextBox x:Name="Location" Width="200" />
+            <TextBlock x:Name="Location_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+
+            <TextBlock Text="Szolgátatás:"/>
+            <ComboBox x:Name="ServiceCombo" Width="200" SelectedIndex="0" Height="18" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="ServiceCombo_SelectionChanged">
+                <ComboBoxItem Content="Pizza"/>
+                <ComboBoxItem Content="Hajvágás"/>
+                <ComboBoxItem Content="tojásdobálás"/>
+                <ComboBoxItem Content="démonidézés"/>
+                <ComboBoxItem Content="ingyen diploma"/>
+            </ComboBox>
+            <TextBlock x:Name="ServiceCombo_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+
+            <TextBlock Text="Kiszolgáló:"/>
+            <ComboBox x:Name="ServerCombo" Width="200" Padding="0" SelectedIndex="2" Height="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="ServerCombo_SelectionChanged">
+                <ComboBoxItem Content="Tóth Károly"/>
+                <ComboBoxItem Content="Gipsz Jakab"/>
+                <ComboBoxItem Content="Beka Kálmán"/>
+                <ComboBoxItem Content="Anyád"/>
+                <ComboBoxItem Content="Ki mást akarnál!?"/>
+            </ComboBox>
+            <TextBlock x:Name="ServerCombo_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+
+            <TextBlock Text="Időpont:"/>
+            <TextBox x:Name="Date" Width="200" PreviewTextInput="NumbersOnly" MaxLength="9"/>
+            <TextBlock x:Name="Date_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+        </StackPanel>
 
     </Grid>
 </Window>

@@ -31,7 +31,6 @@ namespace WpfApp1.UserDatas
         public ObservableCollection<Users_details> User_details { get; set; }
         public ObservableCollection<UserDetailsViewModel> UsersWithDetails { get; set; }
         
-
         public UserDataGrid()
         {
             InitializeComponent();
@@ -40,7 +39,6 @@ namespace WpfApp1.UserDatas
             LoadDataFromDatabase();
             this.Closing += Window_Closing;
         }
-
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -54,8 +52,6 @@ namespace WpfApp1.UserDatas
                 LoadDataFromDatabase();
             }
         }
-
-
 
         public int CurrentPage { get; set; } = 1;
         public int ItemsPerPage { get; set; } 
@@ -168,7 +164,6 @@ namespace WpfApp1.UserDatas
         {
             throw new NotImplementedException();
         }
-
     }
 
     public class UserDetailsViewModel
@@ -185,6 +180,4 @@ namespace WpfApp1.UserDatas
         public string? AccessRole { get; set; }
         public string? Gender { get; set; }
     }
-
 }
-

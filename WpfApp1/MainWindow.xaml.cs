@@ -113,7 +113,6 @@ public class User
     public required string Password { get; set; }
     public required string email { get; set; }
     public int? AccessID { get; set; }
-
 }
 
 public class Users_details
