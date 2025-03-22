@@ -60,5 +60,20 @@ namespace WpfApp1.AdminView
             User_Logs assd = new User_Logs();
             assd.Show();
         }
+
+        private void Mesterseges_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Orsolya_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Musky_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

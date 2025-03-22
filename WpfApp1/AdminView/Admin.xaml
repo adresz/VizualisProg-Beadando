@@ -3,12 +3,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1.AdminView"
         mc:Ignorable="d"
-        Title="" Height="450" Width="800" Background="AliceBlue">
+        Title="Admin Panel" Height="500" Width="850" Background="#F0F8FF">
 
     <Window.Resources>
-        <!-- Alapértelmezett gomb stílus -->
+        <!-- Gombok stílusa lekerekített sarkokkal -->
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Gray"/>
             <Setter Property="Foreground" Value="#FFE0FF00"/>
@@ -28,44 +27,82 @@
             </Style.Triggers>
         </Style>
 
-        <!-- StackPanel stílus -->
-        <Style x:Key="StackPanelStyle" TargetType="StackPanel">
-            <Setter Property="Orientation" Value="Horizontal"/>
-            <Setter Property="DockPanel.Dock" Value="Left"/>
+        <!-- Kép + Név Stílus -->
+        <Style x:Key="ImageWithTextStyle" TargetType="StackPanel">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="15"/>
+            <Setter Property="Orientation" Value="Vertical"/>
         </Style>
+
+        <Style x:Key="ImageStyle" TargetType="Image">
+            <Setter Property="Width" Value="180"/>
+            <Setter Property="Height" Value="300"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Foreground" Value="#333"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+
+        <!-- Animációk a képekhez -->
+        <Storyboard x:Key="ImageHoverAnimation">
+            <DoubleAnimation
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                From="1" To="1.1" Duration="0:0:0.2"/>
+            <DoubleAnimation
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                From="1" To="1.1" Duration="0:0:0.2"/>
+        </Storyboard>
+
+        <!-- Animációk a képek visszaállításához -->
+        <Storyboard x:Key="ImageHoverLeaveAnimation">
+            <DoubleAnimation
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                From="1.1" To="1" Duration="0:0:0.2"/>
+            <DoubleAnimation
+                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                From="1.1" To="1" Duration="0:0:0.2"/>
+        </Storyboard>
     </Window.Resources>
 
     <Grid>
-        <!-- Border körül a DockPanel, hogy lekerekített sarkokat alkalmazzunk -->
+        <!-- Navigációs sáv lekerekített sarkokkal -->
         <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
             <DockPanel VerticalAlignment="Top" Background="LightGray">
-                <StackPanel Style="{StaticResource StackPanelStyle}">
-                    <!-- Gombok Border-tel körbevéve -->
-                    <Button Content="Felhasználók" Style="{StaticResource ButtonStyle}" Click="UserGrid_Click">
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                    <Button Content="Felhasználók" Style="{StaticResource ButtonStyle}" Width="120" Click="UserGrid_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10" Width="120">
-                                    <!-- Lekerekített sarok a gombon -->
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-
-                    <Button Content="Események" Style="{StaticResource ButtonStyle}" Click="LogView_Click" Width="120">
+                    <Button Content="Események" Style="{StaticResource ButtonStyle}" Width="120" Click="LogView_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10" Width="120">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-
                     <Button Content="PlaceHolder" Style="{StaticResource ButtonStyle}" Width="120">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10" Width="120">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 </Border>
                             </ControlTemplate>
@@ -85,5 +122,64 @@
                 </Button>
             </DockPanel>
         </Border>
+
+        <!-- Fő tartalom -->
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!-- 1. Kép és Név -->
+                <StackPanel Style="{StaticResource ImageWithTextStyle}">
+                    <Image Source="/Images/Doctor_1.png" Style="{StaticResource ImageStyle}" MouseLeftButtonDown="Mesterseges_Click">
+                        <Image.RenderTransform>
+                            <ScaleTransform x:Name="ImageScaleTransform1" ScaleX="1" ScaleY="1"/>
+                        </Image.RenderTransform>
+                        <Image.Triggers>
+                            <EventTrigger RoutedEvent="Image.MouseEnter">
+                                <BeginStoryboard Storyboard="{StaticResource ImageHoverAnimation}"/>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Image.MouseLeave">
+                                <BeginStoryboard Storyboard="{StaticResource ImageHoverLeaveAnimation}"/>
+                            </EventTrigger>
+                        </Image.Triggers>
+                    </Image>
+                    <TextBlock Text="Dr. Mesterség Ash" Style="{StaticResource TextBlockStyle}"/>
+                </StackPanel>
+
+                <!-- 2. Kép és Név -->
+                <StackPanel Style="{StaticResource ImageWithTextStyle}">
+                    <Image Source="/Images/Doctor_2.png" Style="{StaticResource ImageStyle}" MouseLeftButtonDown="Orsolya_Click">
+                        <Image.RenderTransform>
+                            <ScaleTransform x:Name="ImageScaleTransform2" ScaleX="1" ScaleY="1"/>
+                        </Image.RenderTransform>
+                        <Image.Triggers>
+                            <EventTrigger RoutedEvent="Image.MouseEnter">
+                                <BeginStoryboard Storyboard="{StaticResource ImageHoverAnimation}"/>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Image.MouseLeave">
+                                <BeginStoryboard Storyboard="{StaticResource ImageHoverLeaveAnimation}"/>
+                            </EventTrigger>
+                        </Image.Triggers>
+                    </Image>
+                    <TextBlock Text="Dr. Sipkovics Dóra" Style="{StaticResource TextBlockStyle}"/>
+                </StackPanel>
+
+                <!-- 3. Kép és Név -->
+                <StackPanel Style="{StaticResource ImageWithTextStyle}">
+                    <Image Source="/Images/Doctor_3.png" Style="{StaticResource ImageStyle}" MouseLeftButtonDown="Orsolya_Click">
+                        <Image.RenderTransform>
+                            <ScaleTransform x:Name="ImageScaleTransform3" ScaleX="1" ScaleY="1"/>
+                        </Image.RenderTransform>
+                        <Image.Triggers>
+                            <EventTrigger RoutedEvent="Image.MouseEnter">
+                                <BeginStoryboard Storyboard="{StaticResource ImageHoverAnimation}"/>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Image.MouseLeave">
+                                <BeginStoryboard Storyboard="{StaticResource ImageHoverLeaveAnimation}"/>
+                            </EventTrigger>
+                        </Image.Triggers>
+                    </Image>
+                    <TextBlock Text="Dr. Muskovics Alan" Style="{StaticResource TextBlockStyle}"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>
