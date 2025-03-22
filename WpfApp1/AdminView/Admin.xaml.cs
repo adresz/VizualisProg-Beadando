@@ -40,10 +40,9 @@ namespace WpfApp1.AdminView
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.MainWindow.Close();
             MainWindow newMainWindow = new MainWindow(); // Új példány létrehozása
             newMainWindow.InitializeComponent();
-            Application.Current.MainWindow = newMainWindow; // Új ablak beállítása főablakként5
+            Application.Current.MainWindow = newMainWindow; // Új ablak beállítása főablakként
             newMainWindow.Show(); // Új ablak megnyitása
             this.Close();
         }
