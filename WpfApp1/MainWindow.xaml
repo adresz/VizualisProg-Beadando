@@ -8,24 +8,80 @@
         mc:Ignorable="d"
         Title="Bejelentkezés" Height="400" Width="700">
 
+    <Window.Resources>
+        <!-- TextBox stílus -->
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+
+        <!-- PasswordBox stílus -->
+        <Style x:Key="PasswordBoxStyle" TargetType="PasswordBox">
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderBrush" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+
+        <!-- Button stílus -->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="DodgerBlue"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- CheckBox stílus -->
+        <Style x:Key="CheckBoxStyle" TargetType="CheckBox">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="500">
+            <!-- Felhasználónév cím és input box -->
+            <TextBlock Text="Felhasználónév" HorizontalAlignment="Left" Margin="115,0,0,5"/>
+            <TextBox x:Name="Username" Style="{StaticResource TextBoxStyle}" Width="270"/>
 
-            <TextBlock Text="    Felhasználónév"/>
-            <TextBox x:Name="Username" Width="190"/>
+            <!-- Jelszó cím és input box -->
+            <TextBlock Text="Jelszó:" HorizontalAlignment="Left" Margin="115,10,0,5"/>
+            <PasswordBox x:Name="Password" Style="{StaticResource PasswordBoxStyle}" Width="270"/>
 
-            <TextBlock Text="    Jelszó:"/>
-            <PasswordBox x:Name="Password" Width="190"/>
-
-            <!-- Gombok egy vízszintes StackPanelben -->
-            <StackPanel Orientation="Horizontal" Margin="10">
-                <Button Content="Regisztráció" Width="90" Margin="5" Click="Register_Click"/>
-                <Button Content="Bejelentkezés" Width="90" Margin="5" Click="Login_Click"/>
+            <!-- Gombok egy StackPanel-ben, hogy elérjük a kívánt elrendezést -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10" Width="270">
+                <Button Content="Regisztráció" Style="{StaticResource ButtonStyle}" Margin="0,0,30,0" Click="Register_Click" Width="120"/>
+                <Button Content="Bejelentkezés" Style="{StaticResource ButtonStyle}" Margin="0" Click="Login_Click" Width="120"/>
             </StackPanel>
 
-            <CheckBox Content="Emlékezz rám" HorizontalAlignment="Left" Margin="15,0,0,0" x:Name="RememberMe"/>
-
+            <!-- Emlékezz rám checkbox -->
+            <CheckBox Content="Emlékezz rám" HorizontalAlignment="Left" Margin="115,0,0,0" x:Name="RememberMe" Style="{StaticResource CheckBoxStyle}" FontSize="12"/>
         </StackPanel>
     </Grid>
-
 </Window>

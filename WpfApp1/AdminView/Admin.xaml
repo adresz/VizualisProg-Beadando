@@ -5,20 +5,85 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.AdminView"
         mc:Ignorable="d"
-        Title="" Height="450" Width="800">
+        Title="" Height="450" Width="800" Background="AliceBlue">
+
+    <Window.Resources>
+        <!-- Alapértelmezett gomb stílus -->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Gray"/>
+            <Setter Property="Foreground" Value="#FFE0FF00"/>
+            <Setter Property="Padding" Value="20,5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- StackPanel stílus -->
+        <Style x:Key="StackPanelStyle" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="DockPanel.Dock" Value="Left"/>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        <DockPanel LastChildFill="True" Background="LightGray" Height="50" Margin="0,0,0,0" VerticalAlignment="Top">
-            <StackPanel Orientation="Horizontal" DockPanel.Dock="Left" Margin="0,0,0,0">
-                <Button Content="Felhasználók" Padding="30,5" Margin="5" Click="UserGrid_Click"/>
-                <Button Content="Események" Padding="30,5" Margin="5" Click="LogView_Click"/>
-                <Button Content="" Padding="30,5" Margin="5"/>
-            </StackPanel>
+        <!-- Border körül a DockPanel, hogy lekerekített sarkokat alkalmazzunk -->
+        <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
+            <DockPanel VerticalAlignment="Top" Background="LightGray">
+                <StackPanel Style="{StaticResource StackPanelStyle}">
+                    <!-- Gombok Border-tel körbevéve -->
+                    <Button Content="Felhasználók" Style="{StaticResource ButtonStyle}" Click="UserGrid_Click">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10" Width="120">
+                                    <!-- Lekerekített sarok a gombon -->
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
 
-            
-            <Button Content="Kijelentkezés" Padding="10,5" Margin="0,0,10,0"
-                    HorizontalAlignment="Right" VerticalAlignment="Center" Click="LogOut_Click"/>
-        </DockPanel>
+                    <Button Content="Események" Style="{StaticResource ButtonStyle}" Click="LogView_Click" Width="120">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
 
-        
+                    <Button Content="PlaceHolder" Style="{StaticResource ButtonStyle}" Width="120">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+
+                <!-- Kijelentkezés gomb jobb oldalon -->
+                <Button Content="Kijelentkezés" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Center" Click="LogOut_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10" Width="120">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </DockPanel>
+        </Border>
     </Grid>
 </Window>
