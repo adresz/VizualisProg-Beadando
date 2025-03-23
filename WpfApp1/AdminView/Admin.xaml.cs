@@ -50,15 +50,15 @@ namespace WpfApp1.AdminView
         private void UserGrid_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            UserDataGrid asd = new UserDataGrid();
-            asd.Show();
+            UserDataGrid DataGrid = new UserDataGrid();
+            DataGrid.Show();
         }
 
         private void LogView_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            User_Logs assd = new User_Logs();
-            assd.Show();
+            User_Logs UserLog = new User_Logs();
+            UserLog.Show();
         }
 
         private void Mesterseges_Click(object sender, RoutedEventArgs e)

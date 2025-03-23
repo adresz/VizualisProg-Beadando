@@ -52,9 +52,10 @@
               "RelativeDocumentMoniker": "AdminView\\Admin.xaml.cs",
               "ToolTip": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml.cs",
               "RelativeToolTip": "AdminView\\Admin.xaml.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAADoAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAAEQAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-22T11:01:16.975Z"
+              "WhenOpened": "2025-03-22T11:01:16.975Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -65,7 +66,8 @@
               "ToolTip": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml",
               "RelativeToolTip": "AdminView\\Admin.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-22T11:01:14.743Z"
+              "WhenOpened": "2025-03-22T11:01:14.743Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
