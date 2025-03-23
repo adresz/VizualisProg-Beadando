@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,6 +21,8 @@ namespace WpfApp1.UserView
     /// </summary>
     public partial class UserV : Window
     {
+        public string doctor = "";
+
         public UserV(string username)
         {
             InitializeComponent();
@@ -37,17 +40,26 @@ namespace WpfApp1.UserView
 
         private void Mesterseges_Click(object sender, RoutedEventArgs e)
         {
-
+            doctor = "Mesterseges";
+            this.Hide();
+            Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
+            Appointment.Show();
         }
 
         private void Orsolya_Click(object sender, RoutedEventArgs e)
         {
-
+            doctor = "Orsolya";
+            this.Hide();
+            Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
+            Appointment.Show();
         }
 
         private void Musky_Click(object sender, RoutedEventArgs e)
         {
-
+            doctor = "Musky";
+            this.Hide();
+            Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
+            Appointment.Show();
         }
     }
 }

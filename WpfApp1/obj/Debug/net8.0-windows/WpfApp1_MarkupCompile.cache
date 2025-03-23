@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\App.xaml
-61654375742
+7-1582803799
 
-101652564550
+11-1873936629
 217-281142021
-AdminView\Admin.xaml;MainWindow.xaml;RegisterView\Register.xaml;UserDatas\UserDataGrid.xaml;UserView\UserV.xaml;User_Logs\User_Logs.xaml;
+AdminView\Admin.xaml;Appointment\Appointments.xaml;MainWindow.xaml;RegisterView\Register.xaml;UserDatas\UserDataGrid.xaml;UserView\UserV.xaml;User_Logs\User_Logs.xaml;
 
 False
 

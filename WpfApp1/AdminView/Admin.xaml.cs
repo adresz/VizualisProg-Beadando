@@ -20,8 +20,12 @@ namespace WpfApp1.AdminView
     /// <summary>
     /// Interaction logic for Admin.xaml
     /// </summary>
+    /// 
     public partial class AdminV : Window
     {
+
+        public string doctor="";
+
         public AdminV(int accessID, string Username)
         {
             InitializeComponent();
@@ -63,17 +67,26 @@ namespace WpfApp1.AdminView
 
         private void Mesterseges_Click(object sender, RoutedEventArgs e)
         {
-
+            doctor = "Mesterseges";
+            this.Hide();
+            Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
+            Appointment.Show();
         }
 
         private void Orsolya_Click(object sender, RoutedEventArgs e)
         {
-
+            doctor = "Orsolya";
+            this.Hide();
+            Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
+            Appointment.Show();
         }
 
         private void Musky_Click(object sender, RoutedEventArgs e)
         {
-
+            doctor = "Musky";
+            this.Hide();
+            Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
+            Appointment.Show();
         }
     }
 }

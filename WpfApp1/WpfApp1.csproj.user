@@ -5,6 +5,9 @@
     <Compile Update="AdminView\Admin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Appointment\Appointments.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="RegisterView\Register.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
