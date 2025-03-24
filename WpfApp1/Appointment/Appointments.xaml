@@ -5,8 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.Appointment"
         mc:Ignorable="d"
-        Title="Appointments" Height="450" Width="800">
+        Title="Appointments" Height="450" Width="800"
+        Background="AliceBlue">
+
+    <Window.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Gray"/>
+            <Setter Property="Foreground" Value="#FFE0FF00"/>
+            <Setter Property="Padding" Value="20,5"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        
+        <!-- Fő tartalom -->
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="Elérhető időpontok" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+
+            <!-- ListBox, amely az órákat és a gombokat jeleníti meg egymás alatt -->
+            <ListBox ItemsSource="{Binding MenuItems}" Width="400" Height="280" Background="AliceBlue">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Margin="5">
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding Time}" FontSize="16" FontWeight="Bold" Margin="5"/>
+                                <TextBlock Text="{Binding Description}" FontSize="16" Margin="5"/>
+                            </StackPanel>
+
+                            <!-- A gomb és hibaüzenet egy vízszintes StackPanel-ben -->
+                            <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                                <Button Content="Foglalás" Style="{StaticResource ButtonStyle}" 
+                            Click="BookAppointment_Click" Tag="{Binding Time}"/>
+                                <!-- Hibaüzenet a gomb mellett -->
+                                <TextBlock x:Name="ErrorMessage" Text="Még nincs implementálva!" 
+                               Foreground="Red" Visibility="Collapsed" Margin="5"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+
+        <!-- Alsó menüsor -->
+        <DockPanel VerticalAlignment="Bottom" Background="LightGray">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                <Button Content="Vissza" Style="{StaticResource ButtonStyle}" Width="120" Click="GoBack_click"/>
+            </StackPanel>
+
+            <Button Content="Kijelentkezés" Style="{StaticResource ButtonStyle}" 
+                    HorizontalAlignment="Right" VerticalAlignment="Center" Click="LogOut_Click"/>
+        </DockPanel>
     </Grid>
 </Window>
