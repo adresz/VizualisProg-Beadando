@@ -9,6 +9,10 @@
         Background="AliceBlue">
 
     <Window.Resources>
+        <!-- Kell hogy elrejthessük a gombokat ha nincs elérhető időpont-->
+        <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+
+        <!-- Stilusok gombokram egyébre-->
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Gray"/>
             <Setter Property="Foreground" Value="#FFE0FF00"/>
@@ -30,11 +34,10 @@
     </Window.Resources>
 
     <Grid>
-        <!-- Fő tartalom -->
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock Text="Elérhető időpontok" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
+            <TextBlock Text="{Binding DoctorText}" FontSize="20" FontWeight="Bold" Margin="0,0,0,10"/>
 
-            <!-- ListBox, amely az órákat és a gombokat jeleníti meg egymás alatt -->
+            <!-- Listbox amiben vannak az elérhető idők -->
             <ListBox ItemsSource="{Binding MenuItems}" Width="400" Height="280" Background="AliceBlue">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -44,13 +47,11 @@
                                 <TextBlock Text="{Binding Description}" FontSize="16" Margin="5"/>
                             </StackPanel>
 
-                            <!-- A gomb és hibaüzenet egy vízszintes StackPanel-ben -->
+                            <!-- Gomb a foglaláshoz -->
                             <StackPanel Orientation="Vertical" Margin="10,0,0,0">
                                 <Button Content="Foglalás" Style="{StaticResource ButtonStyle}" 
-                            Click="BookAppointment_Click" Tag="{Binding Time}"/>
-                                <!-- Hibaüzenet a gomb mellett -->
-                                <TextBlock x:Name="ErrorMessage" Text="Még nincs implementálva!" 
-                               Foreground="Red" Visibility="Collapsed" Margin="5"/>
+                                        Click="BookAppointment_Click" Tag="{Binding Time}"
+                                        Visibility="{Binding IsButtonVisible, Converter={StaticResource BoolToVisibilityConverter}}"/>
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>
@@ -61,7 +62,7 @@
         <!-- Alsó menüsor -->
         <DockPanel VerticalAlignment="Bottom" Background="LightGray">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                <Button Content="Vissza" Style="{StaticResource ButtonStyle}" Width="120" Click="GoBack_click"/>
+                <Button Content="Vissza" Style="{StaticResource ButtonStyle}" Width="120" Click="GoBack_Click"/>
             </StackPanel>
 
             <Button Content="Kijelentkezés" Style="{StaticResource ButtonStyle}" 

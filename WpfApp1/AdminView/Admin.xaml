@@ -141,7 +141,9 @@
                             </EventTrigger>
                         </Image.Triggers>
                     </Image>
+                    <TextBlock Text="H-K 8:00-16:00" Style="{StaticResource TextBlockStyle}"/>
                     <TextBlock Text="Dr. Mesterség Ash" Style="{StaticResource TextBlockStyle}"/>
+                    <TextBlock Text="1-es rendelő" Style="{StaticResource TextBlockStyle}"/>
                 </StackPanel>
 
                 <!-- 2. Kép és Név -->
@@ -159,7 +161,9 @@
                             </EventTrigger>
                         </Image.Triggers>
                     </Image>
+                    <TextBlock Text="Sz 8:00-16:00" Style="{StaticResource TextBlockStyle}"/>
                     <TextBlock Text="Dr. Sipkovics Dóra" Style="{StaticResource TextBlockStyle}"/>
+                    <TextBlock Text="2-es rendelő" Style="{StaticResource TextBlockStyle}"/>
                 </StackPanel>
 
                 <!-- 3. Kép és Név -->
@@ -177,7 +181,9 @@
                             </EventTrigger>
                         </Image.Triggers>
                     </Image>
+                    <TextBlock Text="Cs-Szo 8:00-16:00" Style="{StaticResource TextBlockStyle}"/>
                     <TextBlock Text="Dr. Muskovics Alan" Style="{StaticResource TextBlockStyle}"/>
+                    <TextBlock Text="3-as rendelő" Style="{StaticResource TextBlockStyle}"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

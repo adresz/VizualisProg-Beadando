@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.UserView"
         mc:Ignorable="d"
-        Title="" Height="450" Width="800">
+        Title="" Height="474" Width="800">
     <Window.Resources>
         <!-- Gombok stílusa lekerekített sarkokkal -->
         <Style x:Key="ButtonStyle" TargetType="Button">
@@ -141,7 +141,9 @@
                             </EventTrigger>
                         </Image.Triggers>
                     </Image>
+                    <TextBlock Text="H-K 8:00-16:00" Style="{StaticResource TextBlockStyle}"/>
                     <TextBlock Text="Dr. Mesterség Ash" Style="{StaticResource TextBlockStyle}"/>
+                    <TextBlock Text="1-es rendelő" Style="{StaticResource TextBlockStyle}"/>
                 </StackPanel>
 
                 <!-- 2. Kép és Név -->
@@ -159,7 +161,9 @@
                             </EventTrigger>
                         </Image.Triggers>
                     </Image>
+                    <TextBlock Text="Sz 8:00-16:00" Style="{StaticResource TextBlockStyle}"/>
                     <TextBlock Text="Dr. Sipkovics Dóra" Style="{StaticResource TextBlockStyle}"/>
+                    <TextBlock Text="2-es rendelő" Style="{StaticResource TextBlockStyle}"/>
                 </StackPanel>
 
                 <!-- 3. Kép és Név -->
@@ -177,7 +181,9 @@
                             </EventTrigger>
                         </Image.Triggers>
                     </Image>
+                    <TextBlock Text="Cs-Szo 8:00-16:00" Style="{StaticResource TextBlockStyle}"/>
                     <TextBlock Text="Dr. Muskovics Alan" Style="{StaticResource TextBlockStyle}"/>
+                    <TextBlock Text="3-as rendelő" Style="{StaticResource TextBlockStyle}"/>
                 </StackPanel>
             </StackPanel>
         </Grid>
