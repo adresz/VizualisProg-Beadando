@@ -73,9 +73,9 @@ namespace WpfApp1.AdminView
             Appointment.Show();
         }
 
-        private void Orsolya_Click(object sender, RoutedEventArgs e)
+        private void Dora_Click(object sender, RoutedEventArgs e)
         {
-            doctor = "Orsolya";
+            doctor = "Dora";
             this.Hide();
             Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
             Appointment.Show();

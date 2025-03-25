@@ -101,7 +101,8 @@ namespace WpfApp1.UserDatas
         {
             var pagedData = UsersWithDetails.Skip((CurrentPage - 1) * ItemsPerPage).Take(ItemsPerPage).ToList();
             UsersDataGrid.ItemsSource = pagedData;
-
+            NextButton.Content = $"Következő {ItemsPerPage}";
+            PreviousButton.Content = $"Előző {ItemsPerPage}";
             // Gombok engedélyezése/letiltása
             PreviousButton.IsEnabled = CurrentPage > 1;
             NextButton.IsEnabled = (CurrentPage * ItemsPerPage) < UsersWithDetails.Count;

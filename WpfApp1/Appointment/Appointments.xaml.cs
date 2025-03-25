@@ -76,7 +76,7 @@ namespace WpfApp1.Appointment
                     }
                     break;
 
-                case "Orsolya":
+                case "Dora":
                     if (currentDay == DayOfWeek.Wednesday)
                     {
                         hasAvailableTime = AddAvailableTimes();
