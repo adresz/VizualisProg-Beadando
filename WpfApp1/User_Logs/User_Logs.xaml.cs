@@ -23,5 +23,10 @@ namespace WpfApp1.UserLogs
         {
             InitializeComponent();
         }
+        protected override void OnClosed(EventArgs e)
+        {
+            this.Close();
+            Application.Current.MainWindow.Show();
+        }
     }
 }

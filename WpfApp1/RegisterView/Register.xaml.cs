@@ -34,16 +34,6 @@ namespace WpfApp1.RegisterView
             Birthday.DisplayDateStart = DateTime.Parse("1900-01-01");
         }
 
-        protected override void OnClosed(EventArgs e)
-        {
-            Application.Current.MainWindow.Show();
-        }
-
-        private void GoBack_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.MainWindow.Show();
-            this.Close();
-        }
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
@@ -396,6 +386,19 @@ namespace WpfApp1.RegisterView
                 SeenConfPassword.Visibility = Visibility.Collapsed;
                 Passwordconf.Visibility = Visibility.Visible;
             }
+        }
+
+        //Ablaka bezárással/visszalépssel kapcsolatosak
+        
+        protected override void OnClosed(EventArgs e)
+        {
+            Application.Current.MainWindow.Show();
+        }
+
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.MainWindow.Show();
+            this.Close();
         }
     }
 }

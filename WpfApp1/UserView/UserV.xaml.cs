@@ -61,5 +61,10 @@ namespace WpfApp1.UserView
             Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
             Appointment.Show();
         }
+
+        private void MyAppointsments_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

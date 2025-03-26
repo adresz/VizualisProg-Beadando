@@ -30,7 +30,8 @@ namespace WpfApp1.UserDatas
         public ObservableCollection<User> Users { get; set; }
         public ObservableCollection<Users_details> User_details { get; set; }
         public ObservableCollection<UserDetailsViewModel> UsersWithDetails { get; set; }
-        
+        public int Changed = 0;        
+
         public UserDataGrid()
         {
             InitializeComponent();
@@ -108,6 +109,23 @@ namespace WpfApp1.UserDatas
             NextButton.IsEnabled = (CurrentPage * ItemsPerPage) < UsersWithDetails.Count;
         }
 
+        private void DataGrid_Value_Changed(Object sender, EventArgs e)
+        {
+            Changed += 1;
+        }
+
+        private void UsersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SelectedUser = UsersDataGrid.SelectedItem as dynamic;
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        //Ablak zárással, vissza/per előre lépéssel kapcsolatosak
+
         private void NextPage_Click(object sender, RoutedEventArgs e)
         {
             if ((CurrentPage * ItemsPerPage) < UsersWithDetails.Count)
@@ -134,36 +152,33 @@ namespace WpfApp1.UserDatas
 
         private void Window_Closing(object? sender, System.ComponentModel.CancelEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Szeretni menteni kilépés előtt?", "Mentés", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
-
-            if (result == MessageBoxResult.Yes)
+            if (Changed > 0)
             {
-                //BAN REASON CSAK AKKOR LEGYEN ADHATÓ HA ISBANNED = 1
-                // Mentés ki dolgozása
+                MessageBoxResult result = MessageBox.Show("Szeretni menteni kilépés előtt?", "Mentés", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    //BAN REASON CSAK AKKOR LEGYEN ADHATÓ HA ISBANNED = 1
+                    // Mentés ki dolgozása
+                }
+                else if (result == MessageBoxResult.No)
+                {
+                    Application.Current.MainWindow.Show();
+                }
+                else if (result == MessageBoxResult.Cancel)
+                {
+                    e.Cancel = true; // Ne záródjon be az ablak
+                }
             }
-            else if (result == MessageBoxResult.No)
-            { 
+            else
+            {
                 Application.Current.MainWindow.Show();
-            }
-            else if (result == MessageBoxResult.Cancel)
-            {              
-                e.Cancel = true; // Ne záródjon be az ablak
             }
         }
 
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
-        }
-
-        private void UsersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            SelectedUser = UsersDataGrid.SelectedItem as dynamic;
-        }
-
-        private void Save_Click(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
         }
     }
 

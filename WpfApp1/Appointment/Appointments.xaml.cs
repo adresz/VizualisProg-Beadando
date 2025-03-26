@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginOptions;
+using System;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Windows;
@@ -35,6 +36,10 @@ namespace WpfApp1.Appointment
         public ObservableCollection<MenuItem> MenuItems { get; set; } = new ObservableCollection<MenuItem>();
         public string? DoctorText { get; set; }
         public string ChoosenDoctor;
+        public string SelectedDateDay = DateTime.Today.DayOfWeek.ToString();
+        public string MonthOfChoice = "";
+        public string DayOfChoice = "";
+        public string YearOfChoice = "";
 
         public Appointments(string doctor)
         {
@@ -45,6 +50,9 @@ namespace WpfApp1.Appointment
             DataContext = this;
             UpdateMenu(); // Frissítjük az időpontokat
             StartTimer(); // Percenkénti frissités elinditása
+            AppointmentPicker.SelectedDate = DateTime.Today;
+            AppointmentPicker.DisplayDateStart = DateTime.Today;
+            AppointmentPicker.DisplayDateEnd = DateTime.Today.AddMonths(1); // Mától 1 hónapra lehessen csak előre foglalni
         }
 
         private void StartTimer()
@@ -57,9 +65,24 @@ namespace WpfApp1.Appointment
             timer.Start();
         }
 
+        private void OnChangedDate(object sender, RoutedEventArgs e)
+        {
+            //Warning, hogy ne legyen NULLable
+            //Év hónap nap kiszedése kiváalsztáskor, hogy könnyebb kezelés, elérhetőség legyen
+            if(AppointmentPicker.SelectedDate.HasValue)
+            {
+                SelectedDateDay = AppointmentPicker.SelectedDate.Value.DayOfWeek.ToString();
+                DayOfChoice = AppointmentPicker.SelectedDate.Value.Day.ToString();
+                MonthOfChoice = AppointmentPicker.SelectedDate.Value.Month.ToString();
+                YearOfChoice = AppointmentPicker.SelectedDate.Value.Year.ToString();
+                UpdateMenu();
+
+            }
+        }
+        
         private void UpdateMenu()
         {
-            string isAvailable = "Elérhető";
+
             int currentHour = DateTime.Now.Hour;
             DayOfWeek currentDay = DateTime.Now.DayOfWeek;
             MenuItems.Clear();
@@ -70,21 +93,21 @@ namespace WpfApp1.Appointment
             switch (ChoosenDoctor)
             {
                 case "Mesterseges":
-                    if (currentDay == DayOfWeek.Monday || currentDay == DayOfWeek.Tuesday)
+                    if (SelectedDateDay == "Monday" || SelectedDateDay == "Tuesday")
                     {
                         hasAvailableTime = AddAvailableTimes();
                     }
                     break;
 
                 case "Dora":
-                    if (currentDay == DayOfWeek.Wednesday)
+                    if (SelectedDateDay == "Wednesday")
                     {
                         hasAvailableTime = AddAvailableTimes();
                     }
                     break;
 
                 case "Musky":
-                    if (currentDay == DayOfWeek.Thursday || currentDay == DayOfWeek.Friday || currentDay == DayOfWeek.Saturday)
+                    if (SelectedDateDay == "Thursday" || SelectedDateDay == "Friday" || SelectedDateDay == "Saturday")
                     {
                         hasAvailableTime = AddAvailableTimes();
                     }
@@ -94,7 +117,7 @@ namespace WpfApp1.Appointment
             // Ha nincs elérhető időpont, írja ki, hogy "A mai napon nem rendel"
             if (!hasAvailableTime)
             {
-                MenuItems.Add(new MenuItem {Description = $"A mai napon {ChoosenDoctor} nem rendel.", IsButtonVisible = false });
+                MenuItems.Add(new MenuItem {Description = $"{YearOfChoice}.{MonthOfChoice}.{DayOfChoice}. napon {ChoosenDoctor} nem rendel.", IsButtonVisible = false });
 
                 // Ha nincs elérhető időpont, az összes gombot elrejtjük
                 foreach (var item in MenuItems)
@@ -112,24 +135,40 @@ namespace WpfApp1.Appointment
             }
         }
 
+
         private bool AddAvailableTimes()
         {
             string isAvailable = "Elérhető";
             int currentHour = DateTime.Now.Hour;
             bool hasAvailableTime = false;
 
-            for (int hour = 8; hour <= 16; hour++)
-            {
-                // Ne lehessen foglalni a közvetlen a következő órára, csak 2 vel későbbire
-                if (hour > currentHour + 1)
+                //ha mai nap
+                if(DateTime.Now.Day.ToString() == DayOfChoice)
                 {
-                    hasAvailableTime = true; // Van elérhető időpont
-                                             // Az összes órát hozzáadjuk, nem csak a jövőbeli időpontokat
-                    MenuItems.Add(new MenuItem { Time = $"{hour}:00", Description = $"{isAvailable} időpont" });
+                    for (int hour = 8; hour <= 16; hour++)
+                    {
+                        // Ne lehessen foglalni a közvetlen a következő órára, csak 2 vel későbbire
+                        if (hour > currentHour + 1)
+                        {
+                            hasAvailableTime = true; // Van elérhető időpont
+                                                     // Csak azt az órát adjuk hozzá, ami a jelenlegi után van legalább 1+ órával
+                            MenuItems.Add(new MenuItem { Time = $"{hour}:00", Description = $"{isAvailable} időpont" });
+                        }
+                    }
                 }
-            }
-
-            return hasAvailableTime;
+                //ha nem mai nap
+                else
+                {
+                    for (int hour = 8; hour <= 16; hour++)
+                    {
+                        // Ne lehessen foglalni a közvetlen a következő órára, csak 2 vel későbbire
+                            hasAvailableTime = true; // Van elérhető időpont
+                                                     // Az összes órát hozzáadjuk, ami az adott naphoz tartozik
+                            MenuItems.Add(new MenuItem { Time = $"{hour}:00", Description = $"{isAvailable} időpont" });
+                    }
+                }
+            
+                return hasAvailableTime;
         }
 
         // Foglalás gomb eseménykezelője
@@ -141,12 +180,23 @@ namespace WpfApp1.Appointment
             MessageBox.Show($"A foglalás sikeresen megtörtént: {time}");
         }
 
+        //Kijelentkezés/bezárással kapcsolatos dolgok
+
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            MainWindow LoginOptions = new MainWindow();
+            this.Close();
+            Application.Current.MainWindow.Close();
+            LoginOptions.Show();
         }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            Application.Current.MainWindow.Show();
+        }
+
+        protected override void OnClosed(EventArgs e)
         {
             this.Close();
             Application.Current.MainWindow.Show();

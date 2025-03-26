@@ -81,7 +81,7 @@
         <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
             <DockPanel VerticalAlignment="Top" Background="LightGray">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                    <Button Content="PlaceHolder" Style="{StaticResource ButtonStyle}" Width="120">
+                    <Button Content="Foglalásaim" Style="{StaticResource ButtonStyle}" Width="120" Click="MyAppointsments_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10" Width="120">

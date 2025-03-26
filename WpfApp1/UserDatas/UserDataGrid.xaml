@@ -8,7 +8,7 @@
         Title="UserDataGrid" Height="640" Width="1080"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <DataGrid x:Name="UsersDataGrid" AutoGenerateColumns="False" Margin="10,12,10,60" MouseDoubleClick="UsersDataGrid_MouseDoubleClick" SelectionUnit="Cell" IsReadOnly="False" CanUserAddRows="False">
+        <DataGrid x:Name="UsersDataGrid" AutoGenerateColumns="False" Margin="10,12,10,60" MouseDoubleClick="UsersDataGrid_MouseDoubleClick" SelectionUnit="Cell" IsReadOnly="False" CanUserAddRows="False" CurrentCellChanged="DataGrid_Value_Changed">
             <DataGrid.Columns>
                 <!-- User táblából -->
                 <DataGridTextColumn Header="Felhasználónév" Binding="{Binding Username}" Width="120*"/>
