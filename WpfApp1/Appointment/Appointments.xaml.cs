@@ -57,20 +57,20 @@ namespace WpfApp1.Appointment
 
         private void StartTimer()
         {
-            // Calculate the time until the next full minute
+            // Calculate the time until the next full hour
             DateTime now = DateTime.Now;
             DateTime nextHour = now.AddHours(1).AddMinutes(-now.Minute).AddSeconds(-now.Second).AddMilliseconds(-now.Millisecond);
             TimeSpan initialDelay = nextHour - now;
 
-            // Create a one-time timer to sync exactly at the start of the next minute
+            // Create a one-time timer to sync exactly at the start of the next hour
             DispatcherTimer initialTimer = new DispatcherTimer { Interval = initialDelay };
             initialTimer.Tick += (sender, args) =>
             {
-                UpdateMenu(); // Update immediately at "egészkor"
+                UpdateMenu(); // Update immediately at the next hour
                 initialTimer.Stop(); // Stop the initial one-time timer
 
-                // Start a repeating timer that fires every minute
-                DispatcherTimer repeatingTimer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(1) };
+                // Start a repeating timer that fires every hour
+                DispatcherTimer repeatingTimer = new DispatcherTimer { Interval = TimeSpan.FromHours(1) };
                 repeatingTimer.Tick += (s, e) => UpdateMenu();
                 repeatingTimer.Start();
             };
