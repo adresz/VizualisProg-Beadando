@@ -69,10 +69,10 @@
         <!-- Alsó menüsor -->
         <DockPanel VerticalAlignment="Bottom" Background="LightGray">
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                <Button Content="Vissza" Style="{StaticResource ButtonStyle}" Width="120" Click="GoBack_Click"/>
+                <Button Content="Vissza" Style="{StaticResource ButtonStyle}" Width="140" Click="GoBack_Click"/>
             </StackPanel>
 
-            <Button Content="Kijelentkezés" Style="{StaticResource ButtonStyle}" 
+            <Button Content="Kijelentkezés" Style="{StaticResource ButtonStyle}" Width="140"
                     HorizontalAlignment="Right" VerticalAlignment="Center" Click="LogOut_Click"/>
         </DockPanel>
     </Grid>

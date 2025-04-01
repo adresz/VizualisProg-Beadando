@@ -138,3 +138,41 @@ C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\Vizuali
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MyAppointments\MyAppointments.g.cs
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MyAppointments\MyAppointments.baml
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\Appointment\Appointments.g.cs
+D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MyAppointments\MyAppointments.g.cs
+D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\User_Logs\User_Logs.g.cs
+D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\Appointment\Appointments.baml
+D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MyAppointments\MyAppointments.baml
+D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\User_Logs\User_Logs.baml

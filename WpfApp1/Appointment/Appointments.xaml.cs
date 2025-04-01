@@ -57,12 +57,24 @@ namespace WpfApp1.Appointment
 
         private void StartTimer()
         {
-            DispatcherTimer timer = new DispatcherTimer
+            // Calculate the time until the next full minute
+            DateTime now = DateTime.Now;
+            DateTime nextHour = now.AddHours(1).AddMinutes(-now.Minute).AddSeconds(-now.Second).AddMilliseconds(-now.Millisecond);
+            TimeSpan initialDelay = nextHour - now;
+
+            // Create a one-time timer to sync exactly at the start of the next minute
+            DispatcherTimer initialTimer = new DispatcherTimer { Interval = initialDelay };
+            initialTimer.Tick += (sender, args) =>
             {
-                Interval = TimeSpan.FromMinutes(1) // Percenkénti frissítés
+                UpdateMenu(); // Update immediately at "egészkor"
+                initialTimer.Stop(); // Stop the initial one-time timer
+
+                // Start a repeating timer that fires every minute
+                DispatcherTimer repeatingTimer = new DispatcherTimer { Interval = TimeSpan.FromMinutes(1) };
+                repeatingTimer.Tick += (s, e) => UpdateMenu();
+                repeatingTimer.Start();
             };
-            timer.Tick += (sender, args) => UpdateMenu(); // Percenként frissítjük az időpontokat
-            timer.Start();
+            initialTimer.Start();
         }
 
         private void OnChangedDate(object sender, RoutedEventArgs e)
@@ -76,7 +88,6 @@ namespace WpfApp1.Appointment
                 MonthOfChoice = AppointmentPicker.SelectedDate.Value.Month.ToString();
                 YearOfChoice = AppointmentPicker.SelectedDate.Value.Year.ToString();
                 UpdateMenu();
-
             }
         }
         
@@ -135,7 +146,6 @@ namespace WpfApp1.Appointment
             }
         }
 
-
         private bool AddAvailableTimes()
         {
             string isAvailable = "Elérhető";
@@ -161,13 +171,11 @@ namespace WpfApp1.Appointment
                 {
                     for (int hour = 8; hour <= 16; hour++)
                     {
-                        // Ne lehessen foglalni a közvetlen a következő órára, csak 2 vel későbbire
                             hasAvailableTime = true; // Van elérhető időpont
                                                      // Az összes órát hozzáadjuk, ami az adott naphoz tartozik
                             MenuItems.Add(new MenuItem { Time = $"{hour}:00", Description = $"{isAvailable} időpont" });
                     }
                 }
-            
                 return hasAvailableTime;
         }
 
