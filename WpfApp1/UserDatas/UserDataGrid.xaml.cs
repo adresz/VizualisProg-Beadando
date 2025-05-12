@@ -27,16 +27,11 @@ namespace WpfApp1.UserDatas
     public partial class UserDataGrid : Window
     {
         public dynamic? SelectedUser { get; set; }
-        public ObservableCollection<User> Users { get; set; }
-        public ObservableCollection<Users_details> User_details { get; set; }
-        public ObservableCollection<UserDetailsViewModel> UsersWithDetails { get; set; }
         public int Changed = 0;        
 
         public UserDataGrid()
         {
             InitializeComponent();
-            User_details = new ObservableCollection<Users_details>();
-            Users = new ObservableCollection<User>();
             LoadDataFromDatabase();
             this.Closing += Window_Closing;
         }
@@ -59,34 +54,7 @@ namespace WpfApp1.UserDatas
 
         private void LoadDataFromDatabase()
         {
-            using (var db = new AppDBContext())
-            {
-                var users = db.users.ToList();
-                var userDetails = db.user_details.ToList();
-
-                var joinedData = users.Join(
-                    userDetails,
-                    u => u.email,
-                    ud => ud.email,
-                    (u, ud) => new UserDetailsViewModel
-                    {
-                        Username = u.Username,
-                        Email = u.email,
-                        BanReason = ud.Ban_Reason == "Nincs tiltva." ? "-" : ud.Ban_Reason,
-                        Birth_Date = ud.Birth_Date,
-                        First_Name = ud.First_Name,
-                        Last_Name = ud.Last_Name,
-                        Phone_number = ud.Phone_number,
-                        Taj_Number = ud.Taj_Number,
-                        Banned = ud.isBanned == 1 ? "Igen" : "Nem",
-                        AccessRole = u.AccessID == 2 ? "Owner" : u.AccessID == 1 ? "Admin" : "User",
-                        Gender = ud.Gender
-                    }
-                ).ToList();
-
-                UsersWithDetails = new ObservableCollection<UserDetailsViewModel>(joinedData);
-                UpdateDataGrid();
-            }
+            
         }
 
         private void UsersDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -100,13 +68,7 @@ namespace WpfApp1.UserDatas
 
         private void UpdateDataGrid()
         {
-            var pagedData = UsersWithDetails.Skip((CurrentPage - 1) * ItemsPerPage).Take(ItemsPerPage).ToList();
-            UsersDataGrid.ItemsSource = pagedData;
-            NextButton.Content = $"Következő {ItemsPerPage}";
-            PreviousButton.Content = $"Előző {ItemsPerPage}";
-            // Gombok engedélyezése/letiltása
-            PreviousButton.IsEnabled = CurrentPage > 1;
-            NextButton.IsEnabled = (CurrentPage * ItemsPerPage) < UsersWithDetails.Count;
+  
         }
 
         private void DataGrid_Value_Changed(Object sender, EventArgs e)
@@ -128,11 +90,7 @@ namespace WpfApp1.UserDatas
 
         private void NextPage_Click(object sender, RoutedEventArgs e)
         {
-            if ((CurrentPage * ItemsPerPage) < UsersWithDetails.Count)
-            {
-                CurrentPage++;
-                UpdateDataGrid();
-            }
+   
         }
 
         private void PreviousPage_Click(object sender, RoutedEventArgs e)
@@ -182,18 +140,4 @@ namespace WpfApp1.UserDatas
         }
     }
 
-    public class UserDetailsViewModel
-    {
-        public string? Username { get; set; }
-        public string? Email { get; set; }
-        public string? BanReason { get; set; }
-        public DateTime Birth_Date { get; set; }
-        public string? First_Name { get; set; }
-        public string? Last_Name { get; set; }
-        public string? Phone_number { get; set; }
-        public string? Taj_Number { get; set; }
-        public string? Banned { get; set; }
-        public string? AccessRole { get; set; }
-        public string? Gender { get; set; }
-    }
 }

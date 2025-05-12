@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\
 WpfApp1
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-D:\Git\VizualisProg-Beadando\WpfApp1\App.xaml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\App.xaml
 8-2104857030
 
-121093059885
-2421847514424
+171611653565
+2481856229718
 AdminView\Admin.xaml;Appointment\Appointments.xaml;MainWindow.xaml;MyAppointments\MyAppointments.xaml;RegisterView\Register.xaml;UserDatas\UserDataGrid.xaml;UserView\UserV.xaml;User_Logs\User_Logs.xaml;
 
 False

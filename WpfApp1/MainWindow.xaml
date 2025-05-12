@@ -81,7 +81,6 @@
             </StackPanel>
 
             <!-- Emlékezz rám checkbox -->
-            <CheckBox Content="Emlékezz rám" HorizontalAlignment="Left" Margin="115,0,0,0" x:Name="RememberMe" Style="{StaticResource CheckBoxStyle}" FontSize="12"/>
         </StackPanel>
     </Grid>
 </Window>

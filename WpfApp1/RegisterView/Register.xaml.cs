@@ -56,50 +56,6 @@ namespace WpfApp1.RegisterView
 
         private void SendData()
         {
-            try
-            {
-                using (var db = new AppDBContext())
-                {
-                    // Jelszó titkositás
-                    string hashedPassword = BCrypt.Net.BCrypt.HashPassword(Password.Password.Trim());
-
-                    // Új user létrehozása
-                    User newUser = new User
-                    {
-                        Username = Username.Text,
-                        Password = hashedPassword,
-                        email = Email.Text,
-                        AccessID = 0 
-                    };
-                    string selectedGender = Gender_M.IsChecked == true ? "Male" : "Female"; // Gender kikérése
-                    // Új user details
-                    Users_details newUserDetails = new Users_details
-                    {
-                        email = Email.Text,
-                        First_Name = FirstName.Text,
-                        Last_Name = LastName.Text,
-                        Phone_number = Phone.Text,
-                        Taj_Number = ID.Text,
-                        Birth_Date = DateTime.Now,
-                        isBanned = 0,
-                        Ban_Reason = null,
-                        Gender = selectedGender
-                    };
-
-                    // Add the new user and user details to the database
-                    db.users.Add(newUser);
-                    db.user_details.Add(newUserDetails);
-
-                    // Save changes to the database
-                    db.SaveChanges();
-
-                    MessageBox.Show("Sikeres regisztráció!");
-                }
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("Váratlan hiba lépett fel, kérjük lépjen kapcsolatba az ügyfélszolgálattal.\nHiba kód:\n" + err.Message);
-            }
         }
 
         private void NumbersOnly(object sender, TextCompositionEventArgs e)
@@ -126,33 +82,7 @@ namespace WpfApp1.RegisterView
                 string[] errormsg = {", az email cím", ", a telefonszám", ", a tajkártya szám", ", a felhasználónév"};
                 string[] postfix = { "email", "Phone_number", "TAJ_number"};
                 string[] textBoxmsg = {"A megadott email foglalt", "A megadott tel.szám foglalt", "A megadott azonosító foglalt", "A megadott név foglalt"};
-                using (var db = new AppDBContext())
-                {
-                    //a username-en kívül minden más a user_detailsben van, nem kell ciklus
-                    //ha lesz idő, a usernameet ki lehet venni a listából és konkrétan ideírni
-                    if (db.users.Any(u => u.Username == Username.Text))
-                    {
-                        taken += errormsg[3];
-                        information[3].BorderBrush = Brushes.Red;
-                        available = false;
-                        TextBlock errorTextBlock = (TextBlock)FindName(information[3].Name + "_err");
-                        errorTextBlock.Visibility = Visibility.Visible;
-                        errorTextBlock.Text = textBoxmsg[3];
-                    }
-
-                    for (int i = 1; i < 3; i ++)
-                    {
-                        if (db.user_details.Any(BuildPredicate<Users_details>(postfix[i], (information[i]).Text)))
-                        {
-                            taken += errormsg[i];
-                            information[i].BorderBrush = Brushes.Red;
-                            available = false;
-                            TextBlock errorTextBlock = (TextBlock)FindName(information[i].Name + "_err");
-                            errorTextBlock.Visibility = Visibility.Visible;
-                            errorTextBlock.Text = textBoxmsg[i];
-                        }
-                    }
-                }
+               
 
                 if (!available)
                 {
