@@ -48,11 +48,17 @@ public partial class MainWindow : Window
         }
         var username = Username.Text;
         var password = Password.Password;
-            
-        using(MyDbContext context = new MyDbContext())
+
+
+        //1. id => User; 2 id => doctor; 3 id => admin
+        // 0 female 1 male
+
+
+        using (MyDbContext context = new MyDbContext())
         {
+
             bool userfound = context.Users.Any(User => User.username == username);
-            if(userfound)
+            if (userfound)
             {
                 MessageBox.Show("Sikeres bejelentkezés");
                 AdminV AdminWindow = new AdminV(2, Username.Text);
@@ -63,7 +69,7 @@ public partial class MainWindow : Window
             {
                 MessageBox.Show("Felhasználó nem található");
             }
-        }    
+        }
     }
 
     private void Register_Click(object sender, RoutedEventArgs e)
@@ -73,4 +79,3 @@ public partial class MainWindow : Window
         this.Hide();
     }
 }
-

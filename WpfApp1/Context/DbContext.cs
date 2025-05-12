@@ -11,11 +11,12 @@ namespace Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=DatabaseUsers;Trusted_Connection=True;");
-            }
+            optionsBuilder.UseSqlServer(
+                @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\T. Adrian\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\mssqllocaldb\DatabaseUsers.mdf;",
+                options => options.EnableRetryOnFailure());
         }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
