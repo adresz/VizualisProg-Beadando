@@ -11,10 +11,9 @@ namespace Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(
-                @"Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true;AttachDbFileName=C:\Users\T. Adrian\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\mssqllocaldb\DatabaseUsers.mdf;",
-                options => options.EnableRetryOnFailure());
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-AADOHV3\SQLEXPRESS;Database=FinalDB_UserDatas;Integrated Security=True;Encrypt=False;");
         }
+
 
 
 

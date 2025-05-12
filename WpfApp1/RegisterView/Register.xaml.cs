@@ -98,17 +98,7 @@ namespace WpfApp1.RegisterView
 
             return available;
         }
-        //Átalakitás, hogy ne kelljen mindig irni hogy u => u.xy == "valami"
-        static Expression<Func<T, bool>> BuildPredicate<T>(string propertyName, string value)
-        {
-            var parameter = System.Linq.Expressions.Expression.Parameter(typeof(T), "u"); // u =>
-            var property = System.Linq.Expressions.Expression.Property(parameter, propertyName); // u.PropertyName
-            var constant = System.Linq.Expressions.Expression.Constant(value); // value
-            var equality = System.Linq.Expressions.Expression.Equal(property, constant); // u.PropertyName == value
-
-            return System.Linq.Expressions.Expression.Lambda<Func<T, bool>>(equality, parameter);
-        }
-
+        
         private bool ValidateUsername(string username)
         {
             string pattern = @"^[A-Za-z0-9_.]{6,20}$";

@@ -1,81 +1,129 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using BCrypt.Net;
-using WpfApp1;
+﻿using BCrypt.Net;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using System;
-using System.ComponentModel.DataAnnotations;
-using WpfApp1.RegisterView;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
-using WpfApp1.AdminView;
-using WpfApp1.UserView;
-using System.Runtime.CompilerServices;
-using System.Configuration;
-using System.Dynamic;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.VisualBasic.ApplicationServices;
 using Model;
-using Microsoft.VisualBasic;
+using System;
+using System.Linq;
+using System.Windows;
+using WpfApp1.AdminView;
+using WpfApp1.DoctorView;
+using WpfApp1.RegisterView;
+using WpfApp1.UserView;
 
-
-namespace LoginOptions;
-
-public partial class MainWindow : Window
+namespace LoginOptions
 {
-    public MainWindow()
+    public partial class MainWindow : Window
     {
-        InitializeComponent();
-    }
-
-
-    private void Login_Click(object sender, RoutedEventArgs e)
-    {
-        //Ne töröld, mert hibára fut a kód, ha bejelentkezéskor nincs kitöltve a textBox
-        if (string.IsNullOrWhiteSpace(Username.Text) || string.IsNullOrWhiteSpace(Password.Password))
+        public MainWindow()
         {
-            MessageBox.Show("Hiányzó felhasználónév és/vagy jelszó");
-            return;
+            InitializeComponent();
         }
-        var username = Username.Text;
-        var password = Password.Password;
 
-
-        //1. id => User; 2 id => doctor; 3 id => admin
-        // 0 female 1 male
-
-
-        using (MyDbContext context = new MyDbContext())
+        private void Login_Click(object sender, RoutedEventArgs e)
         {
-
-            bool userfound = context.Users.Any(User => User.username == username);
-            if (userfound)
+            // Ne töröld, ha a textBoxok üresek, mert hibát okoz
+            if (string.IsNullOrWhiteSpace(Username.Text) || string.IsNullOrWhiteSpace(Password.Password))
             {
-                MessageBox.Show("Sikeres bejelentkezés");
-                AdminV AdminWindow = new AdminV(2, Username.Text);
-                AdminWindow.Show();
-                this.Close();
+                MessageBox.Show("Hiányzó felhasználónév és/vagy jelszó");
+                return;
             }
-            else
+
+            var username = Username.Text;
+            var password = Password.Password;
+
+            using (var context = new MyDbContext())
             {
-                MessageBox.Show("Felhasználó nem található");
+                // Keresés a felhasználó adatbázisban
+                var user = context.Users
+                    .Where(u => u.username == username)
+                    .FirstOrDefault(); // Az első megtalált felhasználó, vagy null, ha nem található
+
+                if (user != null)
+                {
+                    // Ellenőrizzük, hogy a jelszó nem NULL
+                    if (!string.IsNullOrEmpty(user.password))
+                    {
+                        // Ha a felhasználó létezik, ellenőrizzük a jelszót
+                        bool passwordMatches = BCrypt.Net.BCrypt.Verify(password, user.password);
+                        if (passwordMatches)
+                        {
+                            // Sikeres bejelentkezés
+                            MessageBox.Show("Sikeres bejelentkezés");
+
+                            // Logolás: sikeres bejelentkezés
+                            var log = new Logs
+                            {
+                                user_id = user.user_id,
+                                Action = $"Sikeres bejelentkezés {username} felhasználónéven",
+                                involved_user = null, // Az aktuális felhasználó próbálkozása
+                                date = DateTime.Now
+                            };
+                            context.Logs.Add(log);
+                            context.SaveChanges();
+
+                            if (user.access_id == 1)
+                            {
+                                UserV userview = new UserV(username);
+                                userview.Show();
+                            }
+                            if (user.access_id == 2)
+                            {
+                                DoctorV doctorview = new DoctorV();
+                                doctorview.Show();
+                            }
+                            if (user.access_id == 3)
+                            {
+                                AdminV adminview = new AdminV(0, username);
+                                adminview.Show();
+                            }
+                            this.Close();
+                        }
+                        else
+                        {
+                            // Sikertelen bejelentkezés
+                            MessageBox.Show("Hibás jelszó!");
+
+                            // Logolás: sikertelen bejelentkezés
+                            var log = new Logs
+                            {
+                                user_id = user.user_id,
+                                Action = $"Sikertelen bejelentkezés: Hibás jelszó {username} felhasználónál.",
+                                involved_user = null, // Az aktuális felhasználó próbálkozása
+                                date = DateTime.Now
+                            };
+                            context.Logs.Add(log);
+                            context.SaveChanges();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("A felhasználó jelszava nem elérhető.");
+                    }
+                }
+                else
+                {
+                    // Ha nem található felhasználó
+                    MessageBox.Show("Felhasználó nem található");
+
+                    // Logolás: sikertelen bejelentkezés
+                    var log = new Logs
+                    {
+                        user_id = 0, // Nem létező felhasználó
+                        Action = "Sikertelen bejelentkezés: Felhasználó nem található",
+                        involved_user = null, // Az aktuális felhasználó próbálkozása
+                        date = DateTime.Now
+                    };
+                    context.Logs.Add(log);
+                    context.SaveChanges();
+                }
             }
         }
-    }
 
-    private void Register_Click(object sender, RoutedEventArgs e)
-    {
-        Register RegisterWindow = new Register();
-        RegisterWindow.Show();
-        this.Hide();
+        private void Register_Click(object sender, RoutedEventArgs e)
+        {
+            // Regisztráció ablak megnyitása
+            Register RegisterWindow = new Register();
+            RegisterWindow.Show();
+            this.Hide();
+        }
     }
 }

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\App.xaml
-8-2104857030
+9-944431611
 
-171611653565
+181152017180
 2481856229718
-AdminView\Admin.xaml;Appointment\Appointments.xaml;MainWindow.xaml;MyAppointments\MyAppointments.xaml;RegisterView\Register.xaml;UserDatas\UserDataGrid.xaml;UserView\UserV.xaml;User_Logs\User_Logs.xaml;
+AdminView\Admin.xaml;Appointment\Appointments.xaml;DoctorView\DoctorV.xaml;MainWindow.xaml;MyAppointments\MyAppointments.xaml;RegisterView\Register.xaml;UserDatas\UserDataGrid.xaml;UserView\UserV.xaml;User_Logs\User_Logs.xaml;
 
 False
 

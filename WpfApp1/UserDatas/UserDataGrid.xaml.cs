@@ -2,59 +2,104 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using WpfApp1.UserView;
 using WpfApp1.AdminView;
+using Model;
+using System.Security.Policy;
 
 namespace WpfApp1.UserDatas
 {
-
-    /// <summary>
-    /// Interaction logic for UserDataGrid.xaml
-    /// </summary>
     public partial class UserDataGrid : Window
     {
         public dynamic? SelectedUser { get; set; }
-        public int Changed = 0;        
+        public int Changed = 0;
+
+        public int CurrentPage { get; set; } = 1;
+        public int ItemsPerPage { get; set; } = 10;
+        public int TotalPages { get; set; }
 
         public UserDataGrid()
         {
             InitializeComponent();
-            LoadDataFromDatabase();
             this.Closing += Window_Closing;
+            LoadDataFromDatabase();
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selectedItem = SelectedCombo.SelectedItem as ComboBoxItem;
-
-            if (selectedItem != null)
+            if (selectedItem != null && int.TryParse(selectedItem.Content.ToString(), out int selectedValueInt))
             {
-                var selectedValue = selectedItem.Content.ToString();
-                int.TryParse(selectedValue, out int selectedValueInt);
                 ItemsPerPage = selectedValueInt;
+                CurrentPage = 1; // Reset to first page
                 LoadDataFromDatabase();
             }
         }
 
-        public int CurrentPage { get; set; } = 1;
-        public int ItemsPerPage { get; set; } 
-
         private void LoadDataFromDatabase()
         {
-            
+            using (var context = new MyDbContext())
+            {
+                var totalItems = context.Users
+                    .Include(u => u.User_details)
+                    .Where(u => u.User_details != null && u.access_id != null)
+                    .Count();
+
+                TotalPages = (int)Math.Ceiling((double)totalItems / ItemsPerPage);
+                if (CurrentPage > TotalPages) CurrentPage = TotalPages;
+                if (CurrentPage < 1) CurrentPage = 1;
+
+                if(CurrentPage == 1)
+                {
+                    PreviousButton.IsEnabled = false;
+                }
+                else if(CurrentPage == TotalPages)
+                {
+                    NextButton.IsEnabled = false;
+                    PreviousButton.IsEnabled = true;
+                }
+                else
+                {
+                    NextButton.IsEnabled = true;
+                    PreviousButton.IsEnabled = true;
+                }
+
+                    int skipCount = (CurrentPage - 1) * ItemsPerPage;
+
+                var users = context.Users
+                    .Include(u => u.User_details)
+                    .Where(u => u.User_details != null && u.access_id != null)
+                    .OrderBy(u => u.user_id)
+                    .Skip(skipCount)
+                    .Take(ItemsPerPage)
+                    .Select(u => new
+                    {
+                        username = u.username,
+                        email = u.User_details.email,
+                        AccessRole = u.access_id == 1 ? "Felhasználó" :
+                                    (u.access_id == 2 ? "Doktor" :
+                                    (u.access_id == 3 ? "Admin" : "Ismeretlen")),
+                        first_name = u.User_details.first_name,
+                        last_name = u.User_details.last_name,
+                        phone_number = u.User_details.phone_Number,
+                        taj_number = u.User_details.taj_Number,
+                        is_banned = u.is_banned ? "Igen" : "Nem",
+                        ban_reason = u.ban_reason,
+                        gender = u.User_details.gender == 1 ? "Férfi" : "Nő"
+                    })
+                    .ToList();
+
+                UsersDataGrid.ItemsSource = users;
+            }
+        }
+
+        private void UpdateDataGrid()
+        {
+            LoadDataFromDatabase();
         }
 
         private void UsersDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -62,16 +107,11 @@ namespace WpfApp1.UserDatas
             if (UsersDataGrid.SelectedItem != null)
             {
                 SelectedUser = UsersDataGrid.SelectedItem as dynamic;
-                MessageBox.Show($"Dupla kattintás történt: {SelectedUser.Username}");
+                MessageBox.Show($"Dupla kattintás történt: {SelectedUser.username}");
             }
         }
 
-        private void UpdateDataGrid()
-        {
-  
-        }
-
-        private void DataGrid_Value_Changed(Object sender, EventArgs e)
+        private void DataGrid_Value_Changed(object sender, EventArgs e)
         {
             Changed += 1;
         }
@@ -83,14 +123,17 @@ namespace WpfApp1.UserDatas
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Mentés még nincs implementálva és nem is lesz, munkaerő hiányában.");
+            // TODO: Mentés logikája
         }
-
-        //Ablak zárással, vissza/per előre lépéssel kapcsolatosak
 
         private void NextPage_Click(object sender, RoutedEventArgs e)
         {
-   
+            if (CurrentPage < TotalPages)
+            {
+                CurrentPage++;
+                UpdateDataGrid();
+            }
         }
 
         private void PreviousPage_Click(object sender, RoutedEventArgs e)
@@ -112,12 +155,11 @@ namespace WpfApp1.UserDatas
         {
             if (Changed > 0)
             {
-                MessageBoxResult result = MessageBox.Show("Szeretni menteni kilépés előtt?", "Mentés", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
+                MessageBoxResult result = MessageBox.Show("Szeretné menteni kilépés előtt?", "Mentés", MessageBoxButton.YesNoCancel, MessageBoxImage.Warning);
 
                 if (result == MessageBoxResult.Yes)
                 {
-                    //BAN REASON CSAK AKKOR LEGYEN ADHATÓ HA ISBANNED = 1
-                    // Mentés ki dolgozása
+                    // TODO: Mentés implementálása
                 }
                 else if (result == MessageBoxResult.No)
                 {
@@ -125,7 +167,7 @@ namespace WpfApp1.UserDatas
                 }
                 else if (result == MessageBoxResult.Cancel)
                 {
-                    e.Cancel = true; // Ne záródjon be az ablak
+                    e.Cancel = true;
                 }
             }
             else
@@ -139,5 +181,4 @@ namespace WpfApp1.UserDatas
             base.OnClosed(e);
         }
     }
-
 }

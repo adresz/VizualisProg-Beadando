@@ -8,6 +8,9 @@
     <Compile Update="Appointment\Appointments.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="DoctorView\DoctorV.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MyAppointments\MyAppointments.xaml.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="Felhasználói események" Height="450" Width="800">
     <Grid>
-        
+        <!-- DataGrid a logok megjelenítésére -->
+        <DataGrid x:Name="LogsDataGrid" AutoGenerateColumns="False" Margin="10" CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Log ID" Binding="{Binding log_id}" Width="100*"/>
+                <DataGridTextColumn Header="Dátum" Binding="{Binding date}" Width="300*"/>
+                <DataGridTextColumn Header="Felhasználó ID" Binding="{Binding user_id}" Width="100*"/>
+                <DataGridTextColumn Header="Esemény" Binding="{Binding Action}" Width="250*"/>
+                <DataGridTextColumn Header="Involved User" Binding="{Binding involved_user}" Width="100*"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
