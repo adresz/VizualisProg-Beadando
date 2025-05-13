@@ -93,15 +93,15 @@ namespace WpfApp1.RegisterView
                     context.User_details.Add(details);
 
                     // Naplózás
-                    var log = new Logs
-                    {
-                        user_id = user.user_id,
-                        Action = $"Új regisztráció: {Username.Text}",
-                        involved_user = null,
-                        date = DateTime.Now
-                    };
+                        var log = new Logs
+                        {
+                            user_id = user.user_id,
+                            Action = $"Új regisztráció: {Username.Text}",
+                            involved_user = null,
+                            date = DateTime.Now
+                        };
 
-                    context.Logs.Add(log);
+                        context.Logs.Add(log);
 
                     // Minden mentése
                     context.SaveChanges();

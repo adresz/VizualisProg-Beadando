@@ -81,7 +81,7 @@
         <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
             <DockPanel VerticalAlignment="Top" Background="LightGray">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                    <Button Content="Foglalásaim" Style="{StaticResource ButtonStyle}" Width="120" Click="MyAppointsments_Click">
+                    <Button Content="Foglalásaim" Style="{StaticResource ButtonStyle}" Width="120" Click="MyAppointments_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10" Width="120">
@@ -148,7 +148,7 @@
 
                 <!-- 2. Kép és Név -->
                 <StackPanel Style="{StaticResource ImageWithTextStyle}">
-                    <Image Source="/Images/Doctor_2.png" Style="{StaticResource ImageStyle}" MouseLeftButtonDown="Orsolya_Click">
+                    <Image Source="/Images/Doctor_2.png" Style="{StaticResource ImageStyle}" MouseLeftButtonDown="Dora_Click">
                         <Image.RenderTransform>
                             <ScaleTransform x:Name="ImageScaleTransform2" ScaleX="1" ScaleY="1"/>
                         </Image.RenderTransform>
@@ -168,7 +168,7 @@
 
                 <!-- 3. Kép és Név -->
                 <StackPanel Style="{StaticResource ImageWithTextStyle}">
-                    <Image Source="/Images/Doctor_3.png" Style="{StaticResource ImageStyle}" MouseLeftButtonDown="Orsolya_Click">
+                    <Image Source="/Images/Doctor_3.png" Style="{StaticResource ImageStyle}" MouseLeftButtonDown="Musky_Click">
                         <Image.RenderTransform>
                             <ScaleTransform x:Name="ImageScaleTransform3" ScaleX="1" ScaleY="1"/>
                         </Image.RenderTransform>

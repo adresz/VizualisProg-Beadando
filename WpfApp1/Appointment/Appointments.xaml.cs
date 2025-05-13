@@ -11,16 +11,14 @@ using System.Windows.Threading;
 
 namespace WpfApp1.Appointment
 {
-    // MenuItem osztály a gombokhoz tartozó időpontok és láthatóság kezeléséhez
     public class MenuItem
     {
         public string? Time { get; set; }
         public string? Description { get; set; }
-        public bool IsButtonVisible { get; set; } = true; // Alapértelmezés szerint látható
-        public int AppointmentId { get; set; } // A foglalás ID-ja az adatbázisban
+        public bool IsButtonVisible { get; set; } = true;
+        public int AppointmentId { get; set; }
     }
 
-    // Kell hogy menjen a visibility
     public class BoolToVisibilityConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -56,11 +54,11 @@ namespace WpfApp1.Appointment
             Title = $"Választott orvosa: {doctor}";
             DoctorText = $"{doctor} rendelési időpontjai";
             DataContext = this;
-            UpdateMenu(); // Frissítjük az időpontokat
-            StartTimer(); // Percenkénti frissítés elindítása
+            UpdateMenu();
+            StartTimer();
             AppointmentPicker.SelectedDate = DateTime.Today;
             AppointmentPicker.DisplayDateStart = DateTime.Today;
-            AppointmentPicker.DisplayDateEnd = DateTime.Today.AddMonths(1); // Mától 1 hónapra lehessen csak előre foglalni
+            AppointmentPicker.DisplayDateEnd = DateTime.Today.AddMonths(1);
         }
 
         private void StartTimer()
@@ -106,29 +104,25 @@ namespace WpfApp1.Appointment
             {
                 case "Mesterseges":
                     if (SelectedDateDay == "Monday" || SelectedDateDay == "Tuesday")
-                    {
                         hasAvailableTime = AddAvailableTimes();
-                    }
                     break;
-
                 case "Dora":
                     if (SelectedDateDay == "Wednesday")
-                    {
                         hasAvailableTime = AddAvailableTimes();
-                    }
                     break;
-
                 case "Musky":
                     if (SelectedDateDay == "Thursday" || SelectedDateDay == "Friday" || SelectedDateDay == "Saturday")
-                    {
                         hasAvailableTime = AddAvailableTimes();
-                    }
                     break;
             }
 
             if (!hasAvailableTime)
             {
-                MenuItems.Add(new MenuItem { Description = $"{YearOfChoice}.{MonthOfChoice}.{DayOfChoice}. napon {ChoosenDoctor} nem rendel.", IsButtonVisible = false });
+                MenuItems.Add(new MenuItem
+                {
+                    Description = $"{YearOfChoice}.{MonthOfChoice}.{DayOfChoice}. napon {ChoosenDoctor} nem rendel.",
+                    IsButtonVisible = false
+                });
             }
             else
             {
@@ -173,10 +167,9 @@ namespace WpfApp1.Appointment
             var time = button?.Tag.ToString();
             MessageBox.Show($"A foglalás sikeresen megtörtént: {time}");
 
-            // Foglalás beszúrása az adatbázisba
+            // Foglalás mentése az adatbázisba és logolás
             BookAppointmentInDb(time);
 
-            // A foglalt időpont eltávolítása a listából
             var bookedAppointment = MenuItems.FirstOrDefault(x => x.Time == time);
             if (bookedAppointment != null)
             {
@@ -186,20 +179,31 @@ namespace WpfApp1.Appointment
 
         private void BookAppointmentInDb(string time)
         {
-            // A foglalás adatbázisba történő mentése
-            // Itt feltételezzük, hogy van egy `DbContext` vagy `DatabaseHelper` osztály, ami kezeli az adatbázis műveleteket
+            var appointmentDate = DateTime.Parse($"{YearOfChoice}-{MonthOfChoice}-{DayOfChoice} {time}");
 
             var appointment = new global::Appointments
             {
-                datetime = DateTime.Parse($"{YearOfChoice}-{MonthOfChoice}-{DayOfChoice} {time}"),
+                datetime = appointmentDate,
                 doctor_id = IdOfDoctor,
-                user_id = user_ID  // Ez az aktuális felhasználó ID-ja, amit be kell állítani
+                user_id = user_ID
             };
 
-            // Feltételezzük, hogy van egy `DbContext` példány
             using (var db = new MyDbContext())
             {
+                // Foglalás mentése
                 db.Appointments.Add(appointment);
+                db.SaveChanges();
+
+                // Logolás
+                var log = new Logs
+                {
+                    user_id = user_ID,
+                    Action = $"Időpont foglalás: Dr.{ChoosenDoctor}hoz - {appointmentDate:yyyy.MM.dd HH:mm}időpontra",
+                    involved_user = IdOfDoctor,
+                    date = DateTime.Now
+                };
+
+                db.Logs.Add(log);
                 db.SaveChanges();
             }
         }
@@ -217,6 +221,7 @@ namespace WpfApp1.Appointment
             this.Close();
             Application.Current.MainWindow.Show();
         }
+
 
         protected override void OnClosed(EventArgs e)
         {

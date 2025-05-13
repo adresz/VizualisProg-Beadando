@@ -19,10 +19,10 @@ namespace WpfApp1.MyAppointments
     /// </summary>
     public partial class MyAppointments : Window
     {
-        public MyAppointments(string Username, string Rank)
+        public MyAppointments(string Username, int access_ID)
         {
             InitializeComponent();
-            this.Title = $"{Rank} {Username} foglalásai";
+            this.Title = $"{Username} foglalásai";
         }
 
         protected override void OnClosed(EventArgs e)

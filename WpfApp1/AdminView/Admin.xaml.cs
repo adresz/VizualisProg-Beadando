@@ -19,12 +19,14 @@ namespace WpfApp1.AdminView
         public string Username = "";
         public string Rank = "";
         public int user_ID;
+        public int access_ID;
 
         public AdminV(int accessID, string Username, int userID)
         {
             InitializeComponent();
             this.Username = Username;
             user_ID = userID;
+            access_ID = accessID;
             if (accessID == 3)
             {
                 Title = $"Bejelentkezve mint [Admin] {Username}";
@@ -65,7 +67,7 @@ namespace WpfApp1.AdminView
             Appointment.Show();
 
             // Logolás: Admin választotta a Mesterseges orvost
-            LogAction($"[Admin] {Username} választotta a {doctor} orvost");
+            LogAction($"[Admin] {Username} az alábbo orvost választotta: Dr.{doctor}");
         }
 
         // Dora_Click esemény
@@ -77,7 +79,7 @@ namespace WpfApp1.AdminView
             Appointment.Show();
 
             // Logolás: Admin választotta a Dora orvost
-            LogAction($"[Admin] {Username} választotta a {doctor} orvost");
+            LogAction($"[Admin] {Username} az alábbi orvost választotta: Dr.{doctor}");
         }
 
         // Musky_Click esemény
@@ -89,14 +91,14 @@ namespace WpfApp1.AdminView
             Appointment.Show();
 
             // Logolás: Admin választotta a Musky orvost
-            LogAction($"[Admin] {Username} választotta a {doctor} orvost");
+            LogAction($"[Admin] {Username} az alábbi orvost választotta Dr.{doctor}");
         }
 
         // MyAppointments_Click esemény
         private void MyAppointments_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            MyAppointments.MyAppointments MyAppointments = new MyAppointments.MyAppointments(Username, Rank);
+            MyAppointments.MyAppointments MyAppointments = new MyAppointments.MyAppointments(Username, access_ID);
             MyAppointments.Show();
 
             // Logolás: Admin belépett a Saját időpontok nézetére
@@ -131,6 +133,12 @@ namespace WpfApp1.AdminView
                 context.Logs.Add(log);
                 context.SaveChanges();
             }
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            this.Close();
+            Application.Current.MainWindow.Show();
         }
     }
 }
