@@ -6,76 +6,73 @@
         xmlns:local="clr-namespace:WpfApp1.RegisterView"
         mc:Ignorable="d"
         Title="Regisztráció" Height="540" Width="960"
-        Background="AliceBlue">
+        Background="#2E2E2E">
 
     <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Background="#2E2E2E">
 
-            <TextBlock Text="Vezetéknév:"/>
-            <TextBox x:Name="LastName" Width="200"/>
-            <TextBlock x:Name="LastName_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+            <TextBlock Text="Vezetéknév:" Foreground="White"/>
+            <TextBox x:Name="LastName" Width="200" Background="#444" Foreground="White" BorderBrush="#555" BorderThickness="1"/>
+            <TextBlock x:Name="LastName_err" Foreground="red" Visibility="Hidden" Text="Kötelező mező" FontSize="10"/>
 
-            <TextBlock Text="Keresztnév:" Width="200"/>
-            <TextBox x:Name="FirstName" Width="200" />
-            <TextBlock x:Name="FirstName_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+            <TextBlock Text="Keresztnév:" Foreground="White"/>
+            <TextBox x:Name="FirstName" Width="200" Background="#444" Foreground="White" BorderBrush="#555" BorderThickness="1"/>
+            <TextBlock x:Name="FirstName_err" Foreground="red" Visibility="Hidden" Text="Kötelező mező" FontSize="10"/>
 
-            <TextBlock Text="E-mail cím:"/>
-            <TextBox x:Name="Email" Width="200" MaxLength="120"/>
-            <TextBlock x:Name="Email_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+            <TextBlock Text="E-mail cím:" Foreground="White"/>
+            <TextBox x:Name="Email" Width="200" MaxLength="120" Background="#444" Foreground="White" BorderBrush="#555" BorderThickness="1"/>
+            <TextBlock x:Name="Email_err" Foreground="red" Visibility="Hidden" Text="Kötelező mező" FontSize="10"/>
 
-            <TextBlock Text="Tel.szám(06xxYYYYYYY):"/>
-            <TextBox x:Name="Phone" Width="200" PreviewTextInput="NumbersOnly" MaxLength="11"/>
-            <TextBlock x:Name="Phone_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+            <TextBlock Text="Tel.szám(06xxYYYYYYY):" Foreground="White"/>
+            <TextBox x:Name="Phone" Width="200" PreviewTextInput="NumbersOnly" MaxLength="11" Background="#444" Foreground="White" BorderBrush="#555" BorderThickness="1"/>
+            <TextBlock x:Name="Phone_err" Foreground="red" Visibility="Hidden" Text="Kötelező mező" FontSize="10"/>
 
-            <TextBlock Text="Taj kártya szám:"/>
-            <TextBox x:Name="ID" Width="200" PreviewTextInput="NumbersOnly" MaxLength="9"/>
-            <TextBlock x:Name="ID_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+            <TextBlock Text="Taj kártya szám:" Foreground="White"/>
+            <TextBox x:Name="ID" Width="200" PreviewTextInput="NumbersOnly" MaxLength="9" Background="#444" Foreground="White" BorderBrush="#555" BorderThickness="1"/>
+            <TextBlock x:Name="ID_err" Foreground="red" Visibility="Hidden" Text="Kötelező mező" FontSize="10"/>
 
-            <TextBlock Text="Neme:"/>
-            <RadioButton x:Name="Gender_M" GroupName="Gender" Content="Férfi" IsChecked="True"></RadioButton>
-            <RadioButton x:Name="Gender_F" GroupName="Gender" Content="Nő"></RadioButton>
+            <TextBlock Text="Neme:" Foreground="White"/>
+            <StackPanel Orientation="Horizontal">
+                <RadioButton x:Name="Gender_M" GroupName="Gender" Content="Férfi" Foreground="White" Background="White" BorderBrush="White" BorderThickness="1" Margin="5"/>
+                <RadioButton x:Name="Gender_F" GroupName="Gender" Content="Nő" Foreground="White" Background="White" BorderBrush="White" BorderThickness="1" Margin="5"/>
+            </StackPanel>
 
-            <TextBlock Text="Születési dátum:"/>
-            <DatePicker x:Name="Birthday">
+            <TextBlock Text="Születési dátum:" Foreground="White"/>
+            <DatePicker x:Name="Birthday" Background="#444" Foreground="Black" BorderBrush="#555" BorderThickness="1">
                 <DatePicker.Resources>
                     <Style TargetType="DatePickerTextBox">
-                        <Setter Property="Text" Value="Születési dátum"/>
-                        <Setter Property="Text" Value="{Binding SelectedDate, RelativeSource={RelativeSource AncestorType=DatePicker}, StringFormat='yyyy-mm-dd'}"/>
+                        <Setter Property="Foreground" Value="AliceBlue"/>
+                        <Setter Property="Text" Value="{Binding SelectedDate, RelativeSource={RelativeSource AncestorType=DatePicker}, StringFormat='yyyy-MM-dd'}"/>
                     </Style>
                 </DatePicker.Resources>
-                <DatePicker.CacheMode>
-                    <BitmapCache/>
-                </DatePicker.CacheMode>
             </DatePicker>
-            <TextBlock x:Name="Birthday_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+            <TextBlock x:Name="Birthday_err" Foreground="red" Visibility="Hidden" Text="Kötelező mező" FontSize="10"/>
 
-            <TextBlock Text="Felhasználónév"/>
-            <TextBox x:Name="Username" Width="200" MaxLength="20"/>
-            <TextBlock x:Name="Username_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+            <TextBlock Text="Felhasználónév" Foreground="White"/>
+            <TextBox x:Name="Username" Width="200" MaxLength="20" Background="#444" Foreground="White" BorderBrush="#555" BorderThickness="1"/>
+            <TextBlock x:Name="Username_err" Foreground="red" Visibility="Hidden" Text="Kötelező mező" FontSize="10"/>
 
-            <TextBlock Text="Jelszó:"/>
+            <TextBlock Text="Jelszó:" Foreground="White"/>
             <Grid>
-                <PasswordBox x:Name="Password" Width="200" MaxLength="24" PasswordChar="*" />
-                <TextBox x:Name="SeenPassword" Width="200" Visibility="Collapsed" />
-                <Button Name="TogglePassword" Content="👁" Width="30" Height="20" HorizontalAlignment="Right" Click="TogglePassword_Click" />
+                <PasswordBox x:Name="Password" Width="200" MaxLength="24" PasswordChar="*" Background="#444" Foreground="White"/>
+                <TextBox x:Name="SeenPassword" Width="200" Visibility="Collapsed" Background="#444" Foreground="White"/>
+                <Button Name="TogglePassword" Content="👁" Width="30" Height="20" HorizontalAlignment="Right" Click="TogglePassword_Click" Background="#555" Foreground="White" />
             </Grid>
-            <TextBlock x:Name="Password_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+            <TextBlock x:Name="Password_err" Foreground="red" Visibility="Hidden" Text="Kötelező mező" FontSize="10"/>
 
-            <TextBlock Text="Jelszó megerősítése:"/>
+            <TextBlock Text="Jelszó megerősítése:" Foreground="White"/>
             <Grid>
-                <PasswordBox x:Name="Passwordconf" Width="200" MaxLength="24" PasswordChar="*" />
-                <TextBox x:Name="SeenConfPassword" Width="200" Visibility="Collapsed" />
-                <Button Name="TogglePasswordConf" Content="👁" Width="30" Height="20" HorizontalAlignment="Right" Click="TogglePasswordConf_Click" />
+                <PasswordBox x:Name="Passwordconf" Width="200" MaxLength="24" PasswordChar="*" Background="#444" Foreground="White"/>
+                <TextBox x:Name="SeenConfPassword" Width="200" Visibility="Collapsed" Background="#444" Foreground="White"/>
+                <Button Name="TogglePasswordConf" Content="👁" Width="30" Height="20" HorizontalAlignment="Right" Click="TogglePasswordConf_Click" Background="#555" Foreground="White"/>
             </Grid>
-            <TextBlock x:Name="Passwordconf_err" Foreground="red" Visibility="hidden" Text="Kötelező mező" FontSize="10"/>
+            <TextBlock x:Name="Passwordconf_err" Foreground="red" Visibility="Hidden" Text="Kötelező mező" FontSize="10"/>
 
             <StackPanel Orientation="Horizontal">
-                <Button Content="Vissza" HorizontalAlignment="Right" Width="90" Margin="5" Click="GoBack_Click" IsCancel="True"/>
-                <Button Content="Regisztrál" HorizontalAlignment="Left" Width="90" Margin="5" Click="Register_Click"/>
+                <Button Content="Vissza" HorizontalAlignment="Right" Width="90" Margin="5" Click="GoBack_Click" Background="#555" Foreground="White" IsCancel="True"/>
+                <Button Content="Regisztrál" HorizontalAlignment="Left" Width="90" Margin="5" Click="Register_Click" Background="#555" Foreground="White"/>
             </StackPanel>
 
         </StackPanel>
     </Grid>
-    
-    
 </Window>

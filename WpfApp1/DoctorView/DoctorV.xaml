@@ -55,26 +55,6 @@
             <Setter Property="Foreground" Value="#FFFFFF"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
-
-        <!-- Animációk a képekhez -->
-        <Storyboard x:Key="ImageHoverAnimation">
-            <DoubleAnimation
-            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
-            From="1" To="1.1" Duration="0:0:0.2"/>
-            <DoubleAnimation
-            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
-            From="1" To="1.1" Duration="0:0:0.2"/>
-        </Storyboard>
-
-        <!-- Animációk a képek visszaállításához -->
-        <Storyboard x:Key="ImageHoverLeaveAnimation">
-            <DoubleAnimation
-            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
-            From="1.1" To="1" Duration="0:0:0.2"/>
-            <DoubleAnimation
-            Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
-            From="1.1" To="1" Duration="0:0:0.2"/>
-        </Storyboard>
     </Window.Resources>
 
     <Grid>
@@ -82,8 +62,8 @@
         <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
             <DockPanel VerticalAlignment="Top" Background="#3A3A3A">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                    <Button Content="Felhasználók" Style="{StaticResource ButtonStyle}" Width="130" Click="UserGrid_Click"/>
-                    <Button Content="Foglalásaim" Style="{StaticResource ButtonStyle}" Width="130" Click="MyAppointments_Click"/>
+                    <Button Content="Korábbi foglalások" Style="{StaticResource ButtonStyle}" Width="200" Click="UserGrid_Click"/>
+                    <Button Content="Aktuális időpontjaim" Style="{StaticResource ButtonStyle}" Width="200" Click="MyAppointments_Click"/>
                 </StackPanel>
 
                 <!-- Kijelentkezés gomb jobb oldalon -->
@@ -93,29 +73,17 @@
 
         <!-- Fő tartalom -->
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <!-- 1. Kép és Név -->
-                <StackPanel Style="{StaticResource ImageWithTextStyle}">
-                    <Image Source="/Images/Doctor_1.png" Style="{StaticResource ImageStyle}" MouseLeftButtonDown="Mesterseges_Click"/>
-                    <TextBlock Text="H-K 8:00-16:00" Style="{StaticResource TextBlockStyle}"/>
-                    <TextBlock Text="Dr. Mesterség Ash" Style="{StaticResource TextBlockStyle}"/>
-                    <TextBlock Text="1-es rendelő" Style="{StaticResource TextBlockStyle}"/>
-                </StackPanel>
-
-                <!-- 2. Kép és Név -->
-                <StackPanel Style="{StaticResource ImageWithTextStyle}">
-                    <Image Source="/Images/Doctor_2.png" Style="{StaticResource ImageStyle}" MouseLeftButtonDown="Dora_Click"/>
-                    <TextBlock Text="Sz 8:00-16:00" Style="{StaticResource TextBlockStyle}"/>
-                    <TextBlock Text="Dr. Sipkovics Dóra" Style="{StaticResource TextBlockStyle}"/>
-                    <TextBlock Text="2-es rendelő" Style="{StaticResource TextBlockStyle}"/>
-                </StackPanel>
-
-                <!-- 3. Kép és Név -->
-                <StackPanel Style="{StaticResource ImageWithTextStyle}">
-                    <Image Source="/Images/Doctor_3.png" Style="{StaticResource ImageStyle}" MouseLeftButtonDown="Musky_Click"/>
-                    <TextBlock Text="Cs-Szo 8:00-16:00" Style="{StaticResource TextBlockStyle}"/>
-                    <TextBlock Text="Dr. Muskovics Alan" Style="{StaticResource TextBlockStyle}"/>
-                    <TextBlock Text="3-as rendelő" Style="{StaticResource TextBlockStyle}"/>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!-- Orvosi eszközök és darabszámaik -->
+                <TextBlock Style="{StaticResource TextBlockStyle}" Text="Orvosi eszközök készlete:"/>
+                <StackPanel HorizontalAlignment="Center">
+                    <!-- Eszközök listája -->
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="Sztetoszkóp: 12 db" Margin="0,0,0,10"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="Injekciós tűk: 50 db" Margin="0,0,0,10"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="Glukométer: 5 db" Margin="0,0,0,10"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="Gyógyszertartó táska: 7 db" Margin="0,0,0,10"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="Orvosi kesztyű: 200 db" Margin="0,0,0,10"/>
+                    <TextBlock Style="{StaticResource TextBlockStyle}" Text="Lázmérő: 15 db" Margin="0,0,0,10"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

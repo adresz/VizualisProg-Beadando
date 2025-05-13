@@ -267,13 +267,8 @@ namespace WpfApp1.RegisterView
             Birthday.BorderThickness = hasDate ? new Thickness(1) : new Thickness(2);
             Birthday_err.Visibility = hasDate ? Visibility.Hidden : Visibility.Visible;
 
-            bool notYoug = ((DateTime.Now.Year - Birthday.SelectedDate.Value.Year) >= 16) && (DateTime.Now.Month >= Birthday.SelectedDate.Value.Month) && (DateTime.Now.Day >= Birthday.SelectedDate.Value.Day);
-            Birthday.BorderBrush = notYoug ? Brushes.Gray : Brushes.Red;
-            Birthday.BorderThickness = notYoug ? new Thickness(1) : new Thickness(2);
-            Birthday_err.Text = "Túl fiatal vagy!";
-            Birthday_err.Visibility = notYoug ? Visibility.Hidden : Visibility.Visible;
 
-            return hasDate && notYoug;
+            return hasDate;
         }
 
         private bool ValidatePassword()
