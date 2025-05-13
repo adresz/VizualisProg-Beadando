@@ -1,4 +1,5 @@
 ﻿using LoginOptions;
+using Microsoft.VisualBasic.ApplicationServices;
 using Model;
 using System;
 using System.Linq;
@@ -17,11 +18,13 @@ namespace WpfApp1.AdminView
         public string doctor = "";
         public string Username = "";
         public string Rank = "";
+        public int user_ID;
 
-        public AdminV(int accessID, string Username)
+        public AdminV(int accessID, string Username, int userID)
         {
             InitializeComponent();
             this.Username = Username;
+            user_ID = userID;
             if (accessID == 3)
             {
                 Title = $"Bejelentkezve mint [Admin] {Username}";
@@ -58,7 +61,7 @@ namespace WpfApp1.AdminView
         {
             doctor = "Mesterseges";
             this.Hide();
-            Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
+            Appointment.Appointments Appointment = new Appointment.Appointments(doctor, 68, user_ID);
             Appointment.Show();
 
             // Logolás: Admin választotta a Mesterseges orvost
@@ -70,7 +73,7 @@ namespace WpfApp1.AdminView
         {
             doctor = "Dora";
             this.Hide();
-            Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
+            Appointment.Appointments Appointment = new Appointment.Appointments(doctor, 67, user_ID);
             Appointment.Show();
 
             // Logolás: Admin választotta a Dora orvost
@@ -82,7 +85,7 @@ namespace WpfApp1.AdminView
         {
             doctor = "Musky";
             this.Hide();
-            Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
+            Appointment.Appointments Appointment = new Appointment.Appointments(doctor, 66, user_ID);
             Appointment.Show();
 
             // Logolás: Admin választotta a Musky orvost
@@ -120,7 +123,7 @@ namespace WpfApp1.AdminView
             {
                 var log = new Logs
                 {
-                    user_id = 0, // Admin ID-ja (vagy 0 ha nincs azonosító)
+                    user_id = user_ID, // Admin ID-ja (vagy 0 ha nincs azonosító)
                     Action = action,
                     involved_user = null, // Az aktuális felhasználó próbálkozása
                     date = DateTime.Now

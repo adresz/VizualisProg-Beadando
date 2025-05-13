@@ -1,5 +1,6 @@
 ﻿using Model;
 using System.ComponentModel.DataAnnotations;
+using WpfApp1.Appointment;
 
 public class Users
 {

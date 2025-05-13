@@ -12,7 +12,7 @@ namespace WpfApp1.DoctorView
         private int _accessID;
 
         // Konstruktor, amely fogadja az accessID-t
-        public DoctorV(int accessID)
+        public DoctorV(int accessID, string username, int user_id)
         {
             InitializeComponent();
             _accessID = accessID;  // Beállítjuk az accessID értékét

@@ -34,7 +34,7 @@ namespace WpfApp1.RegisterView
             Birthday.DisplayDateEnd = DateTime.Today;
             Birthday.DisplayDateStart = DateTime.Parse("1900-01-01");
         }
-
+        public int userID;
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
@@ -48,7 +48,7 @@ namespace WpfApp1.RegisterView
             {
                 MessageBox.Show("Sikeres regisztráció");
                 SendData();
-                UserV userView = new UserV(Username.Text);
+                UserV userView = new UserV(1, Username.Text, userID);
                 userView.Show();
                 this.Close();
                 Application.Current.MainWindow.Close();
@@ -74,7 +74,7 @@ namespace WpfApp1.RegisterView
                         is_banned = false,
                         ban_reason = null
                     };
-
+                    userID = user.user_id;
                     context.Users.Add(user);
                     context.SaveChanges(); // Az ID generálódik itt
 

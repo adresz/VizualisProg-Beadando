@@ -29,7 +29,7 @@ namespace LoginOptions
 
             var username = Username.Text;
             var password = Password.Password;
-
+            var user_id = 0;
             using (var context = new MyDbContext())
             {
                 // Keresés a felhasználó adatbázisban
@@ -46,6 +46,7 @@ namespace LoginOptions
                         bool passwordMatches = BCrypt.Net.BCrypt.Verify(password, user.password);
                         if (passwordMatches)
                         {
+                            user_id = user.user_id;
                             // Sikeres bejelentkezés
                             MessageBox.Show("Sikeres bejelentkezés");
 
@@ -62,17 +63,17 @@ namespace LoginOptions
 
                             if (user.access_id == 1)
                             {
-                                UserV userview = new UserV(username);
+                                UserV userview = new UserV(1,username, user_id);
                                 userview.Show();
                             }
                             if (user.access_id == 2)
                             {
-                                DoctorV doctorview = new DoctorV(user.user_id);
+                                DoctorV doctorview = new DoctorV(2, username, user_id);
                                 doctorview.Show();
                             }
                             if (user.access_id == 3)
                             {
-                                AdminV adminview = new AdminV(0, username);
+                                AdminV adminview = new AdminV(3, username, user_id);
                                 adminview.Show();
                             }
                             this.Close();

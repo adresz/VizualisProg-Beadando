@@ -22,9 +22,11 @@ namespace WpfApp1.UserView
     public partial class UserV : Window
     {
         public string doctor = "";
+        public int userID;
 
-        public UserV(string username)
+        public UserV(int accessID, string username, int user_id)
         {
+            userID = user_id;
             InitializeComponent();
             Title = $"Bejelentkezve mint: {username}";
         }
@@ -42,7 +44,7 @@ namespace WpfApp1.UserView
         {
             doctor = "Mesterseges";
             this.Hide();
-            Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
+            Appointment.Appointments Appointment = new Appointment.Appointments(doctor, 68, userID);
             Appointment.Show();
         }
 
@@ -50,7 +52,7 @@ namespace WpfApp1.UserView
         {
             doctor = "Orsolya";
             this.Hide();
-            Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
+            Appointment.Appointments Appointment = new Appointment.Appointments(doctor, 67, userID);
             Appointment.Show();
         }
 
@@ -58,7 +60,7 @@ namespace WpfApp1.UserView
         {
             doctor = "Musky";
             this.Hide();
-            Appointment.Appointments Appointment = new Appointment.Appointments(doctor);
+            Appointment.Appointments Appointment = new Appointment.Appointments(doctor, 66, userID);
             Appointment.Show();
         }
 
