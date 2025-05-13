@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|c:\\users\\t. adrian\\onedrive - neumann j\u00E1nos egyetem\\dokumentumok\\github\\vizualisprog-beadando\\wpfapp1\\adminview\\admin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:adminview\\admin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|c:\\users\\t. adrian\\onedrive - neumann j\u00E1nos egyetem\\dokumentumok\\github\\vizualisprog-beadando\\wpfapp1\\doctorview\\doctorv.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:doctorview\\doctorv.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,10 +27,6 @@
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:appointment\\appointments.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|c:\\users\\t. adrian\\onedrive - neumann j\u00E1nos egyetem\\dokumentumok\\github\\vizualisprog-beadando\\wpfapp1\\adminview\\admin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:adminview\\admin.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|c:\\users\\t. adrian\\onedrive - neumann j\u00E1nos egyetem\\dokumentumok\\github\\vizualisprog-beadando\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C532820-5507-4FF1-8C8F-EEC5175290AD}|WpfApp1.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -42,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Appointments.xaml.cs",
               "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\Appointment\\Appointments.xaml.cs",
               "RelativeDocumentMoniker": "Appointment\\Appointments.xaml.cs",
@@ -55,12 +55,11 @@
               "ViewState": "AgIAAHsAAAAAAAAAAAAAwN8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-13T16:16:54.495Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Register.xaml.cs",
               "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\RegisterView\\Register.xaml.cs",
               "RelativeDocumentMoniker": "RegisterView\\Register.xaml.cs",
@@ -69,12 +68,11 @@
               "ViewState": "AgIAAIABAAAAAAAAAAAAAJMBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-13T16:18:20.143Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UserV.xaml.cs",
               "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\UserView\\UserV.xaml.cs",
               "RelativeDocumentMoniker": "UserView\\UserV.xaml.cs",
@@ -83,8 +81,7 @@
               "ViewState": "AgIAAHgAAAAAAAAAAAAjwIwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-13T16:15:44.243Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -92,7 +89,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "Admin.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml.cs",
+              "RelativeDocumentMoniker": "AdminView\\Admin.xaml.cs",
+              "ToolTip": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml.cs",
+              "RelativeToolTip": "AdminView\\Admin.xaml.cs",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAwwIsAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-13T15:40:27.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MyAppointments.xaml.cs",
               "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\MyAppointments\\MyAppointments.xaml.cs",
               "RelativeDocumentMoniker": "MyAppointments\\MyAppointments.xaml.cs",
@@ -100,12 +110,11 @@
               "RelativeToolTip": "MyAppointments\\MyAppointments.xaml.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAAwA4AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T16:16:42.777Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-13T16:16:42.777Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "DoctorV.xaml.cs",
               "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\DoctorView\\DoctorV.xaml.cs",
               "RelativeDocumentMoniker": "DoctorView\\DoctorV.xaml.cs",
@@ -126,21 +135,7 @@
               "RelativeToolTip": "MainWindow.xaml.cs",
               "ViewState": "AgIAAF0AAAAAAAAAAAAAwEEAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T16:11:03.922Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Admin.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml.cs",
-              "RelativeDocumentMoniker": "AdminView\\Admin.xaml.cs",
-              "ToolTip": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\AdminView\\Admin.xaml.cs",
-              "RelativeToolTip": "AdminView\\Admin.xaml.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T15:40:27.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-13T16:11:03.922Z"
             },
             {
               "$type": "Document",
@@ -151,8 +146,7 @@
               "ToolTip": "C:\\Users\\T. Adrian\\OneDrive - Neumann J\u00E1nos Egyetem\\Dokumentumok\\GitHub\\VizualisProg-Beadando\\WpfApp1\\UserView\\UserV.xaml",
               "RelativeToolTip": "UserView\\UserV.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-05-13T18:24:18.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-13T18:24:18.364Z"
             }
           ]
         }

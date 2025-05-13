@@ -138,7 +138,6 @@ namespace WpfApp1.AdminView
         protected override void OnClosed(EventArgs e)
         {
             this.Close();
-            Application.Current.MainWindow.Show();
         }
     }
 }
