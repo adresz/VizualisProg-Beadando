@@ -6,16 +6,36 @@
         xmlns:local="clr-namespace:WpfApp1.UserDatas"
         mc:Ignorable="d"
         Title="UserDataGrid" Height="640" Width="1080"
-        WindowStartupLocation="CenterScreen">
-    <Grid>
-        <DataGrid x:Name="UsersDataGrid" AutoGenerateColumns="False" Margin="10,12,10,60" MouseDoubleClick="UsersDataGrid_MouseDoubleClick" SelectionUnit="Cell" IsReadOnly="False" CanUserAddRows="False" CurrentCellChanged="DataGrid_Value_Changed">
+        WindowStartupLocation="CenterScreen"
+        Background="#1E1E1E">
+
+    <Grid Background="#2D2D30">
+        <DataGrid x:Name="UsersDataGrid"
+                  AutoGenerateColumns="False"
+                  Margin="10,12,10,60"
+                  MouseDoubleClick="UsersDataGrid_MouseDoubleClick"
+                  SelectionUnit="Cell"
+                  IsReadOnly="False"
+                  CanUserAddRows="False"
+                  CurrentCellChanged="DataGrid_Value_Changed"
+                  RowBackground="#333"
+                  AlternatingRowBackground="#2A2A2A"
+                  Foreground="White"
+                  Background="#2D2D30"
+                  GridLinesVisibility="None"
+                  HeadersVisibility="Column">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#3E3E42"/>
+                    <Setter Property="Foreground" Value="#C0C0C0"/>
+                    <Setter Property="FontWeight" Value="SemiBold"/>
+                    <Setter Property="FontSize" Value="14"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
             <DataGrid.Columns>
-                <!-- User táblából -->
                 <DataGridTextColumn Header="Felhasználónév" Binding="{Binding username}" Width="120*"/>
                 <DataGridTextColumn Header="E-mail" Binding="{Binding email}" Width="180*"/>
                 <DataGridTextColumn Header="Hozzáférési szint" Binding="{Binding AccessRole}" Width="100*"/>
-
-                <!-- Users_details táblából -->
                 <DataGridTextColumn Header="Keresztnév" Binding="{Binding first_name}" Width="120*"/>
                 <DataGridTextColumn Header="Vezetéknév" Binding="{Binding last_name}" Width="120*"/>
                 <DataGridTextColumn Header="Telefonszám" Binding="{Binding phone_number}" Width="120*"/>
@@ -26,29 +46,81 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <!-- Laposítási gombok -->
+        <!-- Lapozás -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10">
-            <Button x:Name="PreviousButton" Content="Előző 30" Click="PreviousPage_Click" IsEnabled="False" Padding="10" Margin="5" Width="110"/>
-            <TextBlock Text="{Binding CurrentPage, Mode=OneWay}" Margin="10" FontSize="16"/>
-            <Button x:Name="NextButton" Content="Következő 30" Click="NextPage_Click" Padding="10" Margin="5" Width="110"/>
+            <Button x:Name="PreviousButton"
+                    Content="Előző 30"
+                    Click="PreviousPage_Click"
+                    IsEnabled="False"
+                    Padding="10"
+                    Margin="5"
+                    Width="110"
+                    Background="#4A4A4F"
+                    Foreground="#C0C0C0"
+                    FontWeight="SemiBold"
+                    FontSize="14"
+                    BorderBrush="Transparent"/>
+
+            <TextBlock Text="{Binding CurrentPage, Mode=OneWay}"
+                       Margin="10"
+                       FontSize="16"
+                       Foreground="White"
+                       VerticalAlignment="Center"/>
+
+            <Button x:Name="NextButton"
+                    Content="Következő 30"
+                    Click="NextPage_Click"
+                    Padding="10"
+                    Margin="5"
+                    Width="110"
+                    Background="#4A4A4F"
+                    Foreground="#C0C0C0"
+                    FontWeight="SemiBold"
+                    FontSize="14"
+                    BorderBrush="Transparent"/>
         </StackPanel>
 
-
+        <!-- Vissza gomb -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,8" Width="120">
-            <Button x:Name="Back" Content="Vissza" Click="GoBack_Click" Padding="10" Margin="5" Width="110"/>
+            <Button x:Name="Back"
+                    Content="Vissza"
+                    Click="GoBack_Click"
+                    Padding="10"
+                    Margin="5"
+                    Width="110"
+                    Background="#3E3E42"
+                    Foreground="#C0C0C0"
+                    FontWeight="SemiBold"
+                    FontSize="14"
+                    BorderBrush="Transparent"/>
         </StackPanel>
 
-
+        <!-- Dropdown -->
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,38,15" Width="272">
-            <TextBlock Text="Ennyi megjelenitése:" VerticalAlignment="Center" Margin="0,0,40,0"/>
-            <ComboBox x:Name="SelectedCombo" Width="120" SelectedIndex="2" Height="37" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="ComboBox_SelectionChanged">
-                <ComboBoxItem Content="20"/>
-                <ComboBoxItem Content="25"/>
-                <ComboBoxItem Content="30"/>
-                <ComboBoxItem Content="50"/>
-                <ComboBoxItem Content="100"/>
+            <TextBlock Text="Ennyi megjelenítése:"
+                       VerticalAlignment="Center"
+                       Margin="0,0,40,0"
+                       Foreground="White"
+                       FontSize="14"/>
+
+            <ComboBox x:Name="SelectedCombo"
+                      Width="120"
+                      SelectedIndex="2"
+                      Height="37"
+                      HorizontalContentAlignment="Center"
+                      VerticalContentAlignment="Center"
+                      SelectionChanged="ComboBox_SelectionChanged"
+                      Background="#4A4A4F"
+                      Foreground="#C0C0C0"
+                      FontWeight="SemiBold"
+                      FontSize="14"
+                      BorderBrush="Transparent">
+                <ComboBoxItem Content="20" Background="#4A4A4F" Foreground="#C0C0C0"/>
+                <ComboBoxItem Content="25" Background="#4A4A4F" Foreground="#C0C0C0"/>
+                <ComboBoxItem Content="30" Background="#4A4A4F" Foreground="#C0C0C0"/>
+                <ComboBoxItem Content="50" Background="#4A4A4F" Foreground="#C0C0C0"/>
+                <ComboBoxItem Content="100" Background="#4A4A4F" Foreground="#C0C0C0"/>
             </ComboBox>
         </StackPanel>
-
     </Grid>
 </Window>

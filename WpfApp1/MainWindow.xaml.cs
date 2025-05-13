@@ -67,7 +67,7 @@ namespace LoginOptions
                             }
                             if (user.access_id == 2)
                             {
-                                DoctorV doctorview = new DoctorV();
+                                DoctorV doctorview = new DoctorV(user.user_id);
                                 doctorview.Show();
                             }
                             if (user.access_id == 3)

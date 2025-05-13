@@ -21,6 +21,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp1.UserView;
+using Model;
 
 
 namespace WpfApp1.RegisterView
@@ -46,7 +47,7 @@ namespace WpfApp1.RegisterView
             if (isValidText & isCorrectFormEmail & isAvailable)
             {
                 MessageBox.Show("Sikeres regisztráció");
-                // SendData();
+                SendData();
                 UserV userView = new UserV(Username.Text);
                 userView.Show();
                 this.Close();
@@ -56,7 +57,62 @@ namespace WpfApp1.RegisterView
 
         private void SendData()
         {
+            try
+            {
+                using (var context = new MyDbContext())
+                {
+                    // Jelszó hashelés
+                    string hashedPassword = BCrypt.Net.BCrypt.HashPassword(Password.Password);
+
+                    // Új felhasználó létrehozása
+                    var user = new Users
+                    {
+                        username = Username.Text,
+                        password = hashedPassword,
+                        access_id = 1, // Alapértelmezett hozzáférés pl. "User"
+                        created_at = DateTime.Now,
+                        is_banned = false,
+                        ban_reason = null
+                    };
+
+                    context.Users.Add(user);
+                    context.SaveChanges(); // Az ID generálódik itt
+
+                    // Felhasználó részletei
+                    var details = new User_details
+                    {
+                        user_id = user.user_id,
+                        email = Email.Text,
+                        first_name = FirstName.Text,
+                        last_name = LastName.Text,
+                        phone_Number = Phone.Text,
+                        taj_Number = ID.Text,
+                        gender = (bool)Gender_M.IsChecked ? 1 : 0
+                    };
+
+                    context.User_details.Add(details);
+
+                    // Naplózás
+                    var log = new Logs
+                    {
+                        user_id = user.user_id,
+                        Action = $"Új regisztráció: {Username.Text}",
+                        involved_user = null,
+                        date = DateTime.Now
+                    };
+
+                    context.Logs.Add(log);
+
+                    // Minden mentése
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba történt a regisztráció mentésekor:\n" + ex.Message);
+            }
         }
+
 
         private void NumbersOnly(object sender, TextCompositionEventArgs e)
         {
@@ -71,34 +127,70 @@ namespace WpfApp1.RegisterView
         private bool isNotTaken()
         {
             bool available = true;
-            var taken = "Hiba";
-            //Else if feltételek kellenek, hogy mindenképp piros legyen
-            //Ha nincs ott szürke marad mert üres karakter mindig szabad
-            //az adatbázison belül
+            var taken = "Hiba:";
+
             try
             {
                 List<TextBox> information = [Email, Phone, ID, Username];
-                bool[] invalid = {};
-                string[] errormsg = {", az email cím", ", a telefonszám", ", a tajkártya szám", ", a felhasználónév"};
-                string[] postfix = { "email", "Phone_number", "TAJ_number"};
-                string[] textBoxmsg = {"A megadott email foglalt", "A megadott tel.szám foglalt", "A megadott azonosító foglalt", "A megadott név foglalt"};
-               
+                string[] errormsg = { ", az email cím", ", a telefonszám", ", a tajkártya szám", ", a felhasználónév" };
+                string[] textBoxmsg = { "A megadott email foglalt", "A megadott tel.szám foglalt", "A megadott azonosító foglalt", "A megadott név foglalt" };
+
+                using (var context = new MyDbContext())
+                {
+                    // Email
+                    string email = Email.Text.Trim();
+                    if (!string.IsNullOrWhiteSpace(email) && context.User_details.Any(u => u.email == email))
+                    {
+                        Email.BorderBrush = Brushes.Red;
+                        taken += errormsg[0];
+                        available = false;
+                    }
+
+                    // Phone
+                    string phone = Phone.Text.Trim();
+                    if (!string.IsNullOrWhiteSpace(phone) && context.User_details.Any(u => u.phone_Number == phone))
+                    {
+                        Phone.BorderBrush = Brushes.Red;
+                        taken += errormsg[1];
+                        available = false;
+                    }
+
+                    // TAJ
+                    string taj = ID.Text.Trim();
+                    if (!string.IsNullOrWhiteSpace(taj) && context.User_details.Any(u => u.taj_Number == taj))
+                    {
+                        ID.BorderBrush = Brushes.Red;
+                        taken += errormsg[2];
+                        available = false;
+                    }
+
+                    // Username
+                    string username = Username.Text.Trim();
+                    if (!string.IsNullOrWhiteSpace(username) && context.Users.Any(u => u.username == username))
+                    {
+                        Username.BorderBrush = Brushes.Red;
+                        taken += errormsg[3];
+                        available = false;
+                    }
+                }
 
                 if (!available)
                 {
                     taken = taken.TrimEnd(',', ' ') + " már foglalt.";
-                    MessageBox.Show(taken);
+                    MessageBox.Show(taken, "Már létező adatok", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
             catch (Exception err)
             {
-                MessageBox.Show("Váratlan hiba lépett fel, lépjen kapcsolatba az ügyfélszolgálattal\n." + err);
+                MessageBox.Show("Váratlan hiba lépett fel, lépjen kapcsolatba az ügyfélszolgálattal.\n\n" + err.Message,
+                                "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
             return available;
         }
-        
+
+
         private bool ValidateUsername(string username)
         {
             string pattern = @"^[A-Za-z0-9_.]{6,20}$";
@@ -178,7 +270,7 @@ namespace WpfApp1.RegisterView
             bool notYoug = ((DateTime.Now.Year - Birthday.SelectedDate.Value.Year) >= 16) && (DateTime.Now.Month >= Birthday.SelectedDate.Value.Month) && (DateTime.Now.Day >= Birthday.SelectedDate.Value.Day);
             Birthday.BorderBrush = notYoug ? Brushes.Gray : Brushes.Red;
             Birthday.BorderThickness = notYoug ? new Thickness(1) : new Thickness(2);
-            Birthday_err.Text = "Túl fiatal vagy fiacskám!";
+            Birthday_err.Text = "Túl fiatal vagy!";
             Birthday_err.Visibility = notYoug ? Visibility.Hidden : Visibility.Visible;
 
             return hasDate && notYoug;

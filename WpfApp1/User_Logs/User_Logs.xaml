@@ -5,10 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.UserLogs"
         mc:Ignorable="d"
-        Title="Felhasználói események" Height="450" Width="800">
-    <Grid>
+        Title="Felhasználói események"
+        Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="#1E1E1E">
+
+    <Window.Resources>
+        <!-- Egyedi fejléc stílus -->
+        <Style x:Key="DataGridColumnHeaderStyleDark" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#3A3A3A"/>
+            <Setter Property="Foreground" Value="#E0E0E0"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="BorderBrush" Value="#4A4A4A"/>
+            <Setter Property="BorderThickness" Value="0,0,1,1"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#2D2D30">
         <!-- DataGrid a logok megjelenítésére -->
-        <DataGrid x:Name="LogsDataGrid" AutoGenerateColumns="False" Margin="10" CanUserAddRows="False" IsReadOnly="True">
+        <DataGrid x:Name="LogsDataGrid"
+                  AutoGenerateColumns="False"
+                  Margin="10,10,10,60"
+                  CanUserAddRows="False"
+                  IsReadOnly="True"
+                  RowBackground="#333333"
+                  AlternatingRowBackground="#2A2A2A"
+                  Foreground="White"
+                  Background="#2D2D30"
+                  GridLinesVisibility="None"
+                  HeadersVisibility="Column"
+                  ColumnHeaderHeight="30"
+                  FontSize="14"
+                  ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyleDark}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Log ID" Binding="{Binding log_id}" Width="100*"/>
                 <DataGridTextColumn Header="Dátum" Binding="{Binding date}" Width="300*"/>
@@ -17,5 +47,24 @@
                 <DataGridTextColumn Header="Involved User" Binding="{Binding involved_user}" Width="100*"/>
             </DataGrid.Columns>
         </DataGrid>
+
+        <!-- Vissza gomb bal alsó sarokban -->
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Margin="10,0,0,10"
+                    Width="120">
+            <Button x:Name="BackButton"
+                    Content="Vissza"
+                    Click="BackButton_Click"
+                    Padding="10"
+                    Margin="5"
+                    Width="110"
+                    Background="#4A4A4F"
+                    Foreground="#C0C0C0"
+                    FontWeight="SemiBold"
+                    FontSize="14"
+                    BorderBrush="Transparent"/>
+        </StackPanel>
     </Grid>
 </Window>

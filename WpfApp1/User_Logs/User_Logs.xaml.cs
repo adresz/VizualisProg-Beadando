@@ -42,5 +42,10 @@ namespace WpfApp1.UserLogs
             this.Close();
             Application.Current.MainWindow.Show();  // Visszatér a főablakhoz
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close(); // Bezárja az ablakot
+        }
     }
 }
