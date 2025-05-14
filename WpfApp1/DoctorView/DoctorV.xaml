@@ -62,8 +62,7 @@
         <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
             <DockPanel VerticalAlignment="Top" Background="#3A3A3A">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                    <Button Content="Korábbi foglalások" Style="{StaticResource ButtonStyle}" Width="200" Click="UserGrid_Click"/>
-                    <Button Content="Aktuális időpontjaim" Style="{StaticResource ButtonStyle}" Width="200" Click="MyAppointments_Click"/>
+                    <Button Content="Összes foglalás" Style="{StaticResource ButtonStyle}" Width="200" Click="PreviousAppointment_Click"/>
                 </StackPanel>
 
                 <!-- Kijelentkezés gomb jobb oldalon -->

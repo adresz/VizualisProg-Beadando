@@ -1,47 +1,41 @@
 ﻿using LoginOptions;
 using Model;
-using System;
 using System.Windows;
-using System.Windows.Input;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using WpfApp1.PreviousAppointments; // Fontos importálni a PreviousAppointments névteret
 
 namespace WpfApp1.DoctorView
 {
-    /// <summary>
-    /// Interaction logic for DoctorV.xaml
-    /// </summary>
     public partial class DoctorV : Window
     {
         public int _accessID;
         public int userID;
         public string Username;
-        
+
         // Konstruktor, amely fogadja az accessID-t
         public DoctorV(int accessID, string username, int user_id)
         {
             InitializeComponent();
             Username = username;
+            userID = user_id;
             _accessID = accessID;  // Beállítjuk az accessID értékét
             Application.Current.MainWindow = this;
         }
 
-        // Gomb eseménykezelők
-        private void News_Click(object sender, RoutedEventArgs e)
+        // Previous Appointment gomb eseménykezelője
+        private void PreviousAppointment_Click(object sender, RoutedEventArgs e)
         {
-            // Hírek gomb kattintásának kezelése
-            MessageBox.Show("Hírek megjelenítése...");
-        }
-
-        private void Treatments_Click(object sender, RoutedEventArgs e)
-        {
-            // Kezelések gomb kattintásának kezelése
-            MessageBox.Show("Kezelések megjelenítése...");
+            // Létrehozzuk a PreviousAppointments ablakot és megnyitjuk
+            PreviousAppointments.PreviousAppointments asd = new PreviousAppointments.PreviousAppointments(userID, Username);
+            LogAction($"[Doktor] {Username} megtekintette az foglalási előzményeket.");
+            asd.Show();
+            this.Hide();  // Opcióként bezárhatjuk az aktuális ablakot, ha szükséges
         }
 
         private void MyAppointments_Click(object sender, RoutedEventArgs e)
         {
             // Foglalások gomb kattintásának kezelése
             MessageBox.Show("Foglalásaim megjelenítése...");
+            LogAction($"[Doktor] {Username} megtekintette az aktuális foglalásokat.");
         }
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
@@ -53,11 +47,6 @@ namespace WpfApp1.DoctorView
             this.Close();
             // Logolás: Admin kijelentkezett
             LogAction($"[Doktor] {Username} kijelentkezett");
-        }
-
-        private void UserGrid_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void LogAction(string action)

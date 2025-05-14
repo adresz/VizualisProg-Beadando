@@ -5,24 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.UserView"
         mc:Ignorable="d"
-        Title="" Height="474" Width="800">
+        Title="User Panel" Height="474" Width="800" Background="#2E2E2E">
+
     <Window.Resources>
-        <!-- Gombok stílusa lekerekített sarkokkal -->
+        <!-- Gombok stílusa sötétebb háttérrel -->
         <Style x:Key="ButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="Gray"/>
-            <Setter Property="Foreground" Value="#FFE0FF00"/>
+            <Setter Property="Background" Value="#4C4C4C"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
             <Setter Property="Padding" Value="20,5"/>
             <Setter Property="Margin" Value="5"/>
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="Width" Value="160"/>
             <Setter Property="Height" Value="40"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="Black"/>
+                    <Setter Property="Background" Value="#FF4C4C4C"/>
                 </Trigger>
             </Style.Triggers>
         </Style>
@@ -51,7 +52,7 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="5"/>
-            <Setter Property="Foreground" Value="#333"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
             <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
 
@@ -77,55 +78,23 @@
     </Window.Resources>
 
     <Grid>
-        <!-- Navigációs sáv lekerekített sarkokkal -->
+        <!-- Navigációs sáv sötétebb háttérrel és lekerekített sarkokkal -->
         <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
-            <DockPanel VerticalAlignment="Top" Background="LightGray">
+            <DockPanel VerticalAlignment="Top" Background="#3A3A3A">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
-                    <Button Content="Foglalásaim" Style="{StaticResource ButtonStyle}" Width="120" Click="MyAppointments_Click">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10" Width="120">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button Content="PlaceHolder" Style="{StaticResource ButtonStyle}" Width="120">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10" Width="120">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <Button Content="PlaceHolder" Style="{StaticResource ButtonStyle}" Width="120">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10" Width="120">
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Border>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+                    <Button Content="Foglalásaim" Style="{StaticResource ButtonStyle}" Width="160" Click="MyAppointments_Click"/>
+                    <Button Content="PlaceHolder" Style="{StaticResource ButtonStyle}" Width="160"/>
+                    <Button Content="PlaceHolder" Style="{StaticResource ButtonStyle}" Width="160"/>
                 </StackPanel>
 
                 <!-- Kijelentkezés gomb jobb oldalon -->
-                <Button Content="Kijelentkezés" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Center" Click="LogOut_Click">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="10" Width="120">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
+                <Button Content="Kijelentkezés" Style="{StaticResource ButtonStyle}" HorizontalAlignment="Right" VerticalAlignment="Center" Click="LogOut_Click"/>
             </DockPanel>
         </Border>
 
         <!-- Fő tartalom -->
         <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
                 <!-- 1. Kép és Név -->
                 <StackPanel Style="{StaticResource ImageWithTextStyle}">
                     <Image Source="/Images/Doctor_1.png" Style="{StaticResource ImageStyle}" MouseLeftButtonDown="Mesterseges_Click">

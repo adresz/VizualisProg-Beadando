@@ -5,8 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1.MyAppointments"
         mc:Ignorable="d"
-        Title="MyAppointments" Height="450" Width="800">
-    <Grid>
-        
+        Title="Időpontjaim" Height="450" Width="800"
+        Background="#1E1E1E" Foreground="White">
+
+    <Grid Margin="10">
+        <DataGrid x:Name="AppointmentsDataGrid"
+                  AutoGenerateColumns="False"
+                  HeadersVisibility="Column"
+                  CanUserAddRows="False"
+                  Background="#2D2D30"
+                  Foreground="White"
+                  GridLinesVisibility="All"
+                  BorderBrush="Gray"
+                  RowBackground="#2D2D30"
+                  AlternatingRowBackground="#44475A"
+                  FontSize="14"
+                  RowHeight="30">
+
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#3C3C3C"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="Height" Value="30"/>
+                    <Setter Property="BorderBrush" Value="Gray"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,1"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Appointment ID" Binding="{Binding appointment_id}" Width="*" />
+                <DataGridTextColumn Header="Dátum és idő" Binding="{Binding datetime}" Width="*" />
+                <DataGridTextColumn Header="Orvos neve" Binding="{Binding doctor_name}" Width="*" />
+                <DataGridTextColumn Header="Felhasználónév" Binding="{Binding username}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Vissza gomb hozzáadása -->
+        <Button Content="Vissza" 
+                Width="120" 
+                Height="40" 
+                Background="#FF4CAF50" 
+                Foreground="White" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Bottom" 
+                Margin="0,0,0,20" 
+                FontSize="16"
+                Click="BackButton_Click">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="1" CornerRadius="10">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
     </Grid>
 </Window>

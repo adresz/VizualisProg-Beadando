@@ -203,3 +203,5 @@ C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\Vizuali
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\DoctorView\DoctorV.g.cs
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\DoctorView\DoctorV.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\PreviousAppointments\PreviousAppointments.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\PreviousAppointments\PreviousAppointments.baml
