@@ -37,6 +37,9 @@ namespace WpfApp1.UserDatas
                 ItemsPerPage = selectedValueInt;
                 CurrentPage = 1; // Reset to first page
                 LoadDataFromDatabase();
+                PreviousButton.Content = $"Előző {selectedItem.Content.ToString()}";
+                NextButton.Content = $"Következő {selectedItem.Content.ToString()}";
+
             }
         }
 

@@ -139,5 +139,10 @@ namespace WpfApp1.UserView
                 context.SaveChanges();
             }
         }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

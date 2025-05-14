@@ -83,8 +83,6 @@
             <DockPanel VerticalAlignment="Top" Background="#3A3A3A">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
                     <Button Content="Foglalásaim" Style="{StaticResource ButtonStyle}" Width="160" Click="MyAppointments_Click"/>
-                    <Button Content="PlaceHolder" Style="{StaticResource ButtonStyle}" Width="160"/>
-                    <Button Content="PlaceHolder" Style="{StaticResource ButtonStyle}" Width="160"/>
                 </StackPanel>
 
                 <!-- Kijelentkezés gomb jobb oldalon -->

@@ -29,14 +29,7 @@ namespace WpfApp1.DoctorView
             LogAction($"[Doktor] {Username} megtekintette az foglalási előzményeket.");
             asd.Show();
             this.Hide();  // Opcióként bezárhatjuk az aktuális ablakot, ha szükséges
-        }
-
-        private void MyAppointments_Click(object sender, RoutedEventArgs e)
-        {
-            // Foglalások gomb kattintásának kezelése
-            MessageBox.Show("Foglalásaim megjelenítése...");
-            LogAction($"[Doktor] {Username} megtekintette az aktuális foglalásokat.");
-        }
+        }   
 
         private void LogOut_Click(object sender, RoutedEventArgs e)
         {
@@ -64,5 +57,6 @@ namespace WpfApp1.DoctorView
                 context.SaveChanges();
             }
         }
+
     }
 }

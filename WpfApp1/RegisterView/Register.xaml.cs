@@ -48,10 +48,10 @@ namespace WpfApp1.RegisterView
             {
                 MessageBox.Show("Sikeres regisztráció");
                 SendData();
-                UserV userView = new UserV(1, Username.Text, userID);
-                userView.Show();
-                this.Close();
                 Application.Current.MainWindow.Close();
+                UserV userView = new UserV(1, Username.Text, userID);
+                this.Close();
+                userView.Show();
             }
         }
 
@@ -396,11 +396,6 @@ namespace WpfApp1.RegisterView
         }
 
         //Ablaka bezárással/visszalépssel kapcsolatosak
-        
-        protected override void OnClosed(EventArgs e)
-        {
-            Application.Current.MainWindow.Show();
-        }
 
         private void GoBack_Click(object sender, RoutedEventArgs e)
         {

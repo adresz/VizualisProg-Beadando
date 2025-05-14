@@ -1,124 +1,48 @@
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.csproj.AssemblyReference.cache
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MainWindow.g.cs
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\App.g.cs
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1_MarkupCompile.cache
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1_MarkupCompile.lref
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\WpfApp1.exe
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\WpfApp1.deps.json
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\WpfApp1.runtimeconfig.json
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\WpfApp1.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\WpfApp1.pdb
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MainWindow.baml
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.g.resources
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.AssemblyInfoInputs.cache
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.AssemblyInfo.cs
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.csproj.CoreCompileInputs.cache
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.sourcelink.json
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.csproj.Up2Date
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\refint\WpfApp1.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.pdb
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.genruntimeconfig.cache
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\ref\WpfApp1.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.Memory.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Data.Sqlite.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyModel.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\MySqlConnector.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Pomelo.EntityFrameworkCore.MySql.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\RegisterView\Register.g.cs
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\RegisterView\Register.baml
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\AdminView\Admin.g.cs
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\AdminView\Admin.baml
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserView\UserV.g.cs
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserView\UserV.baml
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\WpfApp1.exe
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\WpfApp1.deps.json
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\WpfApp1.runtimeconfig.json
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\WpfApp1.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\WpfApp1.pdb
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\MySqlConnector.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Pomelo.EntityFrameworkCore.MySql.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.csproj.AssemblyReference.cache
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\AdminView\Admin.g.cs
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MainWindow.g.cs
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\RegisterView\Register.g.cs
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserView\UserV.g.cs
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\App.g.cs
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1_MarkupCompile.cache
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1_MarkupCompile.lref
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\AdminView\Admin.baml
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MainWindow.baml
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\RegisterView\Register.baml
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserView\UserV.baml
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.g.resources
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.GeneratedMSBuildEditorConfig.editorconfig
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.AssemblyInfoInputs.cache
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.AssemblyInfo.cs
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.csproj.CoreCompileInputs.cache
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.sourcelink.json
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.csproj.Up2Date
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\refint\WpfApp1.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.pdb
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.genruntimeconfig.cache
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\ref\WpfApp1.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.Memory.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.Memory.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserDatas\UserDataGrid.g.cs
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserDatas\UserDataGrid.baml
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\WpfApp1.dll.config
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserDatas\UserDataGrid.g.cs
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserDatas\UserDataGrid.baml
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\User_Logs\User_Logs.g.cs
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\User_Logs\User_Logs.baml
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\Appointment\Appointments.g.cs
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\Appointment\Appointments.baml
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Core.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\MySqlConnector.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\SQLitePCLRaw.batteries_v2.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\SQLitePCLRaw.core.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\SQLitePCLRaw.provider.e_sqlite3.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
@@ -134,53 +58,6 @@ C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\Vizuali
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MyAppointments\MyAppointments.g.cs
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MyAppointments\MyAppointments.baml
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Core.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Azure.Identity.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Identity.Client.NativeInterop.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Core.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.WinForms.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Web.WebView2.Wpf.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.Memory.Data.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\msalruntime_arm64.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\msalruntime.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\msalruntime_x86.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\WebView2Loader.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\Appointment\Appointments.g.cs
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MyAppointments\MyAppointments.g.cs
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\User_Logs\User_Logs.g.cs
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\Appointment\Appointments.baml
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MyAppointments\MyAppointments.baml
-D:\Git\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\User_Logs\User_Logs.baml
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Data.Sqlite.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Sqlite.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyModel.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\SQLitePCLRaw.batteries_v2.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\SQLitePCLRaw.core.dll
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\SQLitePCLRaw.provider.e_sqlite3.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\browser-wasm\nativeassets\net8.0\e_sqlite3.a
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libe_sqlite3.so
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libe_sqlite3.so
@@ -201,7 +78,41 @@ C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\Vizuali
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\AdminView\Admin.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\AdminView\Admin.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\Appointment\Appointments.g.cs
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\DoctorView\DoctorV.g.cs
-C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\DoctorView\DoctorV.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MainWindow.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MyAppointments\MyAppointments.g.cs
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\PreviousAppointments\PreviousAppointments.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\RegisterView\Register.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserDatas\UserDataGrid.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserView\UserV.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\User_Logs\User_Logs.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1_MarkupCompile.cache
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1_MarkupCompile.lref
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\Appointment\Appointments.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\DoctorView\DoctorV.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MainWindow.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\MyAppointments\MyAppointments.baml
 C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\PreviousAppointments\PreviousAppointments.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\RegisterView\Register.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserDatas\UserDataGrid.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\UserView\UserV.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\User_Logs\User_Logs.baml
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.g.resources
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.AssemblyInfoInputs.cache
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.AssemblyInfo.cs
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.csproj.CoreCompileInputs.cache
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.sourcelink.json
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.csproj.Up2Date
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\refint\WpfApp1.dll
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.pdb
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\WpfApp1.genruntimeconfig.cache
+C:\Users\T. Adrian\OneDrive - Neumann János Egyetem\Dokumentumok\GitHub\VizualisProg-Beadando\WpfApp1\obj\Debug\net8.0-windows\ref\WpfApp1.dll
